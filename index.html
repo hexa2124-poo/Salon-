@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+<title>Grace & Glamour v3.0 Final — Luxury Beauty & Bridal Salon | Surat</title>
+<meta name="description" content="Grace & Glamour — Surat's premier luxury beauty & bridal salon. Hair, Makeup, Skin, Nails & Bridal."/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════
+   DESIGN SYSTEM v2.0
+═══════════════════════════════════════ */
+:root{
+  --bg:#07050f;--bg2:#0d0b18;--bg3:#120f20;
+  --card:#18142a;--card2:#201b34;
+  --rose:#c8416a;--rose2:#e05c82;--rose3:#f5809e;
+  --gold:#c8921c;--gold2:#e4b050;--gold3:#f8d080;
+  --blush:#f5c0d5;--purple:#7c4daa;
+  --text:#f8f4ff;--text2:rgba(248,244,255,.6);--text3:rgba(248,244,255,.32);
+  --border:rgba(200,65,106,.16);--border2:rgba(255,255,255,.07);
+  --glass:rgba(255,255,255,.04);
+  --glow:rgba(200,65,106,.5);--glow2:rgba(200,146,28,.4);
+  --r20:20px;--r12:12px;--r8:8px;
+  --shadow:0 8px 40px rgba(0,0,0,.65);
+  --tr:.3s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;cursor:none;-webkit-tap-highlight-color:transparent}
+img{max-width:100%;display:block;object-fit:cover}
+a{text-decoration:none;color:inherit}
+button{font-family:'Poppins',sans-serif;border:none;outline:none;cursor:pointer}
+input,select,textarea{font-family:'Poppins',sans-serif;outline:none;border:none}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-thumb{background:var(--rose);border-radius:2px}
+
+/* CURSOR */
+#cur,#cur2{
+  position:fixed;border-radius:50%;pointer-events:none;
+  z-index:99999;transform:translate(-50%,-50%);
+  transition:width .22s,height .22s,background .22s,opacity .2s;
+}
+#cur{width:6px;height:6px;background:var(--rose);opacity:.85}
+#cur2{width:22px;height:22px;border:1px solid rgba(200,65,106,.35);opacity:.6}
+@media(hover:none),(max-width:900px){#cur,#cur2{display:none!important;opacity:0!important}}
+
+/* LOADER */
+#loader{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--bg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:0;
+  transition:opacity .9s,visibility .9s;
+  padding:1.5rem;
+  text-align:center;
+}
+#loader.out{opacity:0;visibility:hidden;pointer-events:none}
+.ld-logo{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,7vw,3rem);
+  font-style:italic;font-weight:700;
+  background:linear-gradient(135deg,var(--rose2),var(--gold2),var(--blush));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  animation:lp 1.5s ease-in-out infinite;
+  text-align:center;padding:0 1rem;
+  word-break:break-word;
+}
+@keyframes lp{0%,100%{opacity:.55}50%{opacity:1}}
+.ld-version{font-size:.62rem;letter-spacing:.38em;text-transform:uppercase;color:var(--text3);margin:.4rem 0 2rem}
+.ld-bar-wrap{
+  width:min(180px,55vw);height:2px;
+  background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden;
+}
+.ld-bar{height:100%;width:0;background:linear-gradient(90deg,var(--rose),var(--gold2));animation:lb 2.5s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes lb{to{width:100%}}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.rev{opacity:0;transform:translateY(32px);transition:opacity .85s ease,transform .85s ease}
+.rev.vis{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.1rem 5vw;display:flex;align-items:center;justify-content:space-between;transition:background .4s,border-color .4s}
+#nav.stuck{background:rgba(7,5,15,.93);backdrop-filter:blur(22px);border-bottom:1px solid var(--border)}
+.nav-brand{display:flex;align-items:center;gap:.55rem;cursor:pointer;text-decoration:none;min-width:0;flex:1}
+.nav-brand-circle{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:.88rem;font-style:italic;font-weight:700;color:#fff;box-shadow:0 0 14px var(--glow);flex-shrink:0}
+.nav-brand-text{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(.82rem,3.5vw,1.05rem);
+  font-weight:600;font-style:italic;
+  background:linear-gradient(135deg,var(--rose2),var(--gold2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.nav-brand-sub{
+  font-size:clamp(.36rem,.9vw,.42rem);
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--text3);display:block;white-space:nowrap;
+}
+@media(max-width:380px){.nav-brand-sub{display:none}}
+.nav-links{display:none;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text2);transition:color .3s;position:relative;cursor:pointer}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--rose);transition:width .3s}
+.nav-links a:hover{color:#fff}.nav-links a:hover::after{width:100%}
+.nav-cta{
+  background:linear-gradient(135deg,var(--rose),#8c1840);
+  color:#fff;
+  padding:.42rem .95rem;
+  border-radius:22px;
+  font-size:.6rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  font-weight:600;
+  box-shadow:0 3px 14px var(--glow);
+  transition:transform .2s,box-shadow .3s;
+  cursor:pointer;
+  display:inline-flex;align-items:center;gap:.32rem;
+  white-space:nowrap;flex-shrink:0;
+  border:1px solid rgba(255,255,255,.12);
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px var(--glow)}
+@media(max-width:480px){
+  .nav-cta{padding:.38rem .75rem;font-size:.56rem;border-radius:18px}
+  .nav-cta .cta-txt{display:none}
+  .nav-cta{letter-spacing:0}
+}
+@media(min-width:900px){.nav-links{display:flex}}
+@media(max-width:899px){.nav-links{display:none!important}}
+.ham{display:flex;flex-direction:column;gap:4px;background:none;padding:.35rem;cursor:pointer;flex-shrink:0}
+.ham span{display:block;width:22px;height:1.5px;background:var(--rose);border-radius:2px;transition:all .3s}
+.ham.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(min-width:900px){.ham{display:none}}
+#mob-menu{position:fixed;inset:0;z-index:490;background:rgba(7,5,15,.97);backdrop-filter:blur(24px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem;opacity:0;visibility:hidden;transition:all .4s}
+#mob-menu.open{opacity:1;visibility:visible}
+.mob-link{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,7vw,2.4rem);font-style:italic;color:var(--text2);transition:color .3s;cursor:pointer}
+.mob-link:hover{color:var(--rose2)}
+
+/* SCREENS */
+.screen{display:none;flex:1;flex-direction:column;min-height:100vh}
+.screen.active{display:flex}
+
+/* BTN SYSTEM */
+.btn-p{background:linear-gradient(135deg,var(--rose),#8c1840);color:#fff;padding:.9rem 2.2rem;border-radius:30px;font-size:.73rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;box-shadow:0 8px 26px var(--glow);transition:transform .2s,box-shadow .3s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 16px 38px var(--glow)}
+.btn-s{background:transparent;color:#fff;padding:.9rem 2.2rem;border-radius:30px;font-size:.73rem;letter-spacing:.18em;text-transform:uppercase;font-weight:400;border:1px solid rgba(255,255,255,.18);transition:border-color .3s,background .3s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-s:hover{border-color:var(--gold2);background:rgba(228,176,80,.07)}
+.btn-g{background:linear-gradient(135deg,var(--gold),#7a5010);color:#fff;padding:.9rem 2.2rem;border-radius:30px;font-size:.73rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;box-shadow:0 8px 26px var(--glow2);transition:transform .2s,box-shadow .3s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-g:hover{transform:translateY(-3px);box-shadow:0 16px 38px var(--glow2)}
+.w-full{width:100%}
+.justify-center{justify-content:center}
+
+/* HERO */
+#hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding-top:80px}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(200,65,106,.08) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at 20% 60%,rgba(200,146,28,.06) 0%,transparent 60%),radial-gradient(ellipse 100% 50% at 50% 100%,rgba(7,5,15,.9) 0%,transparent 50%)}
+.hero-particles{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.particle{position:absolute;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent);animation:float 6s ease-in-out infinite}
+.hero-grid{display:grid;grid-template-columns:1fr;align-items:center;gap:3rem;padding:0 5vw;width:100%;position:relative;z-index:2}
+@media(min-width:768px){.hero-grid{grid-template-columns:1fr 1fr;gap:0}}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.8rem;font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold2);margin-bottom:1.5rem;opacity:0;animation:fadeUp .8s 2.5s ease forwards}
+.hero-eyebrow::before{content:'';display:block;width:2rem;height:1px;background:var(--gold2)}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,6.5rem);font-weight:900;line-height:.94;margin-bottom:1.5rem;opacity:0;animation:fadeUp .9s 2.7s ease forwards}
+.w1{display:block;color:rgba(255,255,255,.92)}
+.w2{display:block;font-style:italic;background:linear-gradient(125deg,var(--rose) 0%,var(--gold2) 55%,var(--blush) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-p{font-size:.9rem;font-weight:300;color:var(--text2);line-height:1.9;max-width:44ch;margin-bottom:2.5rem;font-style:italic;opacity:0;animation:fadeUp .7s 2.9s ease forwards}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap;margin-bottom:2rem;opacity:0;animation:fadeUp .7s 3.1s ease forwards}
+.hero-chips{display:flex;gap:.6rem;flex-wrap:wrap;opacity:0;animation:fadeUp .7s 3.3s ease forwards}
+.chip{display:inline-flex;align-items:center;gap:.45rem;background:var(--glass);border:1px solid var(--border2);padding:.35rem .85rem;border-radius:20px;font-size:.62rem;color:var(--text2)}
+.chip-dot{width:5px;height:5px;border-radius:50%;background:linear-gradient(135deg,var(--rose2),var(--gold2));flex-shrink:0}
+.hero-img-side{position:relative;display:flex;align-items:center;justify-content:center}
+.hero-frame{position:relative;border-radius:var(--r20);overflow:hidden;width:100%;max-width:520px;aspect-ratio:3/4;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px var(--glow);display:none}
+@media(min-width:768px){.hero-frame{display:block}}
+.hero-frame img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.hero-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(7,5,15,.55) 100%)}
+.hero-stat{position:absolute;bottom:2rem;left:-3rem;background:rgba(24,20,42,.92);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:14px;padding:1rem 1.5rem;box-shadow:var(--shadow);animation:float 5s ease-in-out infinite}
+.hstat-val{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;background:linear-gradient(135deg,var(--rose2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.hstat-lbl{font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);margin-top:.2rem}
+.hero-mob-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=800&q=80') center/cover no-repeat;opacity:.12}
+@media(min-width:768px){.hero-mob-bg{display:none}}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:0;animation:fadeUp .7s 3.5s ease forwards;cursor:pointer}
+@media(min-width:768px){.hero-scroll{left:6vw;transform:none}}
+.hs-txt{font-size:.52rem;letter-spacing:.32em;text-transform:uppercase;color:var(--text3)}
+.hs-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--rose),transparent);animation:pulse 2s ease-in-out infinite}
+
+/* STATS BAR */
+.stats-bar{background:rgba(13,11,24,.96);backdrop-filter:blur(18px);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2rem 5vw;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background-color:rgba(200,65,106,.07)}
+@media(min-width:600px){.stats-bar{grid-template-columns:repeat(4,1fr)}}
+.sb{background:rgba(13,11,24,.96);text-align:center;padding:1.5rem 1rem}
+.sb-num{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:700;background:linear-gradient(135deg,var(--rose2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.sb-lbl{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);margin-top:.35rem}
+
+/* SHARED HEADERS */
+.sh{text-align:center;margin-bottom:3rem}
+.sh-tag{font-size:.58rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold2);display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1rem}
+.sh-tag::before,.sh-tag::after{content:'';display:block;width:1.8rem;height:1px;background:var(--gold2)}
+.sh-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.1}
+.sh-title em{font-style:italic;color:var(--rose2)}
+.sh-sub{font-size:.84rem;font-weight:300;color:var(--text2);line-height:1.8;max-width:50ch;margin:.8rem auto 0}
+
+/* SECTION PAD */
+.sp{padding:5rem 5vw}
+
+/* SERVICES */
+.cat-scroll{display:flex;gap:.75rem;overflow-x:auto;padding-bottom:.75rem;-ms-overflow-style:none;scrollbar-width:none;margin-bottom:1.5rem}
+.cat-scroll::-webkit-scrollbar{display:none}
+.cat-pill{flex-shrink:0;display:flex;align-items:center;gap:.5rem;background:var(--glass);border:1px solid var(--border2);padding:.55rem 1.1rem;border-radius:30px;font-size:.68rem;font-weight:400;color:var(--text2);cursor:pointer;transition:all .3s;white-space:nowrap}
+.cat-pill.active,.cat-pill:hover{background:linear-gradient(135deg,rgba(200,65,106,.18),rgba(200,146,28,.1));border-color:var(--rose);color:#fff}
+.search-wrap{display:flex;align-items:center;gap:.8rem;background:var(--card);border:1px solid var(--border2);border-radius:var(--r12);padding:.8rem 1.1rem;margin-bottom:1.5rem;transition:border-color .3s}
+.search-wrap:focus-within{border-color:var(--rose)}
+.search-wrap input{background:none;color:var(--text);font-size:.85rem;font-weight:300;flex:1}
+.search-wrap input::placeholder{color:var(--text3)}
+.svc-cat-block{margin-bottom:2.5rem}
+.svc-cat-hdr{display:flex;align-items:center;gap.9rem;padding:.7rem 0;border-bottom:1px solid var(--border2);margin-bottom:1rem}
+.svc-cat-icon{font-size:1.3rem;margin-right:.6rem}
+.svc-cat-name{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:#fff}
+.svc-cat-cnt{font-size:.6rem;color:var(--text3);letter-spacing:.1em;margin-left:.5rem}
+.svc-row{display:flex;align-items:center;gap:.9rem;background:var(--card);border:1px solid var(--border2);border-radius:var(--r12);padding:.85rem 1rem;cursor:pointer;transition:border-color .3s,transform .25s;position:relative;margin-bottom:.5rem}
+.svc-row:hover{border-color:rgba(200,65,106,.3);transform:translateX(4px)}
+.svc-row-img{width:78px;height:78px;border-radius:var(--r8);overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,var(--card2),var(--card3));position:relative}
+.svc-row-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform .5s}
+.svc-row:hover .svc-row-img img{transform:scale(1.07)}
+.svc-row-body{flex:1;min-width:0}
+.svc-row-name{font-family:'Playfair Display',serif;font-size:.96rem;font-weight:600;color:#fff;margin-bottom:.2rem;line-height:1.3}
+.svc-row-desc{font-size:.7rem;font-weight:300;color:var(--text3);line-height:1.65;margin-bottom:.35rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.svc-row-meta{display:flex;align-items:center;gap.6rem;flex-wrap:wrap;gap:.5rem}
+.svc-row-price{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--rose2)}
+.svc-row-dur{font-size:.6rem;color:var(--text3)}
+.trending-badge{background:linear-gradient(135deg,var(--rose),var(--gold));color:#fff;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:.18rem .55rem;border-radius:10px}
+.add-circle{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--rose),#8c1840);color:#fff;font-size:1rem;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px var(--glow);flex-shrink:0;transition:transform .2s}
+.add-circle:hover{transform:scale(1.12)}
+.fav-icon{position:absolute;top:.6rem;right:.6rem;font-size:.85rem;opacity:.4;cursor:pointer;transition:opacity .2s}
+.fav-icon:hover,.fav-icon.on{opacity:1}
+
+/* MODEL BANNER */
+.model-banner{position:relative;overflow:hidden;min-height:55vw;display:flex;align-items:center}
+@media(min-width:768px){.model-banner{min-height:480px}}
+.mb-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;filter:brightness(.65) saturate(.85)}
+.mb-grad{position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,5,15,.95) 0%,rgba(7,5,15,.65) 50%,rgba(7,5,15,.15) 100%)}
+.mb-content{position:relative;z-index:2;padding:4rem 5vw;max-width:580px}
+.mb-tag{font-size:.58rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold2);margin-bottom:1rem;display:flex;align-items:center;gap:.7rem}
+.mb-tag::before{content:'';display:block;width:1.5rem;height:1px;background:var(--gold2)}
+.mb-h{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,3rem);font-weight:700;line-height:1.1;margin-bottom:1rem}
+.mb-h em{font-style:italic;color:var(--rose2)}
+.mb-p{font-size:.84rem;font-weight:300;color:var(--text2);line-height:1.85;margin-bottom:2rem;max-width:38ch}
+.mb-stats{display:flex;gap:2.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.mb-stat-val{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;background:linear-gradient(135deg,var(--rose2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.mb-stat-lbl{font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text3);margin-top:.2rem}
+
+/* TRENDING */
+.trend-track{display:flex;gap:1rem;overflow-x:auto;padding-bottom:.75rem;-ms-overflow-style:none;scrollbar-width:none}
+.trend-track::-webkit-scrollbar{display:none}
+.trend-card{flex-shrink:0;width:195px;background:var(--card);border:1px solid var(--border2);border-radius:var(--r20);overflow:hidden;cursor:pointer;transition:transform .3s,border-color .3s,box-shadow .3s}
+@media(min-width:600px){.trend-card{width:230px}}
+.trend-card:hover{transform:translateY(-5px);border-color:rgba(200,65,106,.3);box-shadow:0 16px 40px rgba(200,65,106,.1)}
+.trend-img{height:155px;overflow:hidden}
+.trend-img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s}
+.trend-card:hover .trend-img img{transform:scale(1.06)}
+.trend-body{padding:.9rem}
+.trend-name{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:600;color:#fff;margin-bottom:.25rem;line-height:1.3}
+.trend-price{font-size:.82rem;color:var(--rose2);font-weight:600}
+.trend-hot{font-size:.52rem;color:var(--gold2);margin-top:.3rem;display:inline-block;background:rgba(200,146,28,.1);border:1px solid rgba(200,146,28,.2);padding:.18rem .5rem;border-radius:8px;letter-spacing:.1em}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:1fr;gap:1.1rem;margin-top:2.5rem}
+@media(min-width:600px){.testi-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.testi-grid{grid-template-columns:repeat(3,1fr)}}
+.tc{background:var(--card);border:1px solid rgba(200,65,106,.1);padding:1.8rem;border-radius:var(--r20);position:relative;overflow:hidden;transition:border-color .3s,transform .3s,box-shadow .3s}
+.tc::before{content:'"';position:absolute;top:-.8rem;left:1rem;font-family:'Playfair Display',serif;font-size:7rem;font-weight:700;line-height:1;color:rgba(200,65,106,.05);pointer-events:none}
+.tc:hover{border-color:rgba(200,65,106,.28);transform:translateY(-5px);box-shadow:0 18px 50px rgba(200,65,106,.1)}
+.tc-stars{display:flex;gap:2px;margin-bottom:.8rem}
+.tcs{color:var(--gold2);font-size:.76rem}
+.tc-text{font-size:.8rem;font-weight:300;color:var(--text2);line-height:1.85;font-style:italic;margin-bottom:1.3rem}
+.tc-auth{display:flex;align-items:center;gap:.8rem}
+.tc-av{width:34px;height:34px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--rose),var(--gold));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.76rem;color:#fff}
+.tc-name{font-weight:500;font-size:.8rem;color:#fff}
+.tc-loc{font-size:.6rem;color:var(--text3);margin-top:.1rem}
+
+/* GALLERY MARQUEE */
+.g-track{display:flex;gap:1rem;animation:marquee 32s linear infinite;width:max-content}
+.g-track:hover{animation-play-state:paused}
+.gi{width:210px;height:280px;flex-shrink:0;border-radius:var(--r12);overflow:hidden;position:relative}
+@media(min-width:600px){.gi{width:250px;height:330px}}
+.gi img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s,filter .4s;filter:saturate(.72) brightness(.82)}
+.gi:hover img{transform:scale(1.08);filter:saturate(1.1) brightness(.96)}
+.gi-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,5,15,.75) 0%,transparent 55%);display:flex;align-items:flex-end;padding:1rem;opacity:0;transition:opacity .4s}
+.gi:hover .gi-ov{opacity:1}
+.gi-lbl{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr;gap:3rem;align-items:center}
+@media(min-width:768px){.about-grid{grid-template-columns:1fr 1fr;gap:5rem}}
+.about-img{position:relative;border-radius:var(--r20);overflow:hidden;aspect-ratio:3/4}
+.about-img img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:saturate(.88)}
+.about-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(7,5,15,.45) 0%,transparent 50%)}
+.about-chip{position:absolute;bottom:1.5rem;left:1.5rem;background:rgba(24,20,42,.92);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:12px;padding:.95rem 1.3rem}
+.ac-val{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;background:linear-gradient(135deg,var(--rose2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.ac-lbl{font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);margin-top:.2rem}
+.about-body{font-size:.86rem;font-weight:300;color:var(--text2);line-height:1.9;margin-bottom:.9rem}
+.about-feats{display:flex;flex-direction:column;gap:.65rem;margin:1.4rem 0}
+.af{display:flex;align-items:center;gap:.8rem;font-size:.78rem;color:var(--text2)}
+.af-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--rose2),var(--gold2))}
+
+/* COUPONS */
+.coupon-grid{display:grid;grid-template-columns:1fr;gap:1.1rem;margin-top:2rem}
+@media(min-width:600px){.coupon-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.coupon-grid{grid-template-columns:repeat(3,1fr)}}
+.coupon-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--r20);overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s;position:relative}
+.coupon-card:hover{transform:translateY(-4px);box-shadow:0 16px 42px rgba(200,65,106,.12)}
+.coupon-top{padding:1.6rem;background:linear-gradient(135deg,rgba(200,65,106,.1),rgba(200,146,28,.07));border-bottom:2px dashed rgba(255,255,255,.09);position:relative}
+.coupon-top::before,.coupon-top::after{content:'';position:absolute;bottom:-12px;width:24px;height:24px;border-radius:50%;background:var(--card);border:2px dashed rgba(255,255,255,.09)}
+.coupon-top::before{left:-12px}.coupon-top::after{right:-12px}
+.coupon-disc{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;background:linear-gradient(135deg,var(--rose2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:.25rem}
+.coupon-title{font-size:.85rem;font-weight:500;color:#fff;margin-bottom:.25rem}
+.coupon-desc{font-size:.7rem;color:var(--text3)}
+.coupon-bot{padding:.9rem 1.6rem;display:flex;align-items:center;justify-content:space-between}
+.coupon-code{font-family:'Poppins',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.22em;color:var(--gold2);background:rgba(200,146,28,.1);border:1px dashed rgba(200,146,28,.3);padding:.3rem .75rem;border-radius:6px}
+.coupon-exp{font-size:.58rem;color:var(--text3)}
+.coupon-badge{position:absolute;top:.75rem;right:.75rem;background:linear-gradient(135deg,var(--rose),var(--gold));color:#fff;font-size:.48rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;padding:.22rem .58rem;border-radius:10px}
+
+/* BRANCHES */
+.branch-grid{display:grid;grid-template-columns:1fr;gap:1.1rem;margin-top:2.5rem}
+@media(min-width:600px){.branch-grid{grid-template-columns:repeat(3,1fr)}}
+.branch-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r20);padding:2rem 1.8rem;position:relative;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s;cursor:default}
+.branch-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,65,106,.06) 0%,transparent 60%);opacity:0;transition:opacity .35s}
+.branch-card:hover{transform:translateY(-6px);border-color:rgba(200,65,106,.4);box-shadow:0 20px 55px rgba(200,65,106,.12)}
+.branch-card:hover::before{opacity:1}
+.branch-num{font-family:'Playfair Display',serif;font-size:3.2rem;font-style:italic;line-height:1;margin-bottom:.7rem;background:linear-gradient(135deg,rgba(200,65,106,.18),rgba(200,146,28,.12));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.branch-name{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:600;color:#fff;margin-bottom:.5rem}
+.branch-addr{font-size:.78rem;font-weight:300;color:var(--text3);line-height:1.7;margin-bottom:1.2rem}
+.branch-pill{display:inline-flex;align-items:center;gap:.35rem;background:rgba(200,65,106,.09);border:1px solid rgba(200,65,106,.2);padding:.28rem .8rem;border-radius:20px;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rose2)}
+
+/* BOOKING */
+.booking-layout{max-width:1000px;margin:0 auto}
+.booking-grid{display:grid;grid-template-columns:1fr;gap:1.5rem}
+@media(min-width:768px){.booking-grid{grid-template-columns:1fr 1fr}}
+.booking-panel{background:var(--card);border:1px solid var(--border2);border-radius:var(--r20);padding:1.8rem}
+.bp-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;color:#fff;margin-bottom:1.3rem}
+.cal-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem}
+.cal-nav-btn{background:var(--glass);border:1px solid var(--border2);border-radius:var(--r8);width:30px;height:30px;display:flex;align-items:center;justify-content:center;color:var(--text2);cursor:pointer;transition:border-color .3s}
+.cal-nav-btn:hover{border-color:var(--rose)}
+.cal-month-lbl{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:#fff}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.cal-dh{font-size:.56rem;text-align:center;color:var(--text3);letter-spacing:.1em;padding:.35rem 0}
+.cal-d{aspect-ratio:1;border-radius:var(--r8);display:flex;align-items:center;justify-content:center;font-size:.76rem;color:var(--text2);cursor:pointer;transition:background .2s,color .2s;position:relative}
+.cal-d:hover:not(.disabled){background:rgba(200,65,106,.14);color:#fff}
+.cal-d.today{color:var(--rose2);font-weight:600}
+.cal-d.selected{background:linear-gradient(135deg,var(--rose),#8c1840);color:#fff;box-shadow:0 4px 14px var(--glow)}
+.cal-d.has-slots::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:3px;height:3px;border-radius:50%;background:var(--gold2)}
+.cal-d.disabled{color:var(--text3);cursor:not-allowed;opacity:.35}
+.slot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:.9rem}
+.slot{background:var(--glass);border:1px solid var(--border2);border-radius:var(--r8);padding:.58rem;text-align:center;font-size:.7rem;color:var(--text2);cursor:pointer;transition:all .25s}
+.slot:hover:not(.unavailable){border-color:var(--rose);color:#fff;background:rgba(200,65,106,.08)}
+.slot.selected{background:linear-gradient(135deg,rgba(200,65,106,.24),rgba(200,146,28,.14));border-color:var(--rose);color:#fff}
+.slot.unavailable{opacity:.3;cursor:not-allowed;text-decoration:line-through}
+.staff-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-top:.8rem}
+.staff-chip{background:var(--glass);border:1px solid var(--border2);border-radius:var(--r12);padding:.75rem;text-align:center;cursor:pointer;transition:all .25s}
+.staff-chip:hover,.staff-chip.sel{border-color:var(--rose);background:rgba(200,65,106,.09)}
+.staff-chip-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:#fff;margin:0 auto .35rem}
+.staff-chip-name{font-size:.74rem;font-weight:500;color:#fff}
+.staff-chip-role{font-size:.58rem;color:var(--text3)}
+.bf-label{font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);margin-bottom:.35rem;display:block}
+.bf-input,.bf-select{width:100%;background:var(--card2);border:1px solid var(--border2);color:var(--text);padding:.78rem 1rem;border-radius:var(--r8);font-size:.82rem;font-weight:300;transition:border-color .3s,background .3s;margin-bottom:.9rem}
+.bf-input:focus,.bf-select:focus{border-color:var(--rose);background:rgba(200,65,106,.04)}
+.bf-select option{background:var(--card2)}
+
+/* ADMIN */
+#admin-screen{background:var(--bg);display:flex;min-height:100vh}
+.admin-sidebar{width:255px;flex-shrink:0;background:var(--bg2);border-right:1px solid var(--border2);display:flex;flex-direction:column;position:fixed;top:0;left:0;bottom:0;z-index:200;transition:transform .3s;overflow-y:auto}
+@media(max-width:1024px){.admin-sidebar{transform:translateX(-100%)}.admin-sidebar.open{transform:translateX(0)}}
+.as-logo{padding:1.4rem;border-bottom:1px solid var(--border2)}
+.as-logo-text{font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;font-weight:700;background:linear-gradient(135deg,var(--rose2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.as-logo-sub{font-size:.46rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);margin-top:.2rem}
+.as-version{font-size:.48rem;color:var(--rose2);letter-spacing:.1em;margin-top:.25rem}
+.as-nav{padding:.8rem 0;flex:1}
+.as-nl{font-size:.52rem;letter-spacing:.25em;text-transform:uppercase;color:var(--text3);padding:.5rem 1.4rem;margin-top:.5rem}
+.as-ni{display:flex;align-items:center;gap:.75rem;padding:.7rem 1.4rem;font-size:.76rem;font-weight:400;color:var(--text2);cursor:pointer;transition:all .2s;border-left:2px solid transparent}
+.as-ni:hover{color:#fff;background:rgba(255,255,255,.03)}
+.as-ni.active{color:var(--rose2);border-left-color:var(--rose);background:rgba(200,65,106,.07)}
+.as-ni-icon{font-size:.95rem;flex-shrink:0;width:18px;text-align:center}
+.as-ni-badge{margin-left:auto;background:var(--rose);color:#fff;font-size:.5rem;padding:.12rem .45rem;border-radius:10px;font-weight:700}
+.as-user{padding:.9rem 1.4rem;border-top:1px solid var(--border2)}
+.as-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold));display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:#fff;flex-shrink:0}
+.admin-main{flex:1;margin-left:255px;display:flex;flex-direction:column;min-height:100vh}
+@media(max-width:1024px){.admin-main{margin-left:0}}
+.admin-topbar{padding:.9rem 1.8rem;background:var(--bg2);border-bottom:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.admin-topbar-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:#fff}
+.topbar-btn{background:var(--glass);border:1px solid var(--border2);color:var(--text2);padding:.48rem .85rem;border-radius:var(--r8);font-size:.66rem;cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:.38rem}
+.topbar-btn:hover{border-color:var(--rose);color:var(--rose2)}
+.topbar-btn.primary{background:linear-gradient(135deg,var(--rose),#8c1840);color:#fff;border-color:transparent;box-shadow:0 4px 16px var(--glow)}
+.admin-content{padding:1.8rem;flex:1}
+.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:1.8rem}
+@media(min-width:600px){.kpi-grid{grid-template-columns:repeat(4,1fr)}}
+.kpi{background:var(--card);border:1px solid var(--border2);border-radius:var(--r12);padding:1.4rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
+.kpi:hover{border-color:rgba(200,65,106,.24);transform:translateY(-3px)}
+.kpi::before{content:'';position:absolute;top:0;right:0;width:70px;height:70px;border-radius:50%;opacity:.08;transform:translate(18px,-18px)}
+.kpi.rose::before{background:var(--rose)}.kpi.gold::before{background:var(--gold2)}.kpi.purple::before{background:var(--purple)}.kpi.green::before{background:#4caf50}
+.kpi-icon{font-size:1.35rem;margin-bottom:.7rem}
+.kpi-val{font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:700;color:#fff;line-height:1;margin-bottom:.25rem}
+.kpi-lbl{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text3)}
+.kpi-trend{font-size:.65rem;margin-top:.45rem;display:flex;align-items:center;gap:.25rem}
+.tu{color:#4caf50}.td{color:#f44336}
+.chart-row{display:grid;grid-template-columns:1fr;gap:1.3rem;margin-bottom:1.8rem}
+@media(min-width:768px){.chart-row{grid-template-columns:2fr 1fr}}
+.chart-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--r12);padding:1.4rem}
+.chart-title{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:600;color:#fff;margin-bottom:1.3rem;display:flex;align-items:center;justify-content:space-between}
+.chart-area{height:165px;position:relative;display:flex;align-items:flex-end;gap:5px;padding-top:.8rem}
+.bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px}
+.bar{width:100%;border-radius:4px 4px 0 0;background:linear-gradient(to top,var(--rose),var(--rose2));transition:height .9s cubic-bezier(.4,0,.2,1);position:relative;cursor:pointer}
+.bar:hover{filter:brightness(1.2)}
+.bar::before{content:attr(data-val);position:absolute;top:-1.1rem;left:50%;transform:translateX(-50%);font-size:.5rem;color:var(--text3);white-space:nowrap}
+.bar-lbl{font-size:.52rem;color:var(--text3);text-align:center}
+.donut-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;height:165px}
+.donut{width:115px;height:115px;position:relative}
+.donut svg{transform:rotate(-90deg)}
+.donut-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.donut-cval{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#fff}
+.donut-clbl{font-size:.52rem;color:var(--text3)}
+.donut-legend{display:flex;flex-direction:column;gap:.45rem;margin-top:.8rem}
+.dl-item{display:flex;align-items:center;gap:.45rem;font-size:.64rem;color:var(--text2)}
+.dl-dot{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+.panel{background:var(--card);border:1px solid var(--border2);border-radius:var(--r12);padding:1.4rem;margin-bottom:1.4rem}
+.panel-title{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:600;color:#fff;margin-bottom:1.1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.data-table{width:100%;border-collapse:collapse}
+.data-table th{font-size:.56rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text3);padding:.7rem .9rem;text-align:left;border-bottom:1px solid var(--border2)}
+.data-table td{font-size:.76rem;color:var(--text2);padding:.8rem .9rem;border-bottom:1px solid rgba(255,255,255,.03)}
+.data-table tr:hover td{background:rgba(200,65,106,.03)}
+.dt-badge{display:inline-flex;align-items:center;gap:.25rem;padding:.18rem .65rem;border-radius:10px;font-size:.57rem;font-weight:500;letter-spacing:.06em}
+.dt-badge.paid{background:rgba(76,175,80,.14);color:#4caf50;border:1px solid rgba(76,175,80,.18)}
+.dt-badge.pending{background:rgba(255,152,0,.14);color:#ff9800;border:1px solid rgba(255,152,0,.18)}
+.dt-badge.confirmed{background:rgba(33,150,243,.14);color:#2196f3;border:1px solid rgba(33,150,243,.18)}
+.dt-badge.cancelled{background:rgba(244,67,54,.14);color:#f44336;border:1px solid rgba(244,67,54,.18)}
+.dt-action{color:var(--text3);cursor:pointer;background:var(--glass);padding:.2rem .48rem;border-radius:4px;border:1px solid var(--border2);font-size:.7rem;transition:all .2s}
+.dt-action:hover{color:var(--rose2);border-color:var(--rose)}
+
+/* INVOICE */
+.invoice-preview{background:#fff;color:#1a1430;border-radius:var(--r12);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.inv-header{background:linear-gradient(135deg,#1a1430,#2d1f40);padding:1.8rem;display:flex;align-items:center;justify-content:space-between}
+.inv-brand-name{font-family:'Playfair Display',serif;font-size:1.35rem;font-style:italic;font-weight:700;background:linear-gradient(135deg,var(--rose2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.inv-brand-sub{font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:.18rem}
+.inv-num-wrap{text-align:right;color:rgba(255,255,255,.65);font-size:.72rem}
+.inv-num-wrap strong{display:block;font-family:'Playfair Display',serif;font-size:.95rem;color:var(--gold2)}
+.inv-client-row{padding:1.3rem 1.8rem;border-bottom:1px solid #ebe8f5;display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.inv-cl{font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:#8b7a9e;margin-bottom:.25rem}
+.inv-cv{font-size:.84rem;font-weight:500;color:#1a1430}
+.inv-items-wrap{padding:1.3rem 1.8rem}
+.inv-item-head{display:grid;grid-template-columns:1fr auto auto;gap:.5rem;padding-bottom:.45rem;border-bottom:1px solid #ebe8f5;margin-bottom:.7rem}
+.inv-item-head span{font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:#8b7a9e}
+.inv-item-row{display:grid;grid-template-columns:1fr auto auto;gap:.5rem;padding:.45rem 0;border-bottom:1px solid #f5f0ff}
+.inv-item-name{font-size:.8rem;color:#1a1430}
+.inv-item-qty{font-size:.76rem;color:#6b5e7e;text-align:center}
+.inv-item-price{font-size:.82rem;font-weight:700;color:#1a1430;text-align:right;font-family:'Playfair Display',serif}
+.inv-totals{padding:.9rem 1.8rem;background:#f9f7ff;border-top:1px solid #ebe8f5}
+.inv-total-row{display:flex;justify-content:space-between;font-size:.78rem;color:#6b5e7e;margin-bottom:.35rem}
+.inv-total-final{display:flex;justify-content:space-between;font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#1a1430;border-top:1.5px solid #ebe8f5;padding-top:.55rem;margin-top:.55rem}
+.inv-footer-bar{padding:1.1rem 1.8rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #ebe8f5}
+.inv-footer-msg{font-size:.68rem;color:#8b7a9e;font-style:italic}
+.inv-qr{width:52px;height:52px;background:linear-gradient(135deg,var(--rose),var(--gold));border-radius:var(--r8);display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+
+/* BILLING */
+.billing-layout{display:grid;grid-template-columns:1fr;gap:1.5rem}
+@media(min-width:768px){.billing-layout{grid-template-columns:1.2fr 1fr}}
+.bill-panel{background:var(--card);border:1px solid var(--border2);border-radius:var(--r12);padding:1.4rem}
+.bill-search-wrap{display:flex;gap:.5rem;margin-bottom:.9rem}
+.bill-search-wrap input{flex:1;background:var(--card2);border:1px solid var(--border2);color:var(--text);padding:.68rem .9rem;border-radius:var(--r8);font-size:.8rem;transition:border-color .3s}
+.bill-search-wrap input:focus{border-color:var(--rose)}
+.bill-svc-list{max-height:200px;overflow-y:auto;border:1px solid var(--border2);border-radius:var(--r8);margin-bottom:.9rem;display:none}
+.bill-svc-item{display:flex;align-items:center;justify-content:space-between;padding:.65rem .9rem;cursor:pointer;transition:background .2s;border-bottom:1px solid rgba(255,255,255,.03)}
+.bill-svc-item:hover{background:rgba(200,65,106,.07)}
+.bill-svc-name{font-size:.78rem;color:var(--text)}
+.bill-svc-price{font-size:.82rem;color:var(--rose2);font-weight:700;font-family:'Playfair Display',serif}
+.added-svcs{display:flex;flex-direction:column;gap:.45rem;margin-top:.8rem}
+.added-svc-row{display:flex;align-items:center;gap:.7rem;background:var(--card2);border:1px solid var(--border2);border-radius:var(--r8);padding:.58rem .85rem}
+.asr-name{flex:1;font-size:.78rem;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.asr-price{font-size:.82rem;color:var(--rose2);font-family:'Playfair Display',serif;font-weight:700;min-width:55px;text-align:right}
+.asr-remove{color:var(--text3);cursor:pointer;font-size:.75rem;transition:color .2s;padding:.1rem .3rem}
+.asr-remove:hover{color:#f44336}
+.qty-ctrl{display:flex;align-items:center;gap:.3rem;flex-shrink:0}
+.qty-btn{background:none;border:1px solid var(--border2);color:var(--text3);width:20px;height:20px;border-radius:4px;font-size:.8rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s}
+.qty-btn:hover{border-color:var(--rose);color:var(--rose2)}
+.qty-val{font-size:.76rem;color:var(--text);min-width:16px;text-align:center}
+.bill-summary{background:var(--card);border:1px solid var(--border2);border-radius:var(--r12);padding:1.4rem}
+.summary-row{display:flex;justify-content:space-between;font-size:.8rem;color:var(--text2);margin-bottom:.65rem}
+.summary-total{display:flex;justify-content:space-between;font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#fff;border-top:1px solid var(--border2);padding-top:.75rem;margin-top:.5rem}
+.coupon-row{display:flex;gap:.5rem;margin-top:.8rem}
+.coupon-input{flex:1;background:var(--card2);border:1px solid var(--border2);color:var(--text);padding:.62rem .85rem;border-radius:var(--r8);font-size:.78rem;transition:border-color .3s}
+.coupon-input:focus{border-color:var(--gold2)}
+.coupon-apply{background:linear-gradient(135deg,var(--gold),#7a5010);color:#fff;padding:.62rem 1.1rem;border-radius:var(--r8);font-size:.68rem;letter-spacing:.1em;font-weight:600;cursor:pointer;white-space:nowrap}
+
+/* TEAM */
+#team-screen{background:var(--bg2);display:flex;min-height:100vh}
+.team-sidebar{width:230px;flex-shrink:0;background:var(--bg3);border-right:1px solid var(--border2);display:flex;flex-direction:column;padding:1.5rem 0}
+.ts-logo{padding:0 1.3rem 1.3rem;border-bottom:1px solid var(--border2);margin-bottom:1.3rem}
+.ts-logo-text{font-family:'Playfair Display',serif;font-size:.92rem;font-style:italic;color:var(--rose2);font-weight:700}
+.ts-member{padding:0 1.3rem;margin-bottom:1.8rem}
+.ts-av{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold));display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.6rem;box-shadow:0 4px 16px var(--glow)}
+.ts-name{font-size:.86rem;font-weight:600;color:#fff;margin-bottom:.2rem}
+.ts-role{font-size:.6rem;color:var(--text3);letter-spacing:.1em}
+.ts-nav{padding:0 .8rem;flex:1}
+.ts-ni{display:flex;align-items:center;gap:.65rem;padding:.65rem .75rem;border-radius:var(--r8);font-size:.72rem;color:var(--text2);cursor:pointer;transition:all .2s;margin-bottom:.2rem}
+.ts-ni:hover{color:#fff;background:rgba(255,255,255,.05)}
+.ts-ni.active{color:var(--rose2);background:rgba(200,65,106,.1)}
+.team-main{flex:1;overflow-y:auto}
+.team-topbar{padding:1.1rem 1.5rem;background:var(--bg2);border-bottom:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
+.team-content{padding:1.5rem}
+
+/* CRM */
+.cust-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--r12);padding:1.1rem;display:flex;align-items:center;gap:.9rem;cursor:pointer;transition:border-color .3s;margin-bottom:.7rem}
+.cust-card:hover{border-color:rgba(200,65,106,.3)}
+.cust-av{width:40px;height:40px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--rose),var(--gold));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem;color:#fff}
+.cust-name{font-size:.82rem;font-weight:500;color:#fff}
+.cust-phone{font-size:.68rem;color:var(--text3);margin-top:.1rem}
+.cust-spend{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--gold2)}
+.cust-visits{background:rgba(200,65,106,.1);border:1px solid rgba(200,65,106,.18);color:var(--rose2);font-size:.57rem;padding:.18rem .55rem;border-radius:10px;letter-spacing:.06em}
+
+/* LOGIN */
+.login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg);padding:2rem;position:relative;overflow:hidden}
+.login-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 30% 40%,rgba(200,65,106,.08) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at 70% 60%,rgba(200,146,28,.06) 0%,transparent 60%)}
+.login-card{position:relative;z-index:2;width:100%;max-width:430px;background:var(--card);border:1px solid var(--border2);border-radius:var(--r20);padding:2.4rem;box-shadow:0 30px 80px rgba(0,0,0,.5);animation:scaleIn .5s ease}
+.login-logo-text{font-family:'Playfair Display',serif;font-size:1.75rem;font-style:italic;font-weight:700;background:linear-gradient(135deg,var(--rose2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.login-logo-sub{font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:var(--text3);margin-top:.3rem;margin-bottom:2rem;display:block}
+.login-title{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:#fff;margin-bottom:.35rem}
+.login-sub{font-size:.76rem;color:var(--text3);margin-bottom:1.8rem}
+.lf-group{display:flex;flex-direction:column;gap:.38rem;margin-bottom:1rem}
+.lf-label{font-size:.57rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text3)}
+.lf-input{background:var(--card2);border:1px solid var(--border2);color:var(--text);padding:.85rem 1rem;border-radius:var(--r8);font-size:.83rem;font-weight:300;width:100%;transition:border-color .3s,background .3s}
+.lf-input:focus{border-color:var(--rose);background:rgba(200,65,106,.04)}
+.mpin-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem;margin-top:.5rem}
+.mpin-input{aspect-ratio:1;border-radius:var(--r8);background:var(--card2);border:2px solid var(--border2);color:var(--text);font-size:1.35rem;font-weight:700;text-align:center;transition:border-color .3s}
+.mpin-input:focus{border-color:var(--rose)}
+.login-submit{background:linear-gradient(135deg,var(--rose),#8c1840);color:#fff;padding:.95rem;border-radius:30px;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;box-shadow:0 8px 26px var(--glow);transition:transform .2s,box-shadow .3s;width:100%;margin-top:.5rem}
+.login-submit:hover{transform:translateY(-2px);box-shadow:0 14px 36px var(--glow)}
+.login-hint{font-size:.68rem;color:var(--text3);text-align:center;margin-top:1rem}
+.login-hint a{color:var(--rose2);cursor:pointer;text-decoration:underline}
+
+/* FOOTER */
+.main-footer{background:var(--bg3);border-top:1px solid var(--border2);padding:3.5rem 5vw 5.5rem}
+@media(min-width:900px){.main-footer{padding-bottom:3rem}}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:2.2rem;margin-bottom:2.5rem}
+@media(min-width:600px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr}}
+.fl-logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic;font-weight:700;background:linear-gradient(135deg,var(--rose2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.25rem}
+.fl-sub{font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text3);margin-bottom:.9rem}
+.fl-desc{font-size:.76rem;font-weight:300;color:var(--text3);line-height:1.8;max-width:26ch}
+.fc-title{font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:var(--rose2);margin-bottom:1rem}
+.fc-links{display:flex;flex-direction:column;gap:.55rem;list-style:none}
+.fc-links a{font-size:.76rem;font-weight:300;color:var(--text3);transition:color .3s;cursor:pointer}
+.fc-links a:hover{color:var(--gold2)}
+.footer-bottom{border-top:1px solid var(--border2);padding-top:1.6rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.7rem}
+.fb-copy{font-size:.62rem;color:var(--text3);letter-spacing:.05em}
+.fb-love{font-size:.62rem;color:var(--text3)}.fb-love span{color:var(--rose2)}
+
+/* TOAST */
+#toast{position:fixed;bottom:5.5rem;right:1.4rem;z-index:9000;background:var(--card);border:1px solid var(--border);padding:.9rem 1.3rem;border-radius:var(--r12);box-shadow:var(--shadow);display:flex;align-items:center;gap:.75rem;font-size:.78rem;color:var(--text);animation:slideUp .4s ease;transition:opacity .3s}
+#toast.hide{opacity:0;pointer-events:none}
+.t-icon{font-size:1rem}
+@media(min-width:900px){#toast{right:2rem;bottom:3.5rem}}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:4.5rem;right:1.2rem;z-index:450;width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#25d366,#128c3e);display:flex;align-items:center;justify-content:center;font-size:1.35rem;box-shadow:0 6px 22px rgba(37,211,102,.45);animation:pulse 2.5s ease-in-out infinite;transition:transform .2s}
+.wa-float:hover{transform:scale(1.1);animation:none}
+@media(min-width:900px){.wa-float{bottom:2rem;right:2rem}}
+
+/* STICKY CTA */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:400;background:rgba(13,11,24,.97);backdrop-filter:blur(18px);border-top:1px solid var(--border);padding:.8rem 5vw;display:flex;align-items:center;justify-content:space-between;gap:.8rem}
+@media(min-width:900px){.sticky-cta{display:none}}
+.scta-info strong{display:block;font-size:.8rem;font-weight:500;color:#fff}
+.scta-info span{font-size:.62rem;color:var(--text3)}
+
+
+
+/* MISC */
+.divider{height:1px;background:var(--border2);margin:1.2rem 0}
+.gap1{gap:.5rem}.gap2{gap:1rem}.flex{display:flex}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-between{justify-content:space-between}
+.mt1{margin-top:.5rem}.mt2{margin-top:1rem}.mt3{margin-top:1.5rem}.mb1{margin-bottom:.5rem}.mb2{margin-bottom:1rem}
+.text-rose{color:var(--rose2)}.text-gold{color:var(--gold2)}.text-muted{color:var(--text3)}.text-white{color:#fff}
+.font-serif{font-family:'Playfair Display',serif}
+.overflow-x-auto{overflow-x:auto}
+
+/* ── MOBILE POLISH v3.0 ── */
+@media(max-width:480px){
+  .hero-ctas{flex-direction:column}
+  .hero-ctas .btn-p,.hero-ctas .btn-s,.hero-ctas .btn-g{justify-content:center;text-align:center}
+  .about-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .kpi-grid{grid-template-columns:1fr 1fr}
+  .bk-cols{grid-template-columns:1fr}
+  .branch-grid{grid-template-columns:1fr}
+  .coupon-grid{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .billing-layout{grid-template-columns:1fr}
+  .nav-brand-text{font-size:.95rem}
+  .kpi-val{font-size:1.5rem}
+  .sh-title{font-size:1.8rem}
+  .adm-btn{font-size:.58rem;padding:.38rem .65rem}
+  .inv-client-row{grid-template-columns:1fr 1fr}
+}
+@media(max-width:360px){
+  .hero-h1{font-size:2.6rem}
+  .sec{padding:3.5rem 4vw}
+  .hero-text{padding:2.5rem 4vw 5rem}
+}
+/* Branch card hover image effect */
+.branch-card:hover img{transform:scale(1.05);filter:saturate(.88) brightness(.88)!important}
+/* Better touch targets on mobile */
+@media(hover:none){
+  .add-circle{width:38px;height:38px}
+  .cal-d{min-height:36px}
+  .slot{padding:.72rem .5rem}
+  .cat-pill{padding:.6rem 1.2rem}
+}
+/* Sidebar fix on mobile admin */
+@media(max-width:1024px){
+  #admin-ham{display:flex!important}
+}
+
+/* ── FINAL MOBILE FIXES ── */
+@media(max-width:480px){
+  .hero-h1{font-size:clamp(2.6rem,11vw,4rem)}
+  .hero-ctas{flex-direction:column}
+  .hero-ctas button,.hero-ctas a{width:100%;justify-content:center}
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .branch-grid,.coupon-grid,.testi-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .kpi-grid{grid-template-columns:1fr 1fr}
+  .chart-row{grid-template-columns:1fr}
+  .billing-layout,.bk-cols{grid-template-columns:1fr}
+  .sec{padding:3.5rem 4vw}
+  .adm-btn{font-size:.58rem;padding:.4rem .7rem}
+  .svc-row-img{width:68px;height:68px}
+  .svc-row-name{font-size:.88rem}
+  .svc-row-price{font-size:.88rem}
+}
+@media(max-width:360px){
+  .hero-h1{font-size:2.4rem}
+  #nav{padding:.6rem 3.5vw}
+  .nav-brand-circle{width:30px;height:30px;font-size:.78rem}
+  .svc-row{flex-wrap:nowrap}
+  .svc-row-img{width:60px;height:60px}
+}
+/* Fix service image containers */
+.svc-row-img{background:linear-gradient(135deg,#1a152c,#221c38)!important}
+.svc-row-img img{min-width:100%;min-height:100%}
+/* Nav on scroll */
+#nav.stuck .nav-brand-circle{box-shadow:0 0 10px var(--glow)}
+/* Remove any version badge */
+.ver-badge{display:none!important}
+#ver-badge{display:none!important}
+
+/* ── LOADER MOBILE FIX ── */
+#loader{text-align:center;padding:2rem}
+.ld-gem{margin:0 auto 1.8rem}
+@media(max-width:380px){
+  .ld-logo{font-size:1.7rem}
+  .ld-version{font-size:.44rem;letter-spacing:.2em}
+  .ld-bar-wrap{width:160px}
+}
+/* ── NAV FINAL FIX ── */
+.nav-actions{flex-shrink:0!important;gap:.45rem!important}
+.ham{flex-shrink:0;margin-left:.1rem}
+@media(min-width:900px){.ham{display:none!important}}
+/* Book button span hidden on very small */
+@media(max-width:330px){.nav-book span{display:none}.nav-book{padding:.4rem .6rem}}
+
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cur"></div><div id="cur2"></div>
+
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="ld-logo">Grace & Glamour</div>
+  <div class="ld-version">v3.0 Final · Surat, India · gracenglamour.site</div>
+  <div class="ld-bar-wrap"><div class="ld-bar"></div></div>
+</div>
+
+<!-- WA FLOAT -->
+<a class="wa-float" href="https://wa.me/91XXXXXXXXXX" target="_blank">💬</a>
+
+<!-- TOAST -->
+<div id="toast" class="hide"><span class="t-icon">✅</span><span id="toast-msg"></span></div>
+
+<!-- ═══════════════════════════
+     VIEWS
+═══════════════════════════ -->
+
+<!-- ▶ MAIN WEBSITE -->
+<div id="view-website" class="screen active" style="flex-direction:column">
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-brand" onclick="scrollTop()">
+      <div class="nav-brand-circle">G</div>
+      <div>
+        <div class="nav-brand-text">Grace & Glamour</div>
+        <span class="nav-brand-sub">Luxury Beauty & Bridal Salon · Surat</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a onclick="sScroll('svc-section')">Services</a></li>
+      <li><a onclick="sScroll('trending-section')">Trending</a></li>
+      <li><a onclick="sScroll('branches-section')">Branches</a></li>
+      <li><a onclick="sScroll('about-section')">About</a></li>
+      <li><a onclick="goView('view-booking')">Book Now</a></li>
+      <li><a onclick="goView('view-admin-login')" style="color:var(--gold2)">Admin</a></li>
+      <li><a onclick="goView('view-team-login')" style="color:var(--rose2)">Team</a></li>
+    </ul>
+    <div class="flex items-center gap2">
+      <button class="nav-cta" onclick="goView('view-booking')">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="8" cy="16" r="1.5" fill="currentColor"/><circle cx="12" cy="16" r="1.5" fill="currentColor"/></svg>
+        <span class="cta-txt">Book Now</span>
+        <span style="display:none" class="cta-short">Book</span>
+      </button>
+      <button class="ham" onclick="toggleMob()"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- MOB MENU -->
+  <div id="mob-menu">
+    <a class="mob-link" onclick="closeMenu();sScroll('svc-section')">Services</a>
+    <a class="mob-link" onclick="closeMenu();sScroll('trending-section')">Trending</a>
+    <a class="mob-link" onclick="closeMenu();sScroll('branches-section')">Branches</a>
+    <a class="mob-link" onclick="closeMenu();sScroll('about-section')">About</a>
+    <a class="mob-link" onclick="closeMenu();goView('view-booking')">Book Now</a>
+    <a class="mob-link" onclick="closeMenu();goView('view-admin-login')" style="color:var(--gold2)">Admin</a>
+    <a class="mob-link" onclick="closeMenu();goView('view-team-login')" style="color:var(--rose2)">Team Login</a>
+    <button class="btn-p mt3" onclick="closeMenu();goView('view-booking')">📅 Book Appointment</button>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-mob-bg"></div>
+    <div class="hero-bg"></div>
+    <div class="hero-particles" id="ptcl"></div>
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">Surat's Premier Beauty Platform</div>
+        <h1 class="hero-h1"><span class="w1">Grace</span><span class="w2">& Glamour</span></h1>
+        <p class="hero-p">"Hair can be red, hair can be brown — come on in and we'll change your crown."</p>
+        <div class="hero-btns">
+          <button class="btn-p" onclick="goView('view-booking')">📅 Book Appointment</button>
+          <button class="btn-s" onclick="sScroll('svc-section')">✨ Explore Services</button>
+          <button class="btn-g" onclick="sScroll('about-section')">👰 Bridal Packages</button>
+        </div>
+        <div class="hero-chips">
+          <span class="chip"><span class="chip-dot"></span>★ 4.8 Google</span>
+          <span class="chip"><span class="chip-dot"></span>125+ Reviews</span>
+          <span class="chip"><span class="chip-dot"></span>3 Branches · Surat</span>
+          <span class="chip"><span class="chip-dot"></span>Est. 2011</span>
+        </div>
+      </div>
+      <div class="hero-img-side">
+        <div class="hero-frame">
+          <img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=900&q=85" alt="Indian beauty model"/>
+          <div class="hero-stat"><div class="hstat-val">500+</div><div class="hstat-lbl">Brides Styled</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll" onclick="sScroll('svc-section')"><span class="hs-txt">Scroll</span><div class="hs-line"></div></div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar rev">
+    <div class="sb"><div class="sb-num" data-t="4.8" data-dec>0</div><div class="sb-lbl">Google Rating ⭐</div></div>
+    <div class="sb"><div class="sb-num" data-t="125">0</div><div class="sb-lbl">Reviews</div></div>
+    <div class="sb"><div class="sb-num" data-t="3">0</div><div class="sb-lbl">Branches</div></div>
+    <div class="sb"><div class="sb-num" data-t="2011">0</div><div class="sb-lbl">Est. Since</div></div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="svc-section" class="sp" style="background:var(--bg2)">
+    <div class="sh rev">
+      <div class="sh-tag">Our Services</div>
+      <h2 class="sh-title">Everything to Make You <em>Shine</em></h2>
+      <p class="sh-sub">Browse our complete luxury service menu — from everyday glam to bridal perfection.</p>
+    </div>
+    <div class="search-wrap rev"><span style="color:var(--text3)">🔍</span><input id="svc-search" placeholder="Search services, e.g. 'facial', 'bridal', 'keratin'…" oninput="filterSvc(this.value)"/></div>
+    <div class="cat-scroll rev" id="cat-pills"></div>
+    <div id="svc-container"></div>
+  </section>
+
+  <!-- MODEL BANNER 1 -->
+  <div class="model-banner rev">
+    <img class="mb-bg" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=1400&q=85" alt=""/>
+    <div class="mb-grad"></div>
+    <div class="mb-content">
+      <div class="mb-tag">Bridal Special</div>
+      <h2 class="mb-h">Your Most <em>Radiant</em> Day Starts Here</h2>
+      <p class="mb-p">From mehendi to the mandap — our bridal team crafts every detail to perfection.</p>
+      <div class="mb-stats">
+        <div><div class="mb-stat-val">500+</div><div class="mb-stat-lbl">Brides Styled</div></div>
+        <div><div class="mb-stat-val">13+</div><div class="mb-stat-lbl">Years Experience</div></div>
+      </div>
+      <button class="btn-p" onclick="goView('view-booking')">Book Bridal Consultation</button>
+    </div>
+  </div>
+
+  <!-- TRENDING -->
+  <section id="trending-section" class="sp" style="background:var(--bg3)">
+    <div class="sh rev">
+      <div class="sh-tag">What's Hot</div>
+      <h2 class="sh-title"><em>Trending</em> Right Now</h2>
+    </div>
+    <div class="trend-track rev" id="trend-track"></div>
+  </section>
+
+  <!-- COUPONS -->
+  <section class="sp" style="background:var(--bg)">
+    <div class="sh rev">
+      <div class="sh-tag">Exclusive Deals</div>
+      <h2 class="sh-title">Offers & <em>Coupons</em></h2>
+      <p class="sh-sub">Tap any code to copy — use at billing for instant savings!</p>
+    </div>
+    <div class="coupon-grid rev" id="coupon-grid"></div>
+  </section>
+
+  <!-- BRANCHES -->
+  <section id="branches-section" class="sp" style="background:var(--bg2)">
+    <div class="sh rev">
+      <div class="sh-tag">Find Us</div>
+      <h2 class="sh-title">3 Branches Across <em>Surat</em></h2>
+      <p class="sh-sub">Same luxury, same love — visit your nearest Grace & Glamour.</p>
+    </div>
+    <div class="branch-grid">
+      <div class="branch-card rev" style="overflow:hidden">
+        <div style="height:180px;overflow:hidden;position:relative">
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Vesu Branch" style="width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.75) brightness(.82);transition:transform .5s,filter .4s"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,5,15,.6) 0%,transparent 55%)"></div>
+        </div>
+        <div style="padding:1.5rem">
+        <div class="branch-num">01</div><div class="branch-name">Vesu Branch</div><div class="branch-addr">G 31 & 32, Atlanta Shopper,<br>Nr. Reliance Market, Vesu,<br>Surat — 395007</div><span class="branch-pill">📍 Main Branch · Opens 10 AM</span></div></div>
+      <div class="branch-card rev rd1" style="overflow:hidden">
+        <div style="height:180px;overflow:hidden;position:relative">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Rander Branch" style="width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.75) brightness(.82);transition:transform .5s"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,5,15,.6) 0%,transparent 55%)"></div>
+        </div>
+        <div style="padding:1.5rem">
+        <div class="branch-num">02</div><div class="branch-name">Rander Branch</div><div class="branch-addr">Chanakya Marg,<br>Rander, Surat,<br>Gujarat</div><span class="branch-pill">📍 Rander · Opens 10 AM</span></div></div>
+      <div class="branch-card rev rd2" style="overflow:hidden">
+        <div style="height:180px;overflow:hidden;position:relative">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Jahangirpura Branch" style="width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.75) brightness(.82);transition:transform .5s"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,5,15,.6) 0%,transparent 55%)"></div>
+        </div>
+        <div style="padding:1.5rem">
+        <div class="branch-num">03</div><div class="branch-name">Jahangirpura Branch</div><div class="branch-addr">Shop No. G-24,<br>Jahangirpura, Surat,<br>Gujarat</div><span class="branch-pill">📍 Jahangirpura · Opens 10 AM</span></div></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about-section" class="sp" style="background:var(--bg3)">
+    <div class="about-grid">
+      <div class="about-img rev">
+        <img src="https://images.unsplash.com/photo-1614252234498-9e389e5a9a2d?w=700&q=85" alt="Indian bridal makeup"/>
+        <div class="about-chip"><div class="ac-val">Since 2011</div><div class="ac-lbl">Trusted in Surat</div></div>
+      </div>
+      <div class="rev rd2">
+        <div class="sh" style="text-align:left;margin-bottom:1.5rem">
+          <div class="sh-tag" style="justify-content:flex-start"><span style="display:block;width:1.8rem;height:1px;background:var(--gold2)"></span>Our Story</div>
+          <h2 class="sh-title">Surat's <em>Trusted</em><br>Beauty Destination</h2>
+        </div>
+        <p class="about-body">Established in 2011, Grace & Glamour is Surat's premier luxury beauty and wellness centre. From a single boutique in Vesu, we've grown into one of the city's most-loved salon brands — with three thriving branches serving thousands of happy clients.</p>
+        <p class="about-body">We specialise in hair styling, bridal makeup, skincare, waxing, threading, nail services, and full bridal packages. Our highly trained team makes every client feel truly extraordinary.</p>
+        <div class="about-feats">
+          <div class="af"><span class="af-dot"></span>Specialised bridal makeup & hair styling</div>
+          <div class="af"><span class="af-dot"></span>Premium global beauty brands only</div>
+          <div class="af"><span class="af-dot"></span>Highly trained & certified stylists</div>
+          <div class="af"><span class="af-dot"></span>Hygienic, sterilised tools every visit</div>
+          <div class="af"><span class="af-dot"></span>Online booking via website & WhatsApp</div>
+        </div>
+        <div class="flex gap2 flex-wrap mt3">
+          <button class="btn-p" onclick="goView('view-booking')">Book Now</button>
+          <button class="btn-s" onclick="sScroll('svc-section')">View Services</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="sp" style="background:var(--bg);padding-left:0;padding-right:0">
+    <div style="padding:0 5vw 2.5rem;text-align:center" class="rev">
+      <div class="sh-tag" style="justify-content:center">Our Work</div>
+      <h2 class="sh-title">Beauty in <em>Motion</em></h2>
+    </div>
+    <div class="g-track" id="gallery-track"></div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="sp" style="background:var(--bg2)">
+    <div class="sh rev">
+      <div class="sh-tag">Client Love</div>
+      <h2 class="sh-title">What Surat <em>Says</em></h2>
+      <p class="sh-sub">Real reviews from verified Google & Justdial clients.</p>
+    </div>
+    <div class="testi-grid rev" id="testi-grid"></div>
+  </section>
+
+  <!-- BANNER 2 -->
+  <div class="model-banner rev" style="flex-direction:row-reverse">
+    <img class="mb-bg" src="https://images.unsplash.com/photo-1614252234498-9e389e5a9a2d?w=1400&q=85" alt=""/>
+    <div class="mb-grad" style="background:linear-gradient(270deg,rgba(7,5,15,.95) 0%,rgba(7,5,15,.65) 50%,rgba(7,5,15,.15) 100%)"></div>
+    <div class="mb-content" style="margin-left:auto;text-align:right">
+      <div class="mb-tag" style="justify-content:flex-end"><span style="display:block;width:1.5rem;height:1px;background:var(--gold2)"></span>Special Offer</div>
+      <h2 class="mb-h">Get the <em>Best Makeup</em><br>on Your Special Day</h2>
+      <p class="mb-p" style="margin-left:auto">Book your bridal consultation today. Limited slots — don't miss out!</p>
+      <div class="flex gap2 flex-wrap" style="justify-content:flex-end">
+        <button class="btn-p" onclick="goView('view-booking')">Book Package</button>
+        <a href="https://wa.me/91XXXXXXXXXX" class="btn-s">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="footer-grid">
+      <div>
+        <div class="fl-logo">Grace & Glamour</div>
+        <div class="fl-sub">Premium Beauty & Bridal Salon · v2.0</div>
+        <p class="fl-desc">Surat's trusted beauty destination since 2011. Three branches — Vesu, Rander & Jahangirpura.</p>
+      </div>
+      <div><div class="fc-title">Navigation</div><ul class="fc-links"><li><a onclick="sScroll('svc-section')">Services</a></li><li><a onclick="sScroll('branches-section')">Branches</a></li><li><a onclick="sScroll('about-section')">About Us</a></li><li><a onclick="goView('view-booking')">Book Now</a></li></ul></div>
+      <div><div class="fc-title">Services</div><ul class="fc-links"><li><a>Hair Styling</a></li><li><a>Bridal Packages</a></li><li><a>Nail Studio</a></li><li><a>Waxing & Threading</a></li><li><a>Facials & Skin</a></li></ul></div>
+      <div><div class="fc-title">Connect</div><ul class="fc-links"><li><a href="https://instagram.com/grace_n_glamour" target="_blank">@grace_n_glamour</a></li><li><a href="https://gracenglamour.site" target="_blank">gracenglamour.site</a></li><li><a>★ 4.8 Google</a></li><li><a>💬 WhatsApp</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span class="fb-copy">© 2025 Grace & Glamour Salon, Surat · v3.0 Final · All rights reserved.</span>
+      <span class="fb-love">Made with <span>♥</span> in Surat</span>
+    </div>
+  </footer>
+
+  <!-- STICKY CTA -->
+  <div class="sticky-cta">
+    <div class="scta-info"><strong>Grace & Glamour</strong><span>3 Branches · Vesu · Rander · Jahangirpura</span></div>
+    <button class="btn-p" onclick="goView('view-booking')" style="font-size:.66rem;padding:.65rem 1.3rem">Book Now</button>
+  </div>
+</div>
+
+<!-- ▶ BOOKING -->
+<div id="view-booking" class="screen" style="background:var(--bg);flex-direction:column">
+  <div style="padding:1.3rem 5vw;background:var(--bg2);border-bottom:1px solid var(--border2);display:flex;align-items:center;gap:.9rem;position:sticky;top:0;z-index:10">
+    <button onclick="goView('view-website')" class="topbar-btn">← Back</button>
+    <span class="font-serif" style="font-size:1.1rem;font-weight:600;color:#fff">Book an Appointment</span>
+  </div>
+  <div style="padding:2rem 5vw" class="booking-layout">
+    <div class="booking-grid">
+      <div class="booking-panel">
+        <div class="bp-title">📅 Select Date</div>
+        <div class="cal-hdr">
+          <button class="cal-nav-btn" onclick="changeMonth(-1)">‹</button>
+          <div class="cal-month-lbl" id="cal-month-lbl"></div>
+          <button class="cal-nav-btn" onclick="changeMonth(1)">›</button>
+        </div>
+        <div class="cal-grid" id="cal-grid">
+          <div class="cal-dh">Su</div><div class="cal-dh">Mo</div><div class="cal-dh">Tu</div><div class="cal-dh">We</div><div class="cal-dh">Th</div><div class="cal-dh">Fr</div><div class="cal-dh">Sa</div>
+          <div id="cal-days" style="display:contents"></div>
+        </div>
+        <div class="divider"></div>
+        <div class="bp-title" style="font-size:1rem;margin-bottom:.7rem">⏰ Time Slots</div>
+        <div class="slot-grid" id="slot-grid"></div>
+        <div class="divider"></div>
+        <div class="bp-title" style="font-size:1rem;margin-bottom:.7rem">👩 Choose Stylist</div>
+        <div class="staff-grid" id="staff-grid"></div>
+      </div>
+      <div class="booking-panel">
+        <div class="bp-title">📝 Your Details</div>
+        <label class="bf-label">Full Name *</label><input class="bf-input" id="bk-name" placeholder="Your name"/>
+        <label class="bf-label">WhatsApp Number *</label><input class="bf-input" id="bk-phone" placeholder="+91 98765 43210"/>
+        <label class="bf-label">Branch *</label>
+        <select class="bf-select" id="bk-branch">
+          <option value="">Select branch…</option>
+          <option>Vesu Branch (Main)</option>
+          <option>Rander Branch</option>
+          <option>Jahangirpura Branch</option>
+        </select>
+        <label class="bf-label">Service *</label>
+        <select class="bf-select" id="bk-service">
+          <option value="">Select service…</option>
+          <option>Hair Styling & Cut</option><option>Colour & Highlights</option><option>Keratin / Botox Treatment</option>
+          <option>Facial / Skin Care</option><option>Bridal Package</option><option>Waxing & Threading</option>
+          <option>Nail Studio</option><option>Massage</option><option>Makeup</option><option>Other / Consultation</option>
+        </select>
+        <label class="bf-label">Special Requests</label>
+        <textarea class="bf-input" id="bk-notes" rows="3" placeholder="Any notes or requests…" style="resize:vertical"></textarea>
+        <button class="btn-p w-full justify-center mt2" onclick="confirmBooking()">✅ Confirm Appointment</button>
+        <p style="font-size:.62rem;color:var(--text3);text-align:center;margin-top:.6rem">WhatsApp confirmation sent automatically after booking.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ▶ ADMIN LOGIN -->
+<div id="view-admin-login" class="screen" style="justify-content:center;align-items:center">
+  <div class="login-screen">
+    <div class="login-bg"></div>
+    <div class="login-card">
+      <div class="login-logo-text">Grace & Glamour</div>
+      <span class="login-logo-sub">Admin Portal · v2.0</span>
+      <div class="login-title">Admin Login</div>
+      <div class="login-sub">Access the management dashboard</div>
+      <div class="lf-group"><label class="lf-label">Email</label><input class="lf-input" id="admin-email" type="email" placeholder="admin@gracenglamour.com"/></div>
+      <div class="lf-group"><label class="lf-label">Password</label><input class="lf-input" id="admin-pass" type="password" placeholder="••••••••"/></div>
+      <!-- ADMIN CREDENTIALS DISPLAY -->
+      <div style="background:rgba(200,146,28,.08);border:1px solid rgba(200,146,28,.25);border-radius:12px;padding:1rem 1.2rem;margin-bottom:1.1rem">
+        <div style="font-size:.56rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold2);margin-bottom:.65rem">🔐 Admin Login Credentials</div>
+        <div style="display:flex;justify-content:space-between;font-size:.74rem;margin-bottom:.3rem"><span style="color:var(--text3)">Email:</span><span style="color:var(--text);font-weight:500">admin@gracenglamour.com</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:.74rem;margin-bottom:.3rem"><span style="color:var(--text3)">Password 1:</span><span style="color:var(--text);font-weight:500">Admin@GG2025</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:.74rem;margin-bottom:.65rem"><span style="color:var(--text3)">Password 2:</span><span style="color:var(--text);font-weight:500">admin123</span></div>
+        <button onclick="document.getElementById('admin-email').value='admin@gracenglamour.com';document.getElementById('admin-pass').value='Admin@GG2025'" style="width:100%;background:linear-gradient(135deg,rgba(200,146,28,.18),rgba(200,65,106,.12));border:1px solid rgba(200,146,28,.3);color:var(--gold2);padding:.45rem;border-radius:20px;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;font-family:'Poppins',sans-serif">⚡ Auto-Fill Credentials</button>
+      </div>
+      <button class="login-submit" onclick="adminLogin()">Sign In to Dashboard</button>
+      <div class="login-hint">admin@gracenglamour.com / Admin@GG2025 · <a onclick="goView('view-website')">← Back</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ▶ ADMIN DASHBOARD -->
+<div id="view-admin" class="screen" style="flex-direction:row">
+  <aside class="admin-sidebar" id="admin-sidebar">
+    <div class="as-logo">
+      <div class="as-logo-text">Grace & Glamour</div>
+      <div class="as-logo-sub">Admin Dashboard</div>
+      <div class="as-version">v2.0 — Final Release</div>
+    </div>
+    <nav class="as-nav">
+      <div class="as-nl">Overview</div>
+      <div class="as-ni active" onclick="aTab('overview',this)"><span class="as-ni-icon">📊</span>Dashboard</div>
+      <div class="as-ni" onclick="aTab('appointments',this)"><span class="as-ni-icon">📅</span>Appointments<span class="as-ni-badge">8</span></div>
+      <div class="as-ni" onclick="aTab('customers',this)"><span class="as-ni-icon">👥</span>Customers</div>
+      <div class="as-nl">Manage</div>
+      <div class="as-ni" onclick="aTab('services-mgmt',this)"><span class="as-ni-icon">✂️</span>Services</div>
+      <div class="as-ni" onclick="aTab('billing',this)"><span class="as-ni-icon">🧾</span>Billing & Invoices</div>
+      <div class="as-ni" onclick="aTab('coupons-mgmt',this)"><span class="as-ni-icon">🎫</span>Coupons</div>
+      <div class="as-ni" onclick="aTab('team-mgmt',this)"><span class="as-ni-icon">👩‍💼</span>Team</div>
+      <div class="as-nl">Reports</div>
+      <div class="as-ni" onclick="aTab('analytics',this)"><span class="as-ni-icon">📈</span>Analytics</div>
+      <div class="as-ni" onclick="aTab('whatsapp',this)"><span class="as-ni-icon">💬</span>WhatsApp</div>
+    </nav>
+    <div class="as-user">
+      <div class="flex items-center gap2">
+        <div class="as-av">A</div>
+        <div style="flex:1"><div style="font-size:.78rem;font-weight:500;color:#fff">Admin</div><div style="font-size:.58rem;color:var(--text3)">Super Admin</div></div>
+        <button onclick="goView('view-website')" class="topbar-btn" style="font-size:.6rem">Exit</button>
+      </div>
+    </div>
+  </aside>
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <div class="flex items-center gap2">
+        <button onclick="document.getElementById('admin-sidebar').classList.toggle('open')" style="background:none;color:var(--text2);font-size:1.1rem;cursor:pointer;display:none" id="admin-ham">☰</button>
+        <div class="admin-topbar-title" id="admin-tab-title">Dashboard Overview</div>
+      </div>
+      <div class="flex gap1 items-center">
+        <button class="topbar-btn" onclick="showToast('📥 Export started!')">⬇ Export</button>
+        <button class="topbar-btn primary" onclick="aTab('billing',null)">+ New Invoice</button>
+      </div>
+    </div>
+    <div class="admin-content" id="admin-content"></div>
+  </main>
+</div>
+
+<!-- ▶ TEAM LOGIN -->
+<div id="view-team-login" class="screen" style="justify-content:center;align-items:center">
+  <div class="login-screen">
+    <div class="login-bg"></div>
+    <div class="login-card">
+      <div class="login-logo-text">Grace & Glamour</div>
+      <span class="login-logo-sub">Team Panel · v2.0</span>
+      <div class="login-title">Team Login</div>
+      <div class="login-sub">Enter your unique ID and 4-digit MPIN</div>
+      <div class="lf-group"><label class="lf-label">Team Member ID</label><input class="lf-input" id="team-id" placeholder="e.g. GG-001"/></div>
+      <div class="lf-group">
+        <label class="lf-label">4-Digit MPIN</label>
+        <div class="mpin-grid">
+          <input class="mpin-input" type="password" maxlength="1" id="mp1" oninput="mpNav(this,'mp2')"/>
+          <input class="mpin-input" type="password" maxlength="1" id="mp2" oninput="mpNav(this,'mp3')"/>
+          <input class="mpin-input" type="password" maxlength="1" id="mp3" oninput="mpNav(this,'mp4')"/>
+          <input class="mpin-input" type="password" maxlength="1" id="mp4" oninput="mpNav(this,null)"/>
+        </div>
+      </div>
+      <!-- TEAM CREDENTIALS DISPLAY -->
+      <div style="background:rgba(124,77,170,.08);border:1px solid rgba(124,77,170,.25);border-radius:12px;padding:1rem 1.2rem;margin-bottom:1.1rem">
+        <div style="font-size:.56rem;letter-spacing:.25em;text-transform:uppercase;color:#a07af0;margin-bottom:.65rem">👩‍💼 Team Login Credentials</div>
+        <div style="display:flex;justify-content:space-between;font-size:.74rem;margin-bottom:.3rem"><span style="color:var(--text3)">Member ID:</span><span style="color:var(--text);font-weight:500">GG-001 (Priya Sharma)</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:.74rem;margin-bottom:.3rem"><span style="color:var(--text3)">MPIN:</span><span style="color:var(--text);font-weight:500">1 2 3 4</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:.74rem;margin-bottom:.65rem"><span style="color:var(--text3)">Also try:</span><span style="color:var(--text);font-weight:500">GG-002 / 2345 &nbsp;|&nbsp; GG-003 / 3456</span></div>
+        <button onclick="document.getElementById('team-id').value='GG-001';document.getElementById('mp1').value='1';document.getElementById('mp2').value='2';document.getElementById('mp3').value='3';document.getElementById('mp4').value='4'" style="width:100%;background:linear-gradient(135deg,rgba(124,77,170,.18),rgba(200,65,106,.1));border:1px solid rgba(124,77,170,.3);color:#a07af0;padding:.45rem;border-radius:20px;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;font-family:'Poppins',sans-serif">⚡ Auto-Fill GG-001</button>
+      </div>
+      <button class="login-submit" onclick="teamLogin()">Login to Team Panel</button>
+      <div class="login-hint">GG-001 / 1234 · GG-002 / 2345 · GG-003 / 3456 · <a onclick="goView('view-website')">← Back</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ▶ TEAM PANEL -->
+<div id="view-team" class="screen" style="flex-direction:row">
+  <aside class="team-sidebar">
+    <div class="ts-logo">
+      <div class="ts-logo-text">Grace & Glamour</div>
+      <div style="font-size:.46rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text3);margin-top:.2rem">Team Panel v2.0</div>
+    </div>
+    <div class="ts-member">
+      <div class="ts-av">P</div>
+      <div class="ts-name">Priya Sharma</div>
+      <div class="ts-role">Senior Stylist · GG-001</div>
+    </div>
+    <nav class="ts-nav">
+      <div class="ts-ni active" onclick="tTab('create-bill',this)">🧾 Create Bill</div>
+      <div class="ts-ni" onclick="tTab('appointments',this)">📅 Appointments</div>
+      <div class="ts-ni" onclick="tTab('history',this)">📋 My History</div>
+    </nav>
+    <div style="padding:1rem;margin-top:auto">
+      <button onclick="goView('view-website')" style="width:100%;background:var(--glass);border:1px solid var(--border2);color:var(--text2);padding:.65rem;border-radius:var(--r8);font-size:.7rem;cursor:pointer">← Exit</button>
+    </div>
+  </aside>
+  <main class="team-main">
+    <div class="team-topbar">
+      <div class="font-serif" style="font-size:1.05rem;font-weight:600;color:#fff" id="team-tab-title">Create Bill</div>
+      <div style="font-size:.68rem;color:var(--text3)" id="team-clock"></div>
+    </div>
+    <div class="team-content" id="team-content"></div>
+  </main>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   GRACE & GLAMOUR PLATFORM v2.0 — FINAL ENGINE
+═══════════════════════════════════════════════════════ */
+
+// ── CURSOR
+const c1=document.getElementById('cur'),c2=document.getElementById('cur2');
+let mx=0,my=0,tx=0,ty=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;c1.style.left=mx+'px';c1.style.top=my+'px'});
+(function L(){tx+=(mx-tx)*.12;ty+=(my-ty)*.12;c2.style.left=tx+'px';c2.style.top=ty+'px';requestAnimationFrame(L)})();
+document.querySelectorAll('a,button,input,select,.trend-card,.tc,.coupon-card,.branch-card,.svc-row,.cust-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{c1.style.width='16px';c1.style.height='16px';c1.style.background='var(--gold2)';c2.style.width='44px';c2.style.height='44px'});
+  el.addEventListener('mouseleave',()=>{c1.style.width='8px';c1.style.height='8px';c1.style.background='var(--rose)';c2.style.width='28px';c2.style.height='28px'});
+});
+
+// ── LOADER
+window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('out'),2800));
+
+// ── NAV
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('stuck',scrollY>55));
+function toggleMob(){document.getElementById('mob-menu').classList.toggle('open');document.querySelector('.ham').classList.toggle('open')}
+function closeMenu(){document.getElementById('mob-menu').classList.remove('open');document.querySelector('.ham').classList.remove('open')}
+function scrollTop(){window.scrollTo({top:0,behavior:'smooth'})}
+function sScroll(id){goView('view-website');setTimeout(()=>{const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})},180)}
+
+// ── VIEWS
+function goView(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  const v=document.getElementById(id);if(v){v.classList.add('active');window.scrollTo(0,0)}
+  
+  if(id==='view-admin')renderAdmin('overview');
+  if(id==='view-team')renderTeam('create-bill');
+}
+
+// ── TOAST
+function showToast(msg,dur=3200){
+  const t=document.getElementById('toast'),m=document.getElementById('toast-msg');
+  m.textContent=msg;t.classList.remove('hide');
+  clearTimeout(t._to);t._to=setTimeout(()=>t.classList.add('hide'),dur);
+}
+
+// ── PARTICLES
+function initParticles(){
+  const pc=document.getElementById('ptcl');if(!pc)return;
+  for(let i=0;i<14;i++){
+    const p=document.createElement('div');p.className='particle';
+    const s=Math.random()*110+35;
+    p.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;top:${Math.random()*100}%;opacity:${Math.random()*.11+.02};animation-delay:${Math.random()*-6}s;animation-duration:${Math.random()*4+4}s`;
+    pc.appendChild(p);
+  }
+}
+
+// ══════════════════════════════════
+// DATA
+// ══════════════════════════════════
+const DB={
+  cats:[
+    {id:'threading',name:'Threading',icon:'✂️'},
+    {id:'waxing',name:'Waxing',icon:'🌿'},
+    {id:'facial',name:'Facial & Cleanup',icon:'✨'},
+    {id:'bleach',name:'Bleach & Polish',icon:'💆'},
+    {id:'massage',name:'Massage',icon:'🧘'},
+    {id:'hair',name:'Hair Services',icon:'💇'},
+    {id:'hair-spa',name:'Hair Spa',icon:'🛁'},
+    {id:'adv-hair',name:'Advanced Hair',icon:'⚗️'},
+    {id:'nails',name:'Nails',icon:'💅'},
+    {id:'color',name:'Hair Color',icon:'🎨'},
+    {id:'makeup',name:'Makeup',icon:'💄'},
+    {id:'bridal',name:'Bridal',icon:'👰'},
+  ],
+  svcs:[
+    {id:'t1',cat:'threading',name:'Eyebrow Threading',desc:'Precision eyebrow shaping for the perfect arch.',price:50,dur:'10 min',hot:false},
+    {id:'t2',cat:'threading',name:'Upper Lip Threading',desc:'Quick & clean upper lip hair removal.',price:20,dur:'5 min',hot:false},
+    {id:'t3',cat:'threading',name:'Forehead Threading',desc:'Clean forehead hairline shaping.',price:20,dur:'5 min',hot:false},
+    {id:'t4',cat:'threading',name:'Chin Threading',desc:'Chin hair removal.',price:20,dur:'5 min',hot:false},
+    {id:'t5',cat:'threading',name:'Lower Lip Threading',desc:'Lower lip hair removal.',price:20,dur:'5 min',hot:false},
+    {id:'t6',cat:'threading',name:'Side Lock Threading',desc:'Side face hair removal.',price:40,dur:'8 min',hot:false},
+    {id:'t7',cat:'threading',name:'Full Face Threading',desc:'Complete facial threading for a clean look.',price:200,dur:'30 min',hot:false},
+    {id:'w1',cat:'waxing',name:'Full Hand Waxing',desc:'Clean Wax ₹200 | Rica Wax ₹400. Smooth, silky hands.',price:200,dur:'25 min',hot:false,alt:'Rica: ₹400'},
+    {id:'w2',cat:'waxing',name:'Half Leg Waxing',desc:'Clean Wax ₹200 | Rica Wax ₹400.',price:200,dur:'20 min',hot:false,alt:'Rica: ₹400'},
+    {id:'w3',cat:'waxing',name:'Full Leg Waxing',desc:'Clean Wax ₹400 | Rica Wax ₹800.',price:400,dur:'35 min',hot:false,alt:'Rica: ₹800'},
+    {id:'w4',cat:'waxing',name:'Tummy Waxing',desc:'Clean Wax ₹200 | Rica Wax ₹400.',price:200,dur:'15 min',hot:false,alt:'Rica: ₹400'},
+    {id:'w5',cat:'waxing',name:'Back Waxing',desc:'Clean Wax ₹200 | Rica Wax ₹400.',price:200,dur:'20 min',hot:false,alt:'Rica: ₹400'},
+    {id:'w6',cat:'waxing',name:'Underarms Waxing',desc:'Clean Wax ₹50 | Rica Wax ₹100.',price:50,dur:'10 min',hot:false,alt:'Rica: ₹100'},
+    {id:'w7',cat:'waxing',name:'Bikini Waxing',desc:'Professional bikini line waxing.',price:700,dur:'30 min',hot:false},
+    {id:'f1',cat:'facial',name:'Signature Cleanup',desc:'Deep pore cleansing & skin refresh.',price:500,dur:'45 min',hot:false,maxPrice:2500},
+    {id:'f2',cat:'facial',name:'Advanced Cleanup (Machinery)',desc:'Cleanup with advanced machinery.',price:3000,dur:'60 min',hot:false},
+    {id:'f3',cat:'facial',name:'Luxury Facial',desc:'Premium facial treatment for glowing skin.',price:700,dur:'60 min',hot:true,maxPrice:5000},
+    {id:'f4',cat:'facial',name:'Advanced Facial (Machinery)',desc:'Facial with advanced machinery & technology.',price:4000,dur:'75 min',hot:true,maxPrice:10000},
+    {id:'f5',cat:'facial',name:'BB Glow Treatment',desc:'Trending semi-permanent BB cream treatment.',price:3500,dur:'60 min',hot:true},
+    {id:'f6',cat:'facial',name:'Permanent Eyebrow',desc:'Long-lasting permanent eyebrow microblading.',price:5000,dur:'90 min',hot:true},
+    {id:'f7',cat:'facial',name:'Permanent Kajal',desc:'Permanent kajal/eyeliner treatment.',price:4000,dur:'60 min',hot:false},
+    {id:'f8',cat:'facial',name:'Permanent Lip Color',desc:'Semi-permanent lip blush treatment.',price:6000,dur:'90 min',hot:true},
+    {id:'b1',cat:'bleach',name:'Face Bleach',desc:'Brightening face bleach treatment.',price:200,dur:'20 min',hot:false},
+    {id:'b2',cat:'bleach',name:'Neck Bleach',desc:'Neck brightening bleach treatment.',price:100,dur:'15 min',hot:false},
+    {id:'b3',cat:'bleach',name:'Back Bleach',desc:'Back bleach treatment.',price:400,dur:'30 min',hot:false},
+    {id:'b4',cat:'bleach',name:'Hand Bleach',desc:'Hand bleaching treatment.',price:400,dur:'25 min',hot:false},
+    {id:'b5',cat:'bleach',name:'Body Bleach',desc:'Full body bleach for even skin tone.',price:1500,dur:'90 min',hot:false},
+    {id:'b6',cat:'bleach',name:'Face Shine',desc:'Instant face glow treatment.',price:500,dur:'30 min',hot:false},
+    {id:'b7',cat:'bleach',name:'Manicure',desc:'Complete nail & hand care.',price:500,dur:'40 min',hot:false},
+    {id:'b8',cat:'bleach',name:'Pedicure',desc:'Relaxing foot & nail treatment.',price:700,dur:'50 min',hot:false},
+    {id:'b9',cat:'bleach',name:'Full Body Spa',desc:'Luxurious full body spa experience.',price:3000,dur:'120 min',hot:true},
+    {id:'b10',cat:'bleach',name:'Full Body Polishing',desc:'Complete body polishing & radiance.',price:2000,dur:'90 min',hot:false},
+    {id:'m1',cat:'massage',name:'Full Body Massage',desc:'Relaxing 45-min full body massage.',price:1500,dur:'45 min',hot:false},
+    {id:'m2',cat:'massage',name:'Advanced Full Body Massage',desc:'Deep tissue 2-hour premium massage.',price:2500,dur:'120 min',hot:true},
+    {id:'m3',cat:'massage',name:'Hand Massage',desc:'Relaxing 30-min hand massage.',price:500,dur:'30 min',hot:false},
+    {id:'m4',cat:'massage',name:'Full Leg Massage',desc:'Full leg massage for relaxation.',price:1000,dur:'90 min',hot:false},
+    {id:'m5',cat:'massage',name:'Half Leg Massage',desc:'Half leg massage.',price:500,dur:'30 min',hot:false},
+    {id:'m6',cat:'massage',name:'Back Massage',desc:'Targeted back pain relief massage.',price:500,dur:'30 min',hot:false},
+    {id:'m7',cat:'massage',name:'Belly Massage',desc:'Belly & chest massage.',price:500,dur:'30 min',hot:false},
+    {id:'m8',cat:'massage',name:'Foot Massage',desc:'Relaxing foot reflexology.',price:500,dur:'30 min',hot:false},
+    {id:'m9',cat:'massage',name:'Head Massage',desc:'Scalp & head massage.',price:500,dur:'30 min',hot:false},
+    {id:'h1',cat:'hair',name:'Hair Wash + Blow Dry',desc:'Luxury shampoo, conditioning & blow dry.',price:200,dur:'30 min',hot:false},
+    {id:'h2',cat:'hair',name:'Oil Hair Wash',desc:'Nourishing oil treatment with hair wash.',price:300,dur:'35 min',hot:false},
+    {id:'h3',cat:'hair',name:'Keratin Hair Wash + Blow Dry',desc:'Keratin-infused wash and blow dry.',price:300,dur:'35 min',hot:false},
+    {id:'h4',cat:'hair',name:'Blow Dry & Style',desc:'Straight / Out Turn / In Turn styling.',price:500,dur:'45 min',hot:false},
+    {id:'h5',cat:'hair',name:'Straight Hair Cut',desc:'Classic precision straight cut.',price:200,dur:'30 min',hot:false},
+    {id:'h6',cat:'hair',name:'U / V / B Cut',desc:'Trendy layered cuts for modern looks.',price:300,dur:'35 min',hot:false},
+    {id:'h7',cat:'hair',name:'Advanced Haircut + Wash + Blow Dry',desc:'Complete haircut experience.',price:700,dur:'60 min',hot:false},
+    {id:'h8',cat:'hair',name:'Baby Hair Cut',desc:'Gentle & safe haircut for little ones.',price:200,dur:'20 min',hot:false},
+    {id:'hs1',cat:'hair-spa',name:'Back Wash Hair Spa (Basic)',desc:'Luxury hair spa treatment.',price:500,dur:'45 min',hot:false},
+    {id:'hs2',cat:'hair-spa',name:'Keratin Hair Spa',desc:'Keratin-infused deep conditioning spa.',price:700,dur:'60 min',hot:true},
+    {id:'hs3',cat:'hair-spa',name:'Treatment Hair Spa',desc:'Advanced hair treatment spa.',price:1000,dur:'75 min',hot:false},
+    {id:'a1',cat:'adv-hair',name:'Olaplex Treatment',desc:'World-famous bond repair treatment.',price:1600,dur:'90 min',hot:true},
+    {id:'a2',cat:'adv-hair',name:'Basic Keratin',desc:'Smooth, frizz-free hair for months.',price:2500,dur:'120 min',hot:true},
+    {id:'a3',cat:'adv-hair',name:'Advanced Keratin',desc:'Premium keratin extended results.',price:4000,dur:'150 min',hot:true},
+    {id:'a4',cat:'adv-hair',name:'Botox Hair Treatment',desc:'Hair botox for silky, voluminous hair.',price:5000,dur:'150 min',hot:true},
+    {id:'a5',cat:'adv-hair',name:'Nano Plastia',desc:'Brazilian-style advanced smoothing.',price:6000,dur:'180 min',hot:false},
+    {id:'a6',cat:'adv-hair',name:'Basic Smoothing',desc:'Smooth, frizz-free straightening.',price:3000,dur:'120 min',hot:false},
+    {id:'a7',cat:'adv-hair',name:'Advanced Smoothing',desc:'Advanced smoothing treatment.',price:4000,dur:'150 min',hot:false},
+    {id:'a8',cat:'adv-hair',name:'Kerabond Treatment',desc:'Kerabond smoothing treatment.',price:5000,dur:'180 min',hot:false},
+    {id:'a9',cat:'adv-hair',name:'Silk Therapy',desc:'Silk protein smoothing treatment.',price:6000,dur:'180 min',hot:false},
+    {id:'a10',cat:'adv-hair',name:'Hair Loss Treatment',desc:'Targeted scalp & hair growth treatment.',price:700,dur:'45 min',hot:false},
+    {id:'n1',cat:'nails',name:'Gel Nail Art (per finger)',desc:'Creative gel nail art per finger.',price:50,dur:'varies',hot:false},
+    {id:'n2',cat:'nails',name:'Press-On Nails',desc:'Custom press-on nail set.',price:1200,dur:'30 min',hot:true},
+    {id:'c1',cat:'color',name:"Root Touch-Up (L'Oréal/Matrix)",desc:'Professional root colour 120gm.',price:700,dur:'60 min',hot:false},
+    {id:'c2',cat:'color',name:'Root Touch-Up (Wella/Schwarzkopf)',desc:'Premium root colour 120gm.',price:800,dur:'60 min',hot:false},
+    {id:'c3',cat:'color',name:"Global Color (Matrix/L'Oréal)",desc:'Full hair colour 150gm.',price:1500,dur:'90 min',hot:false},
+    {id:'c4',cat:'color',name:'Global Color (Wella/Schwarzkopf)',desc:'Premium full hair colour 150gm.',price:2000,dur:'90 min',hot:true},
+    {id:'c5',cat:'color',name:'Highlights',desc:'Foil highlight package.',price:1500,dur:'90 min',hot:false},
+    {id:'c6',cat:'color',name:'Balayage',desc:'Sun-kissed hand-painted highlights.',price:3500,dur:'120 min',hot:true},
+    {id:'c7',cat:'color',name:'Global Color + Highlights',desc:'Full colour with highlights.',price:4000,dur:'150 min',hot:false},
+    {id:'c8',cat:'color',name:'Ombre Hair Color',desc:'Gradient fade colour technique.',price:3000,dur:'120 min',hot:true},
+    {id:'c9',cat:'color',name:'Chunks Highlight Per Strip',desc:'Highlight strip pricing.',price:200,dur:'15 min',hot:false},
+    {id:'mk1',cat:'makeup',name:'Party Makeup',desc:'Glamorous full makeup for parties.',price:2500,dur:'90 min',hot:false},
+    {id:'mk2',cat:'makeup',name:'HD Makeup',desc:'High-definition flawless makeup.',price:3500,dur:'90 min',hot:true},
+    {id:'mk3',cat:'makeup',name:'Kids Makeup (Basic)',desc:'Safe & fun makeup for little ones.',price:1500,dur:'45 min',hot:false},
+    {id:'mk4',cat:'makeup',name:'Kids HD Makeup',desc:'Premium HD makeup for kids.',price:2000,dur:'60 min',hot:false},
+    {id:'mk5',cat:'makeup',name:'Makeup Only',desc:'Makeup without hairstyle.',price:1500,dur:'60 min',hot:false},
+    {id:'mk6',cat:'makeup',name:'HD Makeup Only',desc:'HD Makeup without hairstyle.',price:1800,dur:'60 min',hot:false},
+    {id:'mk7',cat:'makeup',name:'Hairstyle Only',desc:'Hairstyle without makeup.',price:500,dur:'30 min',hot:false},
+    {id:'mk8',cat:'makeup',name:'Pin-Up Hairstyle',desc:'Elegant updo hairstyle.',price:300,dur:'25 min',hot:false},
+    {id:'br1',cat:'bridal',name:'Classic Bridal Makeup',desc:'Timeless bridal look with all essentials.',price:10000,dur:'3 hrs',hot:false},
+    {id:'br2',cat:'bridal',name:'Premium Bridal Makeup',desc:'Enhanced bridal look with premium products.',price:13000,dur:'3.5 hrs',hot:true},
+    {id:'br3',cat:'bridal',name:'Luxury Bridal Makeup',desc:'Luxury experience with top global brands.',price:15000,dur:'4 hrs',hot:true},
+    {id:'br4',cat:'bridal',name:'Airbrush Bridal Makeup',desc:'Flawless airbrushed finish for the bridal look.',price:18000,dur:'4 hrs',hot:true},
+    {id:'br5',cat:'bridal',name:'Engagement Bride Makeup',desc:'Radiant engagement day makeup.',price:7000,dur:'2.5 hrs',hot:false},
+  ],
+  coupons:[
+    {code:'BRIDAL20',disc:'20% OFF',type:'pct',val:20,title:'Bridal Package Discount',desc:'20% off on all bridal packages',expiry:'31 Dec 2025',badge:'🔥 Hot'},
+    {code:'WELCOME500',disc:'₹500 OFF',type:'flat',val:500,title:'Welcome Offer',desc:'₹500 off on first visit (min ₹2000)',expiry:'Ongoing',badge:'New'},
+    {code:'HAIRSPA10',disc:'10% OFF',type:'pct',val:10,title:'Hair Spa Special',desc:'10% off on all hair spa services',expiry:'30 Nov 2025',badge:null},
+    {code:'FESTIVE30',disc:'30% OFF',type:'pct',val:30,title:'Festival Offer',desc:'30% off on facials & skin services',expiry:'15 Dec 2025',badge:'🎉 Festival'},
+    {code:'NAILS200',disc:'₹200 OFF',type:'flat',val:200,title:'Nail Studio Deal',desc:'₹200 off on nail art services',expiry:'Ongoing',badge:null},
+    {code:'REFER15',disc:'15% OFF',type:'pct',val:15,title:'Referral Reward',desc:'15% off when you refer a friend',expiry:'Ongoing',badge:'Referral'},
+  ],
+  testimonials:[
+    {init:'SA',name:'Sonal Agarwal',loc:'Vesu, Surat · Google',text:'Their services ranging from hair and beauty are fantastic. I can rely on them as my go-to salon! Always goes the extra mile.',stars:5},
+    {init:'PV',name:'Priya Vora',loc:'Vesu, Surat · Google',text:'My go-to place in Surat. Amazing haircuts and the only place I trust for my eyebrows. Great hygiene and honest advice.',stars:5},
+    {init:'MS',name:'Mehak Shah',loc:'Jahangirpura, Surat',text:'Great service and polite staff. My bridal look was absolutely stunning — they understood exactly what I wanted!',stars:5},
+    {init:'RD',name:'Riya Desai',loc:'Rander, Surat',text:'The Olaplex treatment completely transformed my damaged hair. Results are incredible. Staff is so knowledgeable!',stars:5},
+    {init:'NP',name:'Neha Patel',loc:'Adajan, Surat',text:'Came in for airbrush bridal makeup — it lasted all day and night! Team is professional and incredibly talented. 10/10!',stars:5},
+    {init:'KS',name:'Kavya Shah',loc:'Vesu, Surat',text:'Love the Botox hair treatment here — my hair has never been this smooth. Best salon in Surat, hands down!',stars:5},
+  ],
+  team:[
+    {id:'GG-001',name:'Priya Sharma',role:'Senior Stylist',mpin:'1234',active:true},
+    {id:'GG-002',name:'Rekha Patel',role:'Makeup Artist',mpin:'2345',active:true},
+    {id:'GG-003',name:'Sunita Verma',role:'Nail Technician',mpin:'3456',active:true},
+    {id:'GG-004',name:'Meena Shah',role:'Bridal Specialist',mpin:'4567',active:false},
+  ],
+  appointments:[
+    {id:'APT001',client:'Priya Mehta',phone:'9876543210',service:'Balayage',stylist:'Priya Sharma',date:'2025-11-20',time:'10:00 AM',branch:'Vesu',status:'confirmed',amount:3500},
+    {id:'APT002',client:'Sneha Patel',phone:'9823456781',service:'Bridal Package',stylist:'Meena Shah',date:'2025-11-21',time:'11:00 AM',branch:'Vesu',status:'pending',amount:15000},
+    {id:'APT003',client:'Riya Desai',phone:'9712345678',service:'Keratin Treatment',stylist:'Rekha Patel',date:'2025-11-21',time:'2:00 PM',branch:'Rander',status:'confirmed',amount:4000},
+    {id:'APT004',client:'Anita Shah',phone:'9654321087',service:'HD Makeup',stylist:'Rekha Patel',date:'2025-11-22',time:'4:00 PM',branch:'Jahangirpura',status:'confirmed',amount:3500},
+    {id:'APT005',client:'Kavya Modi',phone:'9543210876',service:'Hair Spa',stylist:'Priya Sharma',date:'2025-11-23',time:'11:00 AM',branch:'Vesu',status:'pending',amount:1000},
+  ],
+  customers:[
+    {id:'C001',name:'Priya Mehta',phone:'9876543210',visits:12,spend:48500,last:'2025-11-15',fav:'Balayage',tier:'Gold'},
+    {id:'C002',name:'Sneha Patel',phone:'9823456781',visits:3,spend:18500,last:'2025-11-10',fav:'Bridal',tier:'Silver'},
+    {id:'C003',name:'Riya Desai',phone:'9712345678',visits:8,spend:22000,last:'2025-11-08',fav:'Keratin',tier:'Silver'},
+    {id:'C004',name:'Anita Shah',phone:'9654321087',visits:25,spend:95000,last:'2025-11-12',fav:'HD Makeup',tier:'Platinum'},
+    {id:'C005',name:'Kavya Modi',phone:'9543210876',visits:5,spend:12000,last:'2025-11-05',fav:'Hair Spa',tier:'Bronze'},
+    {id:'C006',name:'Meera Joshi',phone:'9432109765',visits:18,spend:62000,last:'2025-11-14',fav:'Facial',tier:'Gold'},
+  ],
+  gallery:[
+    {url:'https://images.unsplash.com/photo-1614252234498-9e389e5a9a2d?w=400&q=80',lbl:'Bridal Makeup'},
+    {url:'https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=400&q=80',lbl:'Hair Styling'},
+    {url:'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80',lbl:'Colour'},
+    {url:'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&q=80',lbl:'Nail Art'},
+    {url:'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&q=80',lbl:'Bridal Look'},
+    {url:'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&q=80',lbl:'Facial Glow'},
+    {url:'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&q=80',lbl:'Makeup Studio'},
+    {url:'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80',lbl:'Salon View'},
+  ],
+};
+
+// ── STATE
+let activeCat='all',billItems=[],adminBillItems=[],adminDisc=0,teamDisc=0;
+let selDate=null,selSlot=null;
+let calY=new Date().getFullYear(),calM=new Date().getMonth();
+
+// ── INIT
+document.addEventListener('DOMContentLoaded',()=>{
+  initParticles();
+  renderCatPills();
+  renderSvcs('all');
+  renderTrending();
+  renderCoupons();
+  renderGallery();
+  renderTestimonials();
+  initCal();
+  initCounters();
+  initReveal();
+  setInterval(()=>{const el=document.getElementById('team-clock');if(el)el.textContent=new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'})},1000);
+});
+
+// ── CATEGORIES
+function renderCatPills(){
+  const el=document.getElementById('cat-pills');if(!el)return;
+  const all=[{id:'all',name:'All Services',icon:'🌟'},...DB.cats];
+  el.innerHTML=all.map(c=>`<div class="cat-pill${c.id==='all'?' active':''}" onclick="filterCat('${c.id}',this)">${c.icon} ${c.name}</div>`).join('');
+}
+function filterCat(id,el){
+  document.querySelectorAll('.cat-pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');activeCat=id;renderSvcs(id);
+}
+function filterSvc(v){renderSvcs(activeCat,v)}
+
+// ── SERVICES RENDER
+const svcImgs=[
+  'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=160&q=75',
+  'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=160&q=75',
+  'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=160&q=75',
+  'https://images.unsplash.com/photo-1614252234498-9e389e5a9a2d?w=160&q=75',
+  'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=160&q=75',
+  'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=160&q=75',
+  'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=160&q=75',
+  'https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=160&q=75',
+  'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=160&q=75',
+  'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=160&q=75',
+  'https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=160&q=75',
+  'https://images.unsplash.com/photo-1457972729786-0411a3b2b626?w=160&q=75',
+];
+function renderSvcs(catId='all',search=''){
+  const container=document.getElementById('svc-container');if(!container)return;
+  const cats=catId==='all'?DB.cats:DB.cats.filter(c=>c.id===catId);
+  let html='';
+  cats.forEach(cat=>{
+    let svcs=DB.svcs.filter(s=>s.cat===cat.id);
+    if(search)svcs=svcs.filter(s=>s.name.toLowerCase().includes(search.toLowerCase())||s.desc.toLowerCase().includes(search.toLowerCase()));
+    if(!svcs.length)return;
+    html+=`<div class="svc-cat-block"><div class="svc-cat-hdr"><span class="svc-cat-icon">${cat.icon}</span><span class="svc-cat-name">${cat.name}</span><span class="svc-cat-cnt">${svcs.length} services</span></div>`;
+    svcs.forEach((s,i)=>{
+      const priceStr=s.maxPrice?`₹${s.price.toLocaleString()} – ₹${s.maxPrice.toLocaleString()}`:`₹${s.price.toLocaleString()}`;
+      html+=`<div class="svc-row" onclick="addToCart('${s.id}')">
+        <span class="fav-icon" onclick="event.stopPropagation();this.classList.toggle('on');this.textContent=this.classList.contains('on')?'❤️':'🤍'">🤍</span>
+        <div class="svc-row-img"><img src="${svcImgs[i%svcImgs.length]}" alt="${s.name}" loading="lazy"/></div>
+        <div class="svc-row-body">
+          <div class="svc-row-name">${s.name}${s.hot?' <span class="trending-badge">🔥 Trending</span>':''}</div>
+          <div class="svc-row-desc">${s.desc}${s.alt?` · <span style="color:var(--gold2)">${s.alt}</span>`:''}</div>
+          <div class="svc-row-meta">
+            <span class="svc-row-price">${priceStr}</span>
+            ${s.dur?`<span class="svc-row-dur">⏱ ${s.dur}</span>`:''}
+          </div>
+        </div>
+        <div class="add-circle" onclick="event.stopPropagation();addToCart('${s.id}')">+</div>
+      </div>`;
+    });
+    html+='</div>';
+  });
+  if(!html)html='<div style="text-align:center;padding:3rem;color:var(--text3)"><div style="font-size:2rem">🔍</div><div style="margin-top:.8rem">No services found</div></div>';
+  container.innerHTML=html;
+}
+
+function addToCart(id){
+  const s=DB.svcs.find(x=>x.id===id);if(!s)return;
+  const ex=billItems.find(i=>i.id===id);
+  if(ex)ex.qty++;else billItems.push({...s,qty:1});
+  showToast(`✅ ${s.name} added · ₹${s.price}`);
+  updateTeamBill();
+}
+
+// ── TRENDING
+const tImgs=['https://images.unsplash.com/photo-1560066984-138dadb4c035?w=300&q=70','https://images.unsplash.com/photo-1614252234498-9e389e5a9a2d?w=300&q=70','https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=300&q=70','https://images.unsplash.com/photo-1604654894610-df63bc536371?w=300&q=70','https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=300&q=70','https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=300&q=70'];
+function renderTrending(){
+  const el=document.getElementById('trend-track');if(!el)return;
+  const hot=DB.svcs.filter(s=>s.hot);
+  el.innerHTML=hot.map((s,i)=>`
+    <div class="trend-card" onclick="addToCart('${s.id}')">
+      <div class="trend-img"><img src="${tImgs[i%tImgs.length]}" alt="${s.name}" loading="lazy"/></div>
+      <div class="trend-body">
+        <div class="trend-name">${s.name}</div>
+        <div class="trend-price">₹${s.price.toLocaleString()}${s.maxPrice?'+':''}</div>
+        <div class="trend-hot">🔥 Trending</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── COUPONS
+function renderCoupons(){
+  const el=document.getElementById('coupon-grid');if(!el)return;
+  el.innerHTML=DB.coupons.map(c=>`
+    <div class="coupon-card" onclick="copyCoupon('${c.code}')">
+      ${c.badge?`<div class="coupon-badge">${c.badge}</div>`:''}
+      <div class="coupon-top">
+        <div class="coupon-disc">${c.disc}</div>
+        <div class="coupon-title">${c.title}</div>
+        <div class="coupon-desc">${c.desc}</div>
+      </div>
+      <div class="coupon-bot">
+        <div class="coupon-code">${c.code}</div>
+        <div class="coupon-exp">Expires: ${c.expiry}</div>
+      </div>
+    </div>
+  `).join('');
+}
+function copyCoupon(code){navigator.clipboard?.writeText(code).catch(()=>{});showToast(`📋 Code "${code}" copied to clipboard!`)}
+
+// ── GALLERY
+function renderGallery(){
+  const el=document.getElementById('gallery-track');if(!el)return;
+  const items=[...DB.gallery,...DB.gallery];
+  el.innerHTML=items.map(g=>`<div class="gi"><img src="${g.url}" alt="${g.lbl}" loading="lazy"/><div class="gi-ov"><span class="gi-lbl">${g.lbl}</span></div></div>`).join('');
+}
+
+// ── TESTIMONIALS
+function renderTestimonials(){
+  const el=document.getElementById('testi-grid');if(!el)return;
+  el.innerHTML=DB.testimonials.map(t=>`
+    <div class="tc">
+      <div class="tc-stars">${'★'.repeat(t.stars).split('').map(s=>`<span class="tcs">${s}</span>`).join('')}</div>
+      <p class="tc-text">"${t.text}"</p>
+      <div class="tc-auth"><div class="tc-av">${t.init}</div><div><div class="tc-name">${t.name}</div><div class="tc-loc">${t.loc}</div></div></div>
+    </div>
+  `).join('');
+}
+
+// ── CALENDAR
+function initCal(){renderCal();renderSlots();renderStaff()}
+const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+function renderCal(){
+  const lbl=document.getElementById('cal-month-lbl'),days=document.getElementById('cal-days');
+  if(!lbl||!days)return;
+  lbl.textContent=`${months[calM]} ${calY}`;
+  const fd=new Date(calY,calM,1).getDay(),dim=new Date(calY,calM+1,0).getDate();
+  const today=new Date();let html='';
+  for(let i=0;i<fd;i++)html+='<div></div>';
+  for(let d=1;d<=dim;d++){
+    const isToday=d===today.getDate()&&calM===today.getMonth()&&calY===today.getFullYear();
+    const isPast=new Date(calY,calM,d)<new Date(today.getFullYear(),today.getMonth(),today.getDate());
+    const hasSlots=!isPast&&d%3!==0;
+    const key=`${calY}-${String(calM+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const isSel=selDate===key;
+    html+=`<div class="cal-d${isToday?' today':''}${isPast?' disabled':''}${hasSlots?' has-slots':''}${isSel?' selected':''}" onclick="${isPast?'':` pickDate('${key}')`}">${d}</div>`;
+  }
+  days.innerHTML=html;
+}
+function pickDate(d){selDate=d;selSlot=null;renderCal();renderSlots();showToast(`📅 ${d} selected`)}
+function changeMonth(dir){calM+=dir;if(calM<0){calM=11;calY--}if(calM>11){calM=0;calY++}renderCal()}
+function renderSlots(){
+  const el=document.getElementById('slot-grid');if(!el)return;
+  const slots=['10:00 AM','10:30 AM','11:00 AM','11:30 AM','12:00 PM','12:30 PM','2:00 PM','2:30 PM','3:00 PM','3:30 PM','4:00 PM','4:30 PM','5:00 PM','5:30 PM','6:00 PM','7:00 PM'];
+  const unavail=[3,7,11,14];
+  el.innerHTML=slots.map((s,i)=>`<div class="slot${unavail.includes(i)?' unavailable':''}${selSlot===s?' selected':''}" onclick="${unavail.includes(i)?'':` pickSlot('${s}')`}">${s}</div>`).join('');
+}
+function pickSlot(s){selSlot=s;renderSlots();showToast(`⏰ ${s} selected`)}
+function renderStaff(){
+  const el=document.getElementById('staff-grid');if(!el)return;
+  el.innerHTML=DB.team.filter(t=>t.active).map(t=>`
+    <div class="staff-chip" onclick="document.querySelectorAll('.staff-chip').forEach(c=>c.classList.remove('sel'));this.classList.add('sel')">
+      <div class="staff-chip-av">${t.name[0]}</div>
+      <div class="staff-chip-name">${t.name.split(' ')[0]}</div>
+      <div class="staff-chip-role">${t.role}</div>
+    </div>
+  `).join('');
+}
+function confirmBooking(){
+  const name=document.getElementById('bk-name')?.value;
+  const phone=document.getElementById('bk-phone')?.value;
+  const branch=document.getElementById('bk-branch')?.value;
+  const service=document.getElementById('bk-service')?.value;
+  if(!name||!phone||!branch||!service){showToast('⚠️ Please fill all required fields');return}
+  if(!selDate){showToast('⚠️ Please select a date');return}
+  if(!selSlot){showToast('⚠️ Please select a time slot');return}
+  DB.appointments.unshift({id:`APT${Date.now()}`,client:name,phone,service,stylist:'Auto-assigned',date:selDate,time:selSlot,branch,status:'confirmed',amount:0});
+  showToast(`🎉 Appointment confirmed! WhatsApp sent to ${phone}`);
+  setTimeout(()=>goView('view-website'),3000);
+}
+
+// ── ADMIN LOGIN
+function adminLogin(){
+  const e=document.getElementById('admin-email')?.value?.trim();
+  const p=document.getElementById('admin-pass')?.value;
+  const validEmails=['admin@gracenglamour.com','grace@gracenglamour.com'];
+  const validPasses=['Admin@GG2025','admin123','grace@2025','Admin123'];
+  if(validEmails.includes(e)&&validPasses.includes(p)){goView('view-admin');showToast('✅ Welcome back, Admin!')}
+  else if(p&&p.length>=4){goView('view-admin');showToast('✅ Logged in (Demo mode)')}
+  else showToast('❌ Invalid credentials. Use: Admin@GG2025 or admin123');
+}
+
+// ── ADMIN TABS
+const aTabTitles={overview:'Dashboard Overview',appointments:'Appointments',customers:'Customer CRM','services-mgmt':'Manage Services',billing:'Billing & Invoices','coupons-mgmt':'Coupons & Offers','team-mgmt':'Team Management',analytics:'Analytics Dashboard',whatsapp:'WhatsApp Automation'};
+function aTab(tab,el){
+  if(el){document.querySelectorAll('.as-ni').forEach(i=>i.classList.remove('active'));el.classList.add('active')}
+  const t=document.getElementById('admin-tab-title');if(t)t.textContent=aTabTitles[tab]||tab;
+  renderAdmin(tab);
+}
+function renderAdmin(tab){
+  const c=document.getElementById('admin-content');if(!c)return;
+  switch(tab){
+    case 'overview': c.innerHTML=renderOverview();setTimeout(drawBars,100);break;
+    case 'appointments': c.innerHTML=renderApptPanel();break;
+    case 'customers': c.innerHTML=renderCRMPanel();break;
+    case 'billing': c.innerHTML=renderBillingPanel();break;
+    case 'services-mgmt': c.innerHTML=renderSvcMgmt();break;
+    case 'coupons-mgmt': c.innerHTML=renderCoupMgmt();break;
+    case 'team-mgmt': c.innerHTML=renderTeamMgmt();break;
+    case 'analytics': c.innerHTML=renderAnalytics();setTimeout(drawBars,100);break;
+    case 'whatsapp': c.innerHTML=renderWA();break;
+    default: c.innerHTML=`<div style="text-align:center;padding:4rem;color:var(--text3)"><div style="font-size:3rem">🚧</div><div style="margin-top:1rem">Coming Soon</div></div>`;
+  }
+}
+
+function renderOverview(){return`
+  <div class="kpi-grid">
+    <div class="kpi rose"><div class="kpi-icon">💰</div><div class="kpi-val">₹1.24L</div><div class="kpi-lbl">Monthly Revenue</div><div class="kpi-trend tu">↑ 18.4% vs last month</div></div>
+    <div class="kpi gold"><div class="kpi-icon">📅</div><div class="kpi-val">47</div><div class="kpi-lbl">Appointments</div><div class="kpi-trend tu">↑ 12 today</div></div>
+    <div class="kpi purple"><div class="kpi-icon">👥</div><div class="kpi-val">1,206</div><div class="kpi-lbl">Customers</div><div class="kpi-trend tu">↑ 8 this week</div></div>
+    <div class="kpi green"><div class="kpi-icon">⭐</div><div class="kpi-val">4.8</div><div class="kpi-lbl">Avg Rating</div><div class="kpi-trend tu">↑ 0.1</div></div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-card">
+      <div class="chart-title">Weekly Revenue <span style="font-size:.65rem;color:var(--text3);font-family:'Poppins',sans-serif">Last 7 days</span></div>
+      <div class="chart-area" id="bar-chart"></div>
+      <div style="display:flex;justify-content:space-between;margin-top:.45rem">${['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(d=>`<div class="bar-lbl">${d}</div>`).join('')}</div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Revenue Split</div>
+      <div class="donut-wrap">
+        <div class="donut"><svg width="115" height="115" viewBox="0 0 115 115"><circle cx="57.5" cy="57.5" r="48" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="15"/><circle cx="57.5" cy="57.5" r="48" fill="none" stroke="var(--rose)" stroke-width="15" stroke-dasharray="120 181" stroke-linecap="round"/><circle cx="57.5" cy="57.5" r="48" fill="none" stroke="var(--gold2)" stroke-width="15" stroke-dasharray="72 229" stroke-dashoffset="-120" stroke-linecap="round"/><circle cx="57.5" cy="57.5" r="48" fill="none" stroke="var(--purple)" stroke-width="15" stroke-dasharray="48 253" stroke-dashoffset="-192" stroke-linecap="round"/><circle cx="57.5" cy="57.5" r="48" fill="none" stroke="#4caf50" stroke-width="15" stroke-dasharray="61 240" stroke-dashoffset="-240" stroke-linecap="round"/></svg><div class="donut-center"><div class="donut-cval">₹1.24L</div><div class="donut-clbl">Total</div></div></div>
+        <div class="donut-legend"><div class="dl-item"><div class="dl-dot" style="background:var(--rose)"></div>Bridal 40%</div><div class="dl-item"><div class="dl-dot" style="background:var(--gold2)"></div>Hair 24%</div><div class="dl-item"><div class="dl-dot" style="background:var(--purple)"></div>Makeup 16%</div><div class="dl-item"><div class="dl-dot" style="background:#4caf50"></div>Other 20%</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="panel"><div class="panel-title">Recent Appointments <button class="topbar-btn" onclick="aTab('appointments',null)">View All →</button></div><div class="overflow-x-auto">${apptTable(DB.appointments.slice(0,5))}</div></div>
+`}
+
+function apptTable(appts){return`<table class="data-table"><thead><tr><th>ID</th><th>Client</th><th>Service</th><th>Stylist</th><th>Date & Time</th><th>Branch</th><th>Status</th><th>Amount</th><th>Actions</th></tr></thead><tbody>${appts.map(a=>`
+  <tr>
+    <td style="color:var(--text3)">${a.id}</td>
+    <td><div style="font-weight:500;color:#fff">${a.client}</div><div style="font-size:.65rem;color:var(--text3)">${a.phone}</div></td>
+    <td>${a.service}</td><td>${a.stylist}</td>
+    <td>${a.date}<br><span style="color:var(--text3)">${a.time}</span></td>
+    <td>${a.branch}</td>
+    <td><span class="dt-badge ${a.status}">${a.status}</span></td>
+    <td style="color:var(--rose2);font-family:'Playfair Display',serif;font-weight:700">₹${a.amount.toLocaleString()}</td>
+    <td><button class="dt-action" onclick="showToast('✏️ Edit')">✏</button> <button class="dt-action" onclick="showToast('📞 Calling...')">📞</button></td>
+  </tr>
+`).join('')}</tbody></table>`}
+
+function renderApptPanel(){return`<div class="panel"><div class="panel-title">All Appointments <button class="topbar-btn primary" onclick="showToast('➕ New appointment')">+ New</button></div><div class="flex gap1 flex-wrap mb2"><input style="flex:1;min-width:180px;background:var(--card2);border:1px solid var(--border2);color:var(--text);padding:.65rem .9rem;border-radius:var(--r8);font-size:.8rem" placeholder="Search…" oninput="filterAppts(this.value)"/><select style="background:var(--card2);border:1px solid var(--border2);color:var(--text);padding:.65rem .9rem;border-radius:var(--r8);font-size:.78rem" onchange="filterApptStatus(this.value)"><option value="">All Status</option><option>confirmed</option><option>pending</option><option>cancelled</option></select></div><div class="overflow-x-auto" id="appt-tbl">${apptTable(DB.appointments)}</div></div>`}
+function filterAppts(v){const el=document.getElementById('appt-tbl');if(el)el.innerHTML=apptTable(DB.appointments.filter(a=>a.client.toLowerCase().includes(v.toLowerCase())||a.service.toLowerCase().includes(v.toLowerCase())))}
+function filterApptStatus(v){const el=document.getElementById('appt-tbl');if(el)el.innerHTML=apptTable(v?DB.appointments.filter(a=>a.status===v):DB.appointments)}
+
+function renderCRMPanel(){return`<div class="panel"><div class="panel-title">Customer Database <span style="font-size:.72rem;color:var(--text3);font-family:'Poppins',sans-serif;font-weight:300">${DB.customers.length}+ records</span></div><input style="width:100%;background:var(--card2);border:1px solid var(--border2);color:var(--text);padding:.7rem 1rem;border-radius:var(--r8);font-size:.8rem;margin-bottom:1rem" placeholder="Search by name or phone…" oninput="filterCustomers(this.value)"/><div id="cust-list">${custList(DB.customers)}</div></div>`}
+function custList(custs){return custs.map(c=>`
+  <div class="cust-card" onclick="showToast('👤 ${c.name} — ${c.visits} visits · ₹${c.spend.toLocaleString()} spent')">
+    <div class="cust-av">${c.name[0]}</div>
+    <div style="flex:1"><div class="cust-name">${c.name}</div><div class="cust-phone">📱 ${c.phone} · 🕐 ${c.last}</div><div style="font-size:.64rem;color:var(--text3);margin-top:.1rem">Fav: ${c.fav}</div></div>
+    <div><span class="cust-visits">${c.visits} visits</span></div>
+    <div class="cust-spend">₹${c.spend.toLocaleString()}</div>
+    <span style="font-size:.54rem;padding:.18rem .55rem;border-radius:10px;background:${c.tier==='Platinum'?'rgba(160,120,240,.15)':c.tier==='Gold'?'rgba(200,146,28,.15)':c.tier==='Silver'?'rgba(192,192,192,.12)':'rgba(205,127,50,.12)'};color:${c.tier==='Platinum'?'#a07af0':c.tier==='Gold'?'var(--gold2)':c.tier==='Silver'?'silver':'#cd7f32'};margin-left:.4rem">${c.tier}</span>
+  </div>
+`).join('')}
+function filterCustomers(v){const el=document.getElementById('cust-list');if(el)el.innerHTML=custList(DB.customers.filter(c=>c.name.toLowerCase().includes(v.toLowerCase())||c.phone.includes(v)))}
+
+function renderBillingPanel(){return`
+<div class="billing-layout">
+  <div>
+    <div class="bill-panel">
+      <div class="panel-title">Client Details</div>
+      <div class="flex gap1 flex-wrap mb2">
+        <input class="bf-input" id="inv-client" placeholder="Client name *" style="flex:1;min-width:150px;margin-bottom:0"/>
+        <input class="bf-input" id="inv-phone" placeholder="WhatsApp number *" style="flex:1;min-width:150px;margin-bottom:0"/>
+      </div>
+      <div class="divider"></div>
+      <div class="panel-title" style="font-size:.88rem">Add Services</div>
+      <div class="bill-search-wrap"><input placeholder="Search & add services…" oninput="searchAdminSvc(this.value)" onfocus="document.getElementById('adm-svc-list').style.display='block'"/></div>
+      <div class="bill-svc-list" id="adm-svc-list">${DB.svcs.map(s=>`<div class="bill-svc-item" onclick="adminAddSvc('${s.id}')"><span class="bill-svc-name">${s.name}</span><span class="bill-svc-price">₹${s.price}</span></div>`).join('')}</div>
+      <div class="added-svcs" id="adm-bill-items"><div style="text-align:center;padding:1.5rem;color:var(--text3);font-size:.76rem">No services added yet ☝️</div></div>
+    </div>
+  </div>
+  <div>
+    <div id="inv-preview-wrap" style="margin-bottom:1.2rem"></div>
+    <div class="bill-summary">
+      <div class="panel-title" style="font-size:.88rem">Bill Summary</div>
+      <div class="summary-row"><span>Subtotal</span><span id="adm-sub">₹0</span></div>
+      <div class="summary-row"><span>Discount</span><span style="color:#4caf50" id="adm-disc-lbl">- ₹0</span></div>
+      <div class="summary-row"><span>GST</span><span>₹0</span></div>
+      <div class="summary-total"><span>Total</span><span id="adm-tot">₹0</span></div>
+      <div class="coupon-row"><input class="coupon-input" id="adm-coupon" placeholder="Coupon code…"/><button class="coupon-apply" onclick="applyAdminCoupon()">Apply</button></div>
+      <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem">
+        <button class="btn-p" style="flex:1;justify-content:center;font-size:.68rem" onclick="genAdminInvoice()">🧾 Generate Invoice</button>
+        <button class="btn-s" style="flex:1;justify-content:center;font-size:.68rem" onclick="showToast('📤 Invoice sent to WhatsApp!')">💬 Send WA</button>
+      </div>
+      <button class="btn-g w-full justify-center mt2" style="font-size:.68rem" onclick="showToast('🖨️ Print dialog')">🖨️ Print</button>
+    </div>
+  </div>
+</div>`}
+
+function searchAdminSvc(v){const el=document.getElementById('adm-svc-list');if(!el)return;el.style.display='block';el.innerHTML=DB.svcs.filter(s=>s.name.toLowerCase().includes(v.toLowerCase())).map(s=>`<div class="bill-svc-item" onclick="adminAddSvc('${s.id}')"><span class="bill-svc-name">${s.name}</span><span class="bill-svc-price">₹${s.price}</span></div>`).join('')}
+function adminAddSvc(id){const s=DB.svcs.find(x=>x.id===id);if(!s)return;const ex=adminBillItems.find(i=>i.id===id);if(ex)ex.qty++;else adminBillItems.push({...s,qty:1});document.getElementById('adm-svc-list').style.display='none';updateAdminBill();showToast(`✅ ${s.name} added`)}
+function updateAdminBill(){
+  const el=document.getElementById('adm-bill-items');
+  if(!el)return;
+  if(!adminBillItems.length){el.innerHTML='<div style="text-align:center;padding:1.5rem;color:var(--text3);font-size:.76rem">No services added yet</div>';updateAdminTotals();return}
+  el.innerHTML=adminBillItems.map((item,i)=>`
+    <div class="added-svc-row">
+      <span class="asr-name">${item.name}</span>
+      <div class="qty-ctrl"><button class="qty-btn" onclick="chgAdminQty(${i},-1)">−</button><span class="qty-val">${item.qty}</span><button class="qty-btn" onclick="chgAdminQty(${i},1)">+</button></div>
+      <span class="asr-price">₹${(item.price*item.qty).toLocaleString()}</span>
+      <span class="asr-remove" onclick="rmAdminItem(${i})">✕</span>
+    </div>
+  `).join('');
+  updateAdminTotals();
+}
+function chgAdminQty(i,d){adminBillItems[i].qty=Math.max(1,adminBillItems[i].qty+d);updateAdminBill()}
+function rmAdminItem(i){adminBillItems.splice(i,1);updateAdminBill()}
+function updateAdminTotals(){
+  const sub=adminBillItems.reduce((a,i)=>a+i.price*i.qty,0);
+  const tot=sub-adminDisc;
+  const s=document.getElementById('adm-sub'),d=document.getElementById('adm-disc-lbl'),t=document.getElementById('adm-tot');
+  if(s)s.textContent=`₹${sub.toLocaleString()}`;
+  if(d)d.textContent=`- ₹${adminDisc.toLocaleString()}`;
+  if(t)t.textContent=`₹${Math.max(0,tot).toLocaleString()}`;
+}
+function applyAdminCoupon(){const code=document.getElementById('adm-coupon')?.value?.toUpperCase();const c=DB.coupons.find(x=>x.code===code);if(c){const sub=adminBillItems.reduce((a,i)=>a+i.price*i.qty,0);adminDisc=c.type==='flat'?c.val:Math.round(sub*c.val/100);updateAdminBill();showToast(`🎉 "${code}" applied! Saving ₹${adminDisc}`)}else showToast('❌ Invalid coupon code')}
+function genAdminInvoice(){
+  const client=document.getElementById('inv-client')?.value||'Walk-in';
+  const phone=document.getElementById('inv-phone')?.value||'N/A';
+  if(!adminBillItems.length){showToast('⚠️ Add at least one service');return}
+  const sub=adminBillItems.reduce((a,i)=>a+i.price*i.qty,0),tot=Math.max(0,sub-adminDisc);
+  const num=`INV-2025-${String(Date.now()).slice(-4)}`;
+  const wrap=document.getElementById('inv-preview-wrap');
+  if(wrap)wrap.innerHTML=buildInv(num,client,phone,adminBillItems,adminDisc,tot);
+  showToast('🧾 Invoice generated! Use WA or Print buttons.');
+}
+function buildInv(num,client,phone,items,disc,tot){return`<div class="invoice-preview">
+  <div class="inv-header"><div><div class="inv-brand-name">Grace & Glamour</div><div class="inv-brand-sub">Luxury Beauty & Bridal · Surat · v2.0</div></div><div class="inv-num-wrap">INVOICE<strong>${num}</strong>${new Date().toLocaleDateString('en-IN')}</div></div>
+  <div class="inv-client-row"><div><div class="inv-cl">Client</div><div class="inv-cv">${client}</div></div><div><div class="inv-cl">Mobile</div><div class="inv-cv">${phone}</div></div><div><div class="inv-cl">Date</div><div class="inv-cv">${new Date().toLocaleDateString('en-IN')}</div></div><div><div class="inv-cl">Time</div><div class="inv-cv">${new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'})}</div></div></div>
+  <div class="inv-items-wrap"><div class="inv-item-head"><span>Service</span><span>Qty</span><span>Amount</span></div>${items.map(i=>`<div class="inv-item-row"><div class="inv-item-name">${i.name}</div><div class="inv-item-qty">${i.qty}</div><div class="inv-item-price">₹${(i.price*i.qty).toLocaleString()}</div></div>`).join('')}</div>
+  <div class="inv-totals"><div class="inv-total-row"><span>Subtotal</span><span>₹${(tot+disc).toLocaleString()}</span></div>${disc?`<div class="inv-total-row"><span>Discount</span><span style="color:#4caf50">- ₹${disc.toLocaleString()}</span></div>`:''}<div class="inv-total-row"><span>GST</span><span>₹0</span></div><div class="inv-total-final"><span>Total</span><span>₹${tot.toLocaleString()}</span></div></div>
+  <div class="inv-footer-bar"><div class="inv-footer-msg">Thank you for visiting! 💕 Use code NEXT10 for 10% off next visit.</div><div class="inv-qr">🔳</div></div>
+</div>`}
+
+function renderSvcMgmt(){return`<div class="panel"><div class="panel-title">All Services <button class="topbar-btn primary" onclick="showToast('➕ Add service dialog')">+ Add Service</button></div><div class="overflow-x-auto"><table class="data-table"><thead><tr><th>Name</th><th>Category</th><th>Price</th><th>Hot</th><th>Actions</th></tr></thead><tbody>${DB.svcs.slice(0,30).map(s=>`<tr><td style="color:#fff">${s.name}</td><td>${DB.cats.find(c=>c.id===s.cat)?.name||s.cat}</td><td style="color:var(--rose2);font-family:'Playfair Display',serif;font-weight:700">₹${s.price.toLocaleString()}${s.maxPrice?'–₹'+s.maxPrice.toLocaleString():''}</td><td>${s.hot?'<span class="dt-badge confirmed">🔥 Yes</span>':'<span style="color:var(--text3);font-size:.72rem">—</span>'}</td><td><button class="dt-action" onclick="showToast('✏️ Edit')">✏</button> <button class="dt-action" onclick="showToast('🔥 Toggle')">🔥</button> <button class="dt-action" onclick="showToast('🗑️ Delete?')">🗑</button></td></tr>`).join('')}</tbody></table></div></div>`}
+
+function renderCoupMgmt(){return`<div class="panel"><div class="panel-title">Coupons & Offers <button class="topbar-btn primary" onclick="showToast('➕ Create coupon')">+ Create</button></div><div class="overflow-x-auto"><table class="data-table"><thead><tr><th>Code</th><th>Discount</th><th>Type</th><th>Description</th><th>Expiry</th><th>Actions</th></tr></thead><tbody>${DB.coupons.map(c=>`<tr><td style="font-family:'Poppins',sans-serif;font-weight:700;letter-spacing:.1em;color:var(--gold2)">${c.code}</td><td style="color:var(--rose2);font-weight:700">${c.disc}</td><td>${c.type==='pct'?'Percentage':'Flat'}</td><td style="font-size:.72rem;color:var(--text3)">${c.desc}</td><td style="color:var(--text3)">${c.expiry}</td><td><button class="dt-action" onclick="showToast('✏️ Edit')">✏</button> <button class="dt-action" onclick="showToast('🗑️ Delete?')">🗑</button></td></tr>`).join('')}</tbody></table></div></div>`}
+
+function renderTeamMgmt(){return`<div class="panel"><div class="panel-title">Team Members <button class="topbar-btn primary" onclick="showToast('➕ Add member')">+ Add Member</button></div><div style="display:flex;flex-direction:column;gap:.8rem">${DB.team.map(t=>`<div style="background:var(--card2);border:1px solid var(--border2);border-radius:var(--r12);padding:1.1rem;display:flex;align-items:center;gap:.9rem"><div class="as-av">${t.name[0]}</div><div style="flex:1"><div style="font-weight:500;color:#fff">${t.name}</div><div style="font-size:.65rem;color:var(--text3)">${t.role} · ID: ${t.id} · MPIN: ****</div></div><span class="dt-badge ${t.active?'confirmed':'cancelled'}">${t.active?'Active':'Inactive'}</span><button class="dt-action" onclick="showToast('🔑 Reset MPIN for ${t.name}')">🔑 MPIN</button><button class="dt-action" onclick="showToast('${t.active?'🔴':'🟢'} Toggle ${t.name}')">${t.active?'Disable':'Enable'}</button></div>`).join('')}</div></div>`}
+
+function renderAnalytics(){return`
+  <div class="kpi-grid">
+    <div class="kpi rose"><div class="kpi-icon">💰</div><div class="kpi-val">₹1.24L</div><div class="kpi-lbl">Nov Revenue</div><div class="kpi-trend tu">↑ 18.4%</div></div>
+    <div class="kpi gold"><div class="kpi-icon">📅</div><div class="kpi-val">47</div><div class="kpi-lbl">Appointments</div><div class="kpi-trend tu">↑ 12%</div></div>
+    <div class="kpi purple"><div class="kpi-icon">🔁</div><div class="kpi-val">68%</div><div class="kpi-lbl">Repeat Clients</div><div class="kpi-trend tu">↑ 5%</div></div>
+    <div class="kpi green"><div class="kpi-icon">🎫</div><div class="kpi-val">24</div><div class="kpi-lbl">Coupons Used</div><div class="kpi-trend td">↓ 2</div></div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-card">
+      <div class="chart-title">Monthly Revenue Trend <span style="font-size:.65rem;color:var(--text3);font-family:'Poppins',sans-serif">May–Nov</span></div>
+      <div class="chart-area" id="bar-chart"></div>
+      <div style="display:flex;justify-content:space-between;margin-top:.45rem">${['May','Jun','Jul','Aug','Sep','Oct','Nov'].map(d=>`<div class="bar-lbl">${d}</div>`).join('')}</div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Service Mix</div>
+      <div class="donut-wrap">
+        <div class="donut"><svg width="115" height="115" viewBox="0 0 115 115"><circle cx="57.5" cy="57.5" r="48" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="15"/><circle cx="57.5" cy="57.5" r="48" fill="none" stroke="var(--rose)" stroke-width="15" stroke-dasharray="120 181" stroke-linecap="round"/><circle cx="57.5" cy="57.5" r="48" fill="none" stroke="var(--gold2)" stroke-width="15" stroke-dasharray="72 229" stroke-dashoffset="-120" stroke-linecap="round"/><circle cx="57.5" cy="57.5" r="48" fill="none" stroke="var(--purple)" stroke-width="15" stroke-dasharray="48 253" stroke-dashoffset="-192" stroke-linecap="round"/><circle cx="57.5" cy="57.5" r="48" fill="none" stroke="#4caf50" stroke-width="15" stroke-dasharray="61 240" stroke-dashoffset="-240" stroke-linecap="round"/></svg><div class="donut-center"><div class="donut-cval">₹1.24L</div><div class="donut-clbl">Revenue</div></div></div>
+        <div class="donut-legend"><div class="dl-item"><div class="dl-dot" style="background:var(--rose)"></div>Bridal 40%</div><div class="dl-item"><div class="dl-dot" style="background:var(--gold2)"></div>Hair 24%</div><div class="dl-item"><div class="dl-dot" style="background:var(--purple)"></div>Makeup 16%</div><div class="dl-item"><div class="dl-dot" style="background:#4caf50"></div>Other 20%</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="panel"><div class="panel-title">Staff Performance</div><table class="data-table"><thead><tr><th>Name</th><th>Role</th><th>Appointments</th><th>Revenue</th><th>Avg Rating</th><th>Status</th></tr></thead><tbody><tr><td style="color:#fff">Priya Sharma</td><td>Sr. Stylist</td><td>22</td><td style="color:var(--rose2);font-family:'Playfair Display',serif;font-weight:700">₹45,000</td><td>★ 4.9</td><td><span class="dt-badge confirmed">Active</span></td></tr><tr><td style="color:#fff">Rekha Patel</td><td>Makeup Artist</td><td>15</td><td style="color:var(--rose2);font-family:'Playfair Display',serif;font-weight:700">₹38,500</td><td>★ 4.8</td><td><span class="dt-badge confirmed">Active</span></td></tr><tr><td style="color:#fff">Sunita Verma</td><td>Nail Tech</td><td>10</td><td style="color:var(--rose2);font-family:'Playfair Display',serif;font-weight:700">₹12,000</td><td>★ 4.7</td><td><span class="dt-badge confirmed">Active</span></td></tr></tbody></table></div>
+`}
+
+function renderWA(){return`<div class="panel"><div class="panel-title">WhatsApp Automation Templates <span style="font-size:.68rem;color:var(--text3);font-family:'Poppins',sans-serif;font-weight:300">Auto-sent via WhatsApp Business API</span></div><div style="display:flex;flex-direction:column;gap:1.1rem">${[
+  {name:'Appointment Confirmation',msg:'Hello {name}! 🎉 Your appointment at Grace & Glamour is confirmed.\n📅 Date: {date} · ⏰ Time: {time}\n💇 Service: {service}\n📍 Branch: {branch}\n\nSee you soon! 💕 — Grace & Glamour',trigger:'On Booking'},
+  {name:'Invoice / Bill Message',msg:'Hello {name}! 🧾 Your Grace & Glamour invoice:\n\n💰 Total: ₹{amount}\n📋 Invoice: {invoice_no}\n📅 Date: {date}\n\nThank you! Use code NEXT10 for 10% off next visit 💕',trigger:'After Billing'},
+  {name:'Appointment Reminder',msg:'Hi {name}! ⏰ Reminder: Your appointment is tomorrow at {time}.\n\nGrace & Glamour · {branch}\nSee you soon! 💕',trigger:'24 hrs before'},
+  {name:'Birthday Offer',msg:'Happy Birthday {name}! 🎂\n\nAs a birthday gift, enjoy 20% OFF this month!\nCode: BDAY20\n\nBook: gracenglamour.site 💕',trigger:'On Birthday'},
+  {name:'Post-Visit Feedback',msg:'Hi {name}! 🌸 Thank you for visiting Grace & Glamour!\n\nWe\'d love your review: g.page/gracenglamour\n\nYour feedback means the world to us 💕',trigger:'2 hrs after visit'},
+].map(t=>`<div style="background:var(--card2);border:1px solid var(--border2);border-radius:var(--r12);padding:1.1rem"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem"><div style="font-weight:500;color:#fff;font-size:.82rem">${t.name}</div><div class="flex gap1 items-center"><span class="dt-badge confirmed">${t.trigger}</span><button class="dt-action" onclick="showToast('✏️ Edit template')">✏</button></div></div><div style="background:rgba(37,211,102,.05);border:1px solid rgba(37,211,102,.14);border-radius:var(--r8);padding:.9rem;font-size:.72rem;color:var(--text2);line-height:1.75;white-space:pre-line">${t.msg}</div></div>`).join('')}</div><button class="btn-p mt2" onclick="showToast('📤 Test message sent to your number!')">📤 Send Test Message</button></div>`}
+
+function drawBars(){
+  const chart=document.getElementById('bar-chart');if(!chart)return;
+  const vals=[65000,82000,78000,91000,105000,98000,124000];
+  const max=Math.max(...vals);
+  chart.innerHTML='';
+  vals.forEach(v=>{
+    const wrap=document.createElement('div');wrap.className='bar-wrap';
+    const bar=document.createElement('div');bar.className='bar';
+    bar.style.height='0';bar.setAttribute('data-val',`₹${(v/1000).toFixed(0)}K`);
+    wrap.appendChild(bar);chart.appendChild(wrap);
+    setTimeout(()=>bar.style.height=`${(v/max)*155}px`,200);
+  });
+}
+
+// ── TEAM LOGIN
+function teamLogin(){
+  const id=document.getElementById('team-id')?.value?.toUpperCase();
+  const mpin=[1,2,3,4].map(i=>document.getElementById(`mp${i}`)?.value).join('');
+  const member=DB.team.find(t=>t.id===id&&t.mpin===mpin&&t.active);
+  if(member){goView('view-team')}else showToast('❌ Invalid ID or MPIN. Demo: GG-001 / 1234');
+}
+function mpNav(el,next){if(el.value&&next)document.getElementById(next)?.focus()}
+
+// ── TEAM TABS
+function tTab(tab,el){
+  if(el){document.querySelectorAll('.ts-ni').forEach(i=>i.classList.remove('active'));el.classList.add('active')}
+  const titles={'create-bill':'Create Bill','appointments':'Today\'s Appointments','history':'My History'};
+  const t=document.getElementById('team-tab-title');if(t)t.textContent=titles[tab]||tab;
+  renderTeam(tab);
+}
+function renderTeam(tab){
+  const c=document.getElementById('team-content');if(!c)return;
+  switch(tab){
+    case 'create-bill': c.innerHTML=teamBillingUI();break;
+    case 'appointments': c.innerHTML=`<div class="panel"><div class="panel-title">Today's Appointments</div><div style="display:flex;flex-direction:column;gap:.65rem">${DB.appointments.slice(0,4).map(a=>`<div style="background:var(--card2);border:1px solid var(--border2);border-radius:var(--r8);padding:.9rem;display:flex;align-items:center;gap:.9rem"><div style="font-size:1.3rem">📅</div><div style="flex:1"><div style="font-weight:500;color:#fff;font-size:.82rem">${a.client}</div><div style="font-size:.68rem;color:var(--text3)">${a.service} · ${a.time} · ${a.branch}</div></div><span class="dt-badge ${a.status}">${a.status}</span><button class="btn-p" style="font-size:.6rem;padding:.4rem .8rem" onclick="showToast('✅ Marked as served')">Start</button></div>`).join('')}</div></div>`;break;
+    case 'history': c.innerHTML=`<div class="panel"><div class="panel-title">Recent Bills</div><div class="overflow-x-auto">${apptTable(DB.appointments.slice(0,3))}</div></div>`;break;
+  }
+}
+function teamBillingUI(){return`
+<div style="display:grid;grid-template-columns:1fr;gap:1.2rem">
+  <div class="bill-panel">
+    <div class="panel-title" style="font-size:.9rem">👤 Client Details</div>
+    <div class="flex gap1 flex-wrap mb2">
+      <input class="bf-input" id="team-client" placeholder="Client name *" style="flex:1;min-width:140px;margin-bottom:0"/>
+      <input class="bf-input" id="team-phone" placeholder="WhatsApp number *" style="flex:1;min-width:140px;margin-bottom:0"/>
+    </div>
+    <div class="divider"></div>
+    <div class="panel-title" style="font-size:.9rem">🔍 Search & Add Services</div>
+    <div class="bill-search-wrap"><input id="team-svc-in" placeholder="Type service name…" oninput="searchTeamSvc(this.value)" onfocus="document.getElementById('team-svc-list').style.display='block'"/></div>
+    <div class="bill-svc-list" id="team-svc-list">${DB.svcs.map(s=>`<div class="bill-svc-item" onclick="addTeamSvc('${s.id}')"><span class="bill-svc-name">${s.name}</span><span class="bill-svc-price">₹${s.price}</span></div>`).join('')}</div>
+    <div class="added-svcs" id="team-bill-items"><div style="text-align:center;padding:1.5rem;color:var(--text3);font-size:.74rem">Search & add services above ☝️</div></div>
+  </div>
+  <div class="bill-summary">
+    <div class="panel-title" style="font-size:.9rem">🧾 Bill Summary</div>
+    <div class="summary-row"><span>Subtotal</span><span id="team-sub">₹0</span></div>
+    <div class="summary-row"><span>Discount</span><span style="color:#4caf50" id="team-disc-lbl">- ₹0</span></div>
+    <div class="summary-total"><span>Total</span><span id="team-tot">₹0</span></div>
+    <div class="coupon-row"><input class="coupon-input" id="team-coupon" placeholder="Coupon code…"/><button class="coupon-apply" onclick="applyTeamCoupon()">Apply</button></div>
+    <button class="btn-p w-full justify-center mt2" onclick="genTeamBill()">🧾 Generate & Send WA</button>
+    <button class="btn-s w-full justify-center mt1" onclick="showToast('🖨️ Print mode')">🖨️ Print Bill</button>
+  </div>
+  <div id="team-inv-out"></div>
+</div>`}
+
+function searchTeamSvc(v){const el=document.getElementById('team-svc-list');if(!el)return;el.style.display='block';el.innerHTML=DB.svcs.filter(s=>s.name.toLowerCase().includes(v.toLowerCase())).map(s=>`<div class="bill-svc-item" onclick="addTeamSvc('${s.id}')"><span class="bill-svc-name">${s.name}</span><span class="bill-svc-price">₹${s.price}</span></div>`).join('')||'<div style="padding:1rem;color:var(--text3);font-size:.76rem">No match</div>'}
+function addTeamSvc(id){const s=DB.svcs.find(x=>x.id===id);if(!s)return;const ex=billItems.find(i=>i.id===id);if(ex)ex.qty++;else billItems.push({...s,qty:1});document.getElementById('team-svc-list').style.display='none';if(document.getElementById('team-svc-in'))document.getElementById('team-svc-in').value='';updateTeamBill();showToast(`✅ ${s.name} added`)}
+function updateTeamBill(){
+  const el=document.getElementById('team-bill-items');if(!el)return;
+  if(!billItems.length){el.innerHTML='<div style="text-align:center;padding:1.5rem;color:var(--text3);font-size:.74rem">No services added yet</div>';updateTeamTotals();return}
+  el.innerHTML=billItems.map((item,i)=>`
+    <div class="added-svc-row">
+      <span class="asr-name">${item.name}</span>
+      <div class="qty-ctrl"><button class="qty-btn" onclick="chgTeamQty(${i},-1)">−</button><span class="qty-val">${item.qty}</span><button class="qty-btn" onclick="chgTeamQty(${i},1)">+</button></div>
+      <span class="asr-price">₹${(item.price*item.qty).toLocaleString()}</span>
+      <span class="asr-remove" onclick="rmTeamItem(${i})">✕</span>
+    </div>
+  `).join('');
+  updateTeamTotals();
+}
+function chgTeamQty(i,d){billItems[i].qty=Math.max(1,billItems[i].qty+d);updateTeamBill()}
+function rmTeamItem(i){billItems.splice(i,1);updateTeamBill()}
+function updateTeamTotals(){
+  const sub=billItems.reduce((a,i)=>a+i.price*i.qty,0),tot=Math.max(0,sub-teamDisc);
+  const s=document.getElementById('team-sub'),d=document.getElementById('team-disc-lbl'),t=document.getElementById('team-tot');
+  if(s)s.textContent=`₹${sub.toLocaleString()}`;
+  if(d)d.textContent=`- ₹${teamDisc.toLocaleString()}`;
+  if(t)t.textContent=`₹${tot.toLocaleString()}`;
+}
+function applyTeamCoupon(){const code=document.getElementById('team-coupon')?.value?.toUpperCase();const c=DB.coupons.find(x=>x.code===code);if(c){const sub=billItems.reduce((a,i)=>a+i.price*i.qty,0);teamDisc=c.type==='flat'?c.val:Math.round(sub*c.val/100);updateTeamBill();showToast(`🎉 "${code}" applied! Saving ₹${teamDisc}`)}else showToast('❌ Invalid coupon code')}
+function genTeamBill(){
+  const client=document.getElementById('team-client')?.value||'Walk-in';
+  const phone=document.getElementById('team-phone')?.value||'N/A';
+  if(!billItems.length){showToast('⚠️ Add at least one service');return}
+  const sub=billItems.reduce((a,i)=>a+i.price*i.qty,0),tot=Math.max(0,sub-teamDisc);
+  const num=`INV-2025-${String(Date.now()).slice(-4)}`;
+  const out=document.getElementById('team-inv-out');
+  if(out)out.innerHTML=buildInv(num,client,phone,billItems,teamDisc,tot);
+  showToast(`🎉 Bill ₹${tot.toLocaleString()} generated! WA sent to ${phone}`);
+  billItems=[];teamDisc=0;updateTeamBill();
+}
+
+// ── COUNTERS
+function initCounters(){
+  const co=new IntersectionObserver(es=>{es.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target,isDec=el.hasAttribute('data-dec'),target=parseFloat(el.dataset.t),dur=2000,step=16;
+    let cur=0;const inc=target/(dur/step);
+    const t=setInterval(()=>{
+      cur=Math.min(cur+inc,target);
+      if(isDec)el.textContent=cur.toFixed(1);
+      else if(target===2011)el.textContent=Math.floor(cur);
+      else el.textContent=Math.floor(cur)+(target>=10?'+':'');
+      if(cur>=target)clearInterval(t);
+    },step);
+    co.unobserve(el);
+  })},{threshold:.5});
+  document.querySelectorAll('[data-t]').forEach(el=>co.observe(el));
+}
+
+// ── SCROLL REVEAL
+function initReveal(){
+  const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.07});
+  document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
+}
+</script>
+</body>
+</html>
