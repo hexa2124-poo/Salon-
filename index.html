@@ -1,0 +1,2618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5"/>
+<title>Grace & Glamour — Ultra Luxury Beauty & Bridal Salon | Surat</title>
+<meta name="description" content="Grace & Glamour — Surat's premier luxury beauty & bridal salon. Hair, Makeup, Skin, Nails & Bridal. Est. 2011. 3 Branches — Vesu, Rander, Jahangirpura."/>
+<meta name="keywords" content="luxury salon surat, bridal makeup surat, hair salon surat, beauty parlour surat, grace and glamour"/>
+<meta property="og:title" content="Grace & Glamour — Ultra Luxury Salon | Surat"/>
+<meta property="og:description" content="Surat's premier luxury beauty & bridal destination since 2011."/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,700&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════════
+   GRACE & GLAMOUR — DESIGN SYSTEM v4.0
+═══════════════════════════════════════════ */
+:root{
+  --ink:#04030a;--ink2:#0a0816;--ink3:#100d1c;
+  --surface:#15112a;--surface2:#1d1935;
+  --rose:#c23968;--rose2:#e05482;--rose3:#f07a9e;
+  --gold:#b8831a;--gold2:#d4a040;--gold3:#f0c870;
+  --blush:#f0b8cc;--plum:#5a3580;
+  --txt:#f4f0fe;--txt2:rgba(244,240,254,.62);--txt3:rgba(244,240,254,.32);
+  --bdr:rgba(194,57,104,.14);--bdr2:rgba(255,255,255,.07);
+  --glass:rgba(255,255,255,.035);
+  --glow:rgba(194,57,104,.48);--glow2:rgba(184,131,26,.38);
+  --r24:24px;--r16:16px;--r10:10px;--r50:50px;
+  --shad:0 12px 50px rgba(0,0,0,.7);
+  --ease:.35s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Jost',sans-serif;background:var(--ink);color:var(--txt);overflow-x:hidden;cursor:none;-webkit-tap-highlight-color:transparent;font-weight:300}
+img{max-width:100%;display:block;object-fit:cover}
+a{text-decoration:none;color:inherit}
+button{font-family:'Jost',sans-serif;border:none;outline:none;cursor:pointer}
+input,select,textarea{font-family:'Jost',sans-serif;outline:none;border:none}
+::-webkit-scrollbar{width:2px}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--rose),var(--gold));border-radius:2px}
+
+/* ─── CURSOR ─── */
+#cur,#cur2{position:fixed;border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .18s,height .18s,background .2s,opacity .15s}
+#cur{width:5px;height:5px;background:var(--rose);opacity:.9}
+#cur2{width:20px;height:20px;border:1.5px solid rgba(194,57,104,.4);opacity:.55;transition:width .28s,height .28s,border-color .2s}
+@media(hover:none),(max-width:900px){#cur,#cur2{display:none!important}}
+
+/* ─── LOADER ─── */
+#loader{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--ink);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:0;padding:2rem;text-align:center;
+  transition:opacity 1s ease,visibility 1s ease;
+}
+#loader.out{opacity:0;visibility:hidden;pointer-events:none}
+.ld-gem{
+  width:60px;height:60px;margin:0 auto 1.5rem;
+  position:relative;animation:ldFloat 2.5s ease-in-out infinite;
+}
+.ld-gem svg{width:100%;height:100%;filter:drop-shadow(0 0 14px var(--glow))}
+@keyframes ldFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-8px) rotate(3deg)}}
+.ld-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.8rem,6vw,2.8rem);
+  font-weight:500;font-style:italic;
+  background:linear-gradient(125deg,var(--rose2) 0%,var(--gold2) 50%,var(--blush) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  letter-spacing:.04em;margin-bottom:.4rem;
+  animation:ldPulse 2s ease-in-out infinite;
+}
+@keyframes ldPulse{0%,100%{opacity:.6}50%{opacity:1}}
+.ld-sub{font-size:.52rem;letter-spacing:.38em;text-transform:uppercase;color:var(--txt3);margin-bottom:2.2rem}
+.ld-bar-outer{width:min(160px,50vw);height:1.5px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+.ld-bar-inner{height:100%;width:0;background:linear-gradient(90deg,var(--rose),var(--gold2));border-radius:2px;animation:ldBar 2.8s cubic-bezier(.25,.46,.45,.94) forwards}
+@keyframes ldBar{to{width:100%}}
+.ld-dots{display:flex;gap:.5rem;margin-top:1.8rem;justify-content:center}
+.ld-dot{width:5px;height:5px;border-radius:50%;background:var(--rose);opacity:.3;animation:ldDot 1.4s ease-in-out infinite}
+.ld-dot:nth-child(2){animation-delay:.2s}.ld-dot:nth-child(3){animation-delay:.4s}
+@keyframes ldDot{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
+@media(max-width:400px){.ld-gem{width:50px;height:50px}.ld-title{font-size:1.6rem}}
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes marqueeSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+@keyframes glow{0%,100%{box-shadow:0 0 18px var(--glow)}50%{box-shadow:0 0 35px var(--glow),0 0 55px var(--glow2)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+.rev{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+.rev.vis{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.12s}.rd2{transition-delay:.24s}.rd3{transition-delay:.36s}.rd4{transition-delay:.48s}
+
+/* ─── NAV ─── */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  padding:1rem 5vw;
+  display:flex;align-items:center;justify-content:space-between;gap:.8rem;
+  transition:background var(--ease),border-color var(--ease),padding var(--ease);
+}
+#nav.stuck{
+  background:rgba(4,3,10,.94);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--bdr);
+  padding:.7rem 5vw;
+}
+.nav-brand{display:flex;align-items:center;gap:.6rem;cursor:pointer;flex:1;min-width:0}
+.nav-logo-ring{
+  width:36px;height:36px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--rose),var(--gold));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:.95rem;font-style:italic;font-weight:700;
+  color:#fff;box-shadow:0 0 18px var(--glow);
+  position:relative;
+}
+.nav-logo-ring::after{
+  content:'';position:absolute;inset:-3px;border-radius:50%;
+  border:1px solid rgba(194,57,104,.3);
+  animation:spin 8s linear infinite;
+  border-top-color:var(--gold2);
+}
+.nav-brand-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(.9rem,3vw,1.1rem);font-weight:600;font-style:italic;
+  background:linear-gradient(135deg,var(--rose2),var(--gold2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1;
+}
+.nav-brand-tag{font-size:.38rem;letter-spacing:.22em;text-transform:uppercase;color:var(--txt3);display:block;margin-top:.18rem;white-space:nowrap}
+@media(max-width:380px){.nav-brand-tag{display:none}}
+.nav-links{display:none;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--txt2);transition:color .3s;position:relative;padding:.2rem 0;cursor:pointer}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:linear-gradient(90deg,var(--rose),var(--gold2));transition:width .3s}
+.nav-links a:hover{color:#fff}.nav-links a:hover::after{width:100%}
+@media(min-width:900px){.nav-links{display:flex}}
+/* Book Now Button */
+.nav-book{
+  display:inline-flex;align-items:center;gap:.45rem;
+  background:linear-gradient(135deg,var(--rose) 0%,#8a1538 100%);
+  color:#fff;padding:.48rem 1.1rem;border-radius:var(--r50);
+  font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;
+  box-shadow:0 4px 18px var(--glow);
+  transition:transform .25s,box-shadow .3s,filter .25s;
+  border:1px solid rgba(255,255,255,.14);white-space:nowrap;flex-shrink:0;cursor:pointer;
+  position:relative;overflow:hidden;
+}
+.nav-book::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,transparent,rgba(255,255,255,.08),transparent);
+  transform:translateX(-100%);transition:transform .5s;
+}
+.nav-book:hover::before{transform:translateX(100%)}
+.nav-book:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 10px 30px var(--glow),0 0 0 1px rgba(240,200,112,.35)}
+.nav-book svg{flex-shrink:0;animation:pulse 2s ease-in-out infinite}
+.nav-book:hover svg{animation:none}
+@media(max-width:480px){.nav-book .nbook-txt{display:none}}
+.ham{display:flex;flex-direction:column;gap:4.5px;background:none;padding:.4rem;flex-shrink:0;cursor:pointer}
+.ham span{display:block;width:20px;height:1.5px;background:var(--rose2);border-radius:2px;transition:all .3s}
+.ham.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.ham.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+@media(min-width:900px){.ham{display:none!important}}
+#mob-menu{
+  position:fixed;inset:0;z-index:490;
+  background:rgba(4,3,10,.97);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
+  opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s;
+}
+#mob-menu.open{opacity:1;visibility:visible}
+.mob-link{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,8vw,2.6rem);font-style:italic;font-weight:400;
+  color:var(--txt2);transition:color .3s,transform .3s;cursor:pointer;
+}
+.mob-link:hover{color:var(--rose2);transform:translateX(6px)}
+.mob-close{position:absolute;top:1.5rem;right:1.5rem;background:none;color:var(--txt3);font-size:1.5rem;padding:.5rem;cursor:pointer;transition:color .3s}
+.mob-close:hover{color:var(--rose2)}
+
+/* ─── SCREENS ─── */
+.screen{display:none;flex:1;flex-direction:column;min-height:100vh}
+.screen.active{display:flex}
+
+/* ─── BUTTONS ─── */
+.btn-p{
+  background:linear-gradient(135deg,var(--rose) 0%,#8a1538 100%);
+  color:#fff;padding:.9rem 2.2rem;border-radius:var(--r50);
+  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;
+  box-shadow:0 8px 28px var(--glow);
+  transition:transform .25s,box-shadow .3s;
+  display:inline-flex;align-items:center;gap:.55rem;position:relative;overflow:hidden;cursor:pointer;
+}
+.btn-p::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,.1),transparent);transform:translateX(-100%);transition:transform .5s}
+.btn-p:hover::after{transform:translateX(100%)}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 18px 45px var(--glow)}
+.btn-s{
+  background:transparent;color:#fff;padding:.9rem 2.2rem;border-radius:var(--r50);
+  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:400;
+  border:1px solid rgba(255,255,255,.18);
+  transition:border-color .3s,background .3s,transform .25s;
+  display:inline-flex;align-items:center;gap:.55rem;cursor:pointer;
+}
+.btn-s:hover{border-color:var(--gold2);background:rgba(212,160,64,.08);transform:translateY(-2px)}
+.btn-g{
+  background:linear-gradient(135deg,var(--gold) 0%,#6e4c0a 100%);
+  color:#fff;padding:.9rem 2.2rem;border-radius:var(--r50);
+  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;
+  box-shadow:0 8px 28px var(--glow2);
+  transition:transform .25s,box-shadow .3s;
+  display:inline-flex;align-items:center;gap:.55rem;cursor:pointer;
+}
+.btn-g:hover{transform:translateY(-3px);box-shadow:0 18px 45px var(--glow2)}
+.w-full{width:100%}.justify-center{justify-content:center}
+
+/* ─── HERO ─── */
+#hero{
+  position:relative;min-height:100svh;
+  display:flex;align-items:center;overflow:hidden;padding-top:76px;
+}
+/* ── Full-bleed salon background image ── */
+.hero-bg-img{
+  position:absolute;inset:0;width:100%;height:100%;
+  background:
+    url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1800&q=90')
+    center center / cover no-repeat;
+  transform:scale(1.04);
+  animation:heroBgDrift 18s ease-in-out infinite alternate;
+}
+@keyframes heroBgDrift{from{transform:scale(1.04) translateX(0)}to{transform:scale(1.08) translateX(-1%)}}
+/* Cinematic dark overlay — heavier on left so text stays readable */
+.hero-bg-overlay{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(105deg,
+      rgba(4,3,10,.96) 0%,
+      rgba(4,3,10,.82) 38%,
+      rgba(10,5,18,.65) 62%,
+      rgba(4,3,10,.45) 100%),
+    linear-gradient(to top,rgba(4,3,10,.75) 0%,transparent 50%);
+}
+/* Luxury colour tints */
+.hero-bg-layer{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 70% 55% at 68% 38%,rgba(194,57,104,.13) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 70% at 15% 70%,rgba(184,131,26,.09) 0%,transparent 55%),
+    radial-gradient(ellipse 35% 28% at 50% 2%,rgba(90,53,128,.07) 0%,transparent 48%);
+}
+.hero-noise{position:absolute;inset:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none}
+.hero-particles{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hparticle{position:absolute;border-radius:50%;pointer-events:none}
+/* ── Grid layout ── */
+.hero-grid{
+  display:grid;grid-template-columns:1fr;
+  align-items:center;gap:2rem;
+  padding:3.5rem 6vw 6rem;width:100%;position:relative;z-index:2;
+}
+@media(min-width:600px){.hero-grid{padding:3rem 6vw 5rem}}
+@media(min-width:768px){.hero-grid{grid-template-columns:1.15fr 1fr;gap:2.5rem;padding:2.5rem 6vw 4rem}}
+@media(min-width:1280px){.hero-grid{gap:4rem;padding:2rem 7vw 3rem}}
+/* Eyebrow */
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:.8rem;
+  font-size:clamp(.48rem,.9vw,.6rem);letter-spacing:.44em;text-transform:uppercase;color:var(--gold2);
+  margin-bottom:1.2rem;opacity:0;animation:fadeUp .8s 2.6s ease forwards;
+}
+.hero-eyebrow::before{content:'';display:block;width:2rem;height:1px;background:var(--gold2);opacity:.7;flex-shrink:0}
+/* H1 */
+.hero-h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3rem,9vw,7.5rem);
+  font-weight:600;line-height:.88;margin-bottom:1.5rem;
+  opacity:0;animation:fadeUp .9s 2.8s ease forwards;
+}
+.hw1{display:block;color:rgba(244,240,254,.92);font-weight:300;letter-spacing:-.01em}
+.hw2{
+  display:block;font-style:italic;
+  background:linear-gradient(125deg,var(--rose) 0%,var(--gold2) 52%,var(--blush) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  font-weight:700;
+}
+.hero-tagline{
+  font-size:clamp(.78rem,1.4vw,.92rem);font-weight:300;color:rgba(244,240,254,.68);line-height:1.95;
+  max-width:38ch;margin-bottom:2rem;font-style:italic;
+  opacity:0;animation:fadeUp .7s 3s ease forwards;
+}
+.hero-actions{
+  display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2rem;
+  opacity:0;animation:fadeUp .7s 3.2s ease forwards;
+}
+/* Stack buttons vertically on very small screens */
+@media(max-width:420px){.hero-actions{flex-direction:column;align-items:flex-start}}
+.hero-badges{display:flex;gap:.55rem;flex-wrap:wrap;opacity:0;animation:fadeUp .7s 3.4s ease forwards}
+.badge{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  padding:.32rem .8rem;border-radius:var(--r50);font-size:clamp(.52rem,.85vw,.62rem);color:rgba(244,240,254,.7);
+  backdrop-filter:blur(10px);white-space:nowrap;
+}
+.badge-dot{width:5px;height:5px;border-radius:50%;background:linear-gradient(135deg,var(--rose2),var(--gold2));flex-shrink:0;animation:pulse 2s ease-in-out infinite}
+/* ── Hero right — portrait card ── */
+.hero-right{position:relative;display:flex;align-items:center;justify-content:center}
+.hero-frame{
+  position:relative;border-radius:20px;overflow:hidden;
+  width:min(100%,420px);aspect-ratio:3/4;
+  box-shadow:0 40px 100px rgba(0,0,0,.7),0 0 80px var(--glow);
+  display:none;
+}
+@media(min-width:768px){.hero-frame{display:block}}
+@media(min-width:1024px){.hero-frame{width:min(100%,460px)}}
+.hero-frame img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform 10s ease}
+.hero-frame:hover img{transform:scale(1.05)}
+/* Thin rose border ring */
+.hero-frame-border{
+  position:absolute;inset:-2px;border-radius:22px;
+  border:1.5px solid rgba(194,57,104,.25);pointer-events:none;z-index:3;
+}
+/* Inner gradient fade at bottom */
+.hero-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(4,3,10,.65) 100%);z-index:2}
+/* Floating stat cards */
+.hero-float-card{
+  position:absolute;bottom:2rem;left:-2rem;z-index:4;
+  background:rgba(15,11,28,.93);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  border:1px solid rgba(194,57,104,.2);border-radius:var(--r16);
+  padding:1rem 1.4rem;box-shadow:0 20px 50px rgba(0,0,0,.6),0 0 20px rgba(194,57,104,.15);
+  animation:floatY 5s ease-in-out infinite;
+}
+@media(max-width:900px){.hero-float-card{left:-1rem;bottom:1.5rem}}
+.hfc-val{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;background:linear-gradient(135deg,var(--rose2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.hfc-lbl{font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--txt3);margin-top:.22rem}
+.hero-rating-card{
+  position:absolute;top:2rem;right:-1.8rem;z-index:4;
+  background:rgba(15,11,28,.93);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  border:1px solid rgba(212,160,64,.25);border-radius:var(--r16);
+  padding:.85rem 1.1rem;
+  box-shadow:0 20px 50px rgba(0,0,0,.6),0 0 20px rgba(184,131,26,.12);
+  animation:floatY 6s ease-in-out 1.5s infinite;
+  display:flex;align-items:center;gap:.75rem;
+}
+@media(max-width:900px){.hero-rating-card{right:-1rem;top:1.5rem}}
+.hrc-stars{color:var(--gold2);font-size:.85rem;letter-spacing:.06em}
+.hrc-val{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;color:var(--gold2);line-height:1}
+.hrc-lbl{font-size:.5rem;color:var(--txt3);text-transform:uppercase;letter-spacing:.15em;margin-top:.12rem}
+/* Mobile: show bg image through overlay, no portrait card */
+.hero-mob-overlay{display:none} /* overlay handled by hero-bg-img now */
+/* Scroll hint */
+.hero-scroll-hint{
+  position:absolute;bottom:1.8rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.45rem;
+  opacity:0;animation:fadeUp .7s 3.8s ease forwards;cursor:pointer;z-index:3;
+}
+@media(min-width:768px){.hero-scroll-hint{left:6vw;transform:none}}
+.hsh-txt{font-size:.48rem;letter-spacing:.38em;text-transform:uppercase;color:rgba(244,240,254,.35)}
+.hsh-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--rose),transparent);animation:pulse 2s ease-in-out infinite}
+
+/* ─── STATS BAR ─── */
+.stats-band{
+  background:rgba(10,8,22,.97);backdrop-filter:blur(20px);
+  border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);
+  padding:0 5vw;
+  display:grid;grid-template-columns:repeat(2,1fr);
+  background-color:rgba(194,57,104,.04);
+}
+@media(min-width:600px){.stats-band{grid-template-columns:repeat(4,1fr)}}
+.sband-item{
+  text-align:center;padding:2rem 1rem;
+  position:relative;
+}
+.sband-item+.sband-item::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);height:40%;width:1px;background:var(--bdr2)}
+.sband-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.2rem,5vw,3rem);font-weight:700;
+  background:linear-gradient(135deg,var(--rose2),var(--gold2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  line-height:1;
+}
+.sband-lbl{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--txt3);margin-top:.4rem}
+
+/* ─── SECTION HEADER ─── */
+.sec-head{text-align:center;margin-bottom:3.5rem}
+.sec-head-tag{
+  font-size:.56rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold2);
+  display:flex;align-items:center;justify-content:center;gap:1.2rem;margin-bottom:1rem;
+}
+.sec-head-tag::before,.sec-head-tag::after{content:'';display:block;width:2rem;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent)}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5.5vw,3.4rem);font-weight:600;line-height:1.05}
+.sec-title em{font-style:italic;color:var(--rose2)}
+.sec-sub{font-size:.84rem;font-weight:300;color:var(--txt2);line-height:1.9;max-width:52ch;margin:.9rem auto 0}
+
+/* ─── SECTION PAD ─── */
+.sp{padding:5.5rem 5vw}
+
+/* ─── SERVICES ─── */
+.svc-search-wrap{
+  display:flex;align-items:center;gap:.8rem;
+  background:var(--glass);border:1px solid var(--bdr2);
+  border-radius:var(--r50);padding:.7rem 1.4rem;margin-bottom:1.8rem;
+  backdrop-filter:blur(10px);transition:border-color .3s;
+}
+.svc-search-wrap:focus-within{border-color:rgba(194,57,104,.4)}
+.svc-search-wrap input{background:none;color:var(--txt);width:100%;font-size:.82rem;font-weight:300}
+.svc-search-wrap input::placeholder{color:var(--txt3)}
+.cat-pills{display:flex;gap:.65rem;overflow-x:auto;padding-bottom:.8rem;-ms-overflow-style:none;scrollbar-width:none;margin-bottom:2rem}
+.cat-pills::-webkit-scrollbar{display:none}
+.cat-pill{
+  flex-shrink:0;display:flex;align-items:center;gap:.5rem;
+  background:var(--glass);border:1px solid var(--bdr2);
+  padding:.5rem 1.1rem;border-radius:var(--r50);
+  font-size:.66rem;font-weight:400;color:var(--txt2);
+  cursor:pointer;transition:all .3s;white-space:nowrap;
+}
+.cat-pill:hover{border-color:rgba(194,57,104,.3);color:#fff}
+.cat-pill.active{
+  background:linear-gradient(135deg,rgba(194,57,104,.18),rgba(184,131,26,.1));
+  border-color:rgba(194,57,104,.45);color:#fff;
+  box-shadow:0 4px 16px rgba(194,57,104,.15);
+}
+.svc-cat-block{margin-bottom:2.2rem}
+.svc-cat-hdr{
+  display:flex;align-items:center;gap:.8rem;margin-bottom:1rem;
+  padding-bottom:.7rem;border-bottom:1px solid var(--bdr2);
+}
+.svc-cat-icon{font-size:1.1rem}
+.svc-cat-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:#fff}
+.svc-cat-cnt{font-size:.58rem;color:var(--txt3);letter-spacing:.08em;margin-left:auto}
+.svc-row{
+  display:flex;align-items:center;gap:1rem;
+  background:var(--surface);border:1px solid var(--bdr2);border-radius:var(--r16);
+  padding:.9rem;margin-bottom:.7rem;cursor:pointer;
+  transition:border-color .3s,background .3s,transform .25s;
+  position:relative;overflow:hidden;
+}
+.svc-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--rose),var(--gold));opacity:0;transition:opacity .3s;border-radius:3px 0 0 3px}
+.svc-row:hover{border-color:rgba(194,57,104,.3);background:var(--surface2);transform:translateX(4px)}
+.svc-row:hover::before{opacity:1}
+.svc-img-box{
+  width:72px;height:72px;border-radius:var(--r10);overflow:hidden;
+  flex-shrink:0;background:linear-gradient(135deg,var(--surface2),#221c38);
+}
+.svc-img-box img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.svc-row:hover .svc-img-box img{transform:scale(1.08)}
+.svc-body{flex:1;min-width:0}
+.svc-name{font-size:.88rem;font-weight:500;color:#fff;margin-bottom:.3rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.svc-desc{font-size:.7rem;font-weight:300;color:var(--txt3);line-height:1.6;margin-bottom:.45rem}
+.svc-meta{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.svc-price{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.1rem;font-weight:700;
+  color:var(--gold2);
+}
+.svc-dur{font-size:.6rem;color:var(--txt3);letter-spacing:.05em}
+.hot-badge{
+  font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;
+  background:linear-gradient(135deg,rgba(194,57,104,.2),rgba(184,131,26,.15));
+  border:1px solid rgba(194,57,104,.35);color:var(--rose3);
+  padding:.18rem .6rem;border-radius:var(--r50);
+}
+.svc-add-btn{
+  width:36px;height:36px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--rose),#8a1538);
+  color:#fff;font-size:1.2rem;font-weight:300;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 14px var(--glow);transition:transform .25s,box-shadow .3s;
+}
+.svc-row:hover .svc-add-btn{transform:scale(1.15);box-shadow:0 8px 22px var(--glow)}
+.svc-fav{
+  position:absolute;top:.7rem;right:3rem;font-size:.9rem;cursor:pointer;
+  transition:transform .2s;background:none;border:none;color:var(--txt3);
+}
+.svc-fav.on{color:var(--rose2);transform:scale(1.2)}
+@media(max-width:480px){.svc-img-box{width:58px;height:58px}.svc-price{font-size:1rem}}
+
+/* ─── TRENDING ─── */
+.trend-rail{display:flex;gap:1.2rem;overflow-x:auto;padding-bottom:1rem;-ms-overflow-style:none;scrollbar-width:none}
+.trend-rail::-webkit-scrollbar{display:none}
+.trend-card{
+  flex:0 0 220px;border-radius:var(--r16);overflow:hidden;
+  background:var(--surface);border:1px solid var(--bdr2);
+  transition:transform .3s,box-shadow .3s;cursor:pointer;
+}
+.trend-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,.5),0 0 30px var(--glow)}
+.trend-img{height:160px;overflow:hidden;position:relative}
+.trend-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.trend-card:hover .trend-img img{transform:scale(1.08)}
+.trend-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(4,3,10,.65) 0%,transparent 55%)}
+.trend-hot-tag{position:absolute;top:.8rem;left:.8rem;z-index:2;font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(194,57,104,.85);backdrop-filter:blur(8px);border:1px solid rgba(194,57,104,.5);color:#fff;padding:.22rem .65rem;border-radius:var(--r50);font-weight:600}
+.trend-body{padding:1rem}
+.trend-name{font-size:.82rem;font-weight:500;color:#fff;margin-bottom:.4rem;line-height:1.4}
+.trend-price{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--gold2)}
+
+/* ─── COUPONS ─── */
+.coupon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.1rem}
+.coupon-card{
+  background:var(--surface);border:1px dashed rgba(194,57,104,.3);
+  border-radius:var(--r16);padding:1.5rem;cursor:pointer;
+  transition:border-color .3s,transform .25s,box-shadow .3s;position:relative;overflow:hidden;
+}
+.coupon-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(194,57,104,.05),transparent);opacity:0;transition:opacity .3s}
+.coupon-card:hover::before{opacity:1}
+.coupon-card:hover{border-color:var(--rose2);transform:translateY(-3px);box-shadow:0 12px 30px rgba(194,57,104,.15)}
+.coupon-code{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;letter-spacing:.08em;color:var(--rose2);margin-bottom:.4rem}
+.coupon-val{font-size:.78rem;color:var(--gold2);font-weight:500;margin-bottom:.5rem}
+.coupon-desc{font-size:.7rem;font-weight:300;color:var(--txt3);line-height:1.6}
+.coupon-copy{font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:var(--txt3);margin-top:.9rem;display:flex;align-items:center;gap:.4rem}
+
+/* ─── BRANCHES ─── */
+.branches-grid{display:grid;grid-template-columns:1fr;gap:1.5rem}
+@media(min-width:640px){.branches-grid{grid-template-columns:repeat(3,1fr)}}
+.branch-card{
+  background:var(--surface);border:1px solid var(--bdr2);border-radius:var(--r24);
+  overflow:hidden;transition:transform .35s,box-shadow .35s,border-color .3s;
+  cursor:pointer;
+}
+.branch-card:hover{transform:translateY(-8px);box-shadow:0 25px 60px rgba(0,0,0,.55),0 0 40px var(--glow);border-color:rgba(194,57,104,.28)}
+.branch-img{height:200px;overflow:hidden;position:relative}
+.branch-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.7) brightness(.8);transition:transform .5s,filter .4s}
+.branch-card:hover .branch-img img{transform:scale(1.06);filter:saturate(.9) brightness(.9)}
+.branch-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(4,3,10,.7) 0%,transparent 60%)}
+.branch-num{position:absolute;bottom:1rem;left:1.2rem;font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:700;color:rgba(244,240,254,.08);line-height:1;z-index:2}
+.branch-body{padding:1.5rem}
+.branch-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:#fff;margin-bottom:.5rem}
+.branch-addr{font-size:.74rem;font-weight:300;color:var(--txt3);line-height:1.7;margin-bottom:1rem}
+.branch-tag{display:inline-flex;align-items:center;gap:.45rem;font-size:.6rem;letter-spacing:.1em;color:var(--rose3);background:rgba(194,57,104,.1);border:1px solid rgba(194,57,104,.2);padding:.3rem .8rem;border-radius:var(--r50)}
+
+/* ─── MODEL BANNER ─── */
+.hero-banner{
+  position:relative;height:min(560px,85vw);overflow:hidden;
+  display:flex;align-items:center;
+}
+.hero-banner-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;filter:saturate(.7) brightness(.6)}
+.hero-banner-grad{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,3,10,.92) 0%,rgba(4,3,10,.65) 55%,rgba(4,3,10,.12) 100%)}
+.hero-banner-content{position:relative;z-index:2;padding:3rem 5vw;max-width:580px}
+.hbc-tag{font-size:.56rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold2);display:flex;align-items:center;gap:.8rem;margin-bottom:1.2rem}
+.hbc-tag::before{content:'';display:block;width:1.5rem;height:1px;background:var(--gold2)}
+.hbc-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:600;line-height:1.05;margin-bottom:1rem;color:#fff}
+.hbc-title em{font-style:italic;color:var(--rose2)}
+.hbc-body{font-size:.84rem;font-weight:300;color:var(--txt2);line-height:1.9;margin-bottom:1.8rem}
+.hbc-stats{display:flex;gap:2.5rem;margin-bottom:2rem}
+.hbs-val{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,var(--rose2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hbs-lbl{font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--txt3)}
+
+/* ─── ABOUT ─── */
+.about-layout{display:grid;grid-template-columns:1fr;gap:3.5rem;align-items:center}
+@media(min-width:768px){.about-layout{grid-template-columns:1fr 1fr}}
+.about-img-wrap{position:relative}
+.about-img-frame{
+  border-radius:var(--r24);overflow:hidden;aspect-ratio:3/4;max-width:420px;
+  box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 50px var(--glow);
+}
+.about-img-frame img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.about-badge{
+  position:absolute;bottom:-1.5rem;right:-1.5rem;
+  background:rgba(21,17,42,.95);backdrop-filter:blur(18px);
+  border:1px solid var(--bdr);border-radius:var(--r16);
+  padding:1.2rem 1.6rem;box-shadow:var(--shad);
+  animation:floatY 6s ease-in-out 1s infinite;
+}
+.ab-val{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,var(--rose2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.ab-lbl{font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--txt3);margin-top:.25rem}
+.about-text-head{margin-bottom:1.8rem}
+.about-text-head .sec-head-tag{justify-content:flex-start}
+.about-text-head .sec-head-tag::before{display:none}
+.about-text-head .sec-title{text-align:left}
+.about-body{font-size:.84rem;font-weight:300;color:var(--txt2);line-height:2;margin-bottom:1.1rem}
+.about-feats{display:flex;flex-direction:column;gap:.7rem;margin:1.5rem 0 2rem}
+.about-feat{display:flex;align-items:center;gap:.8rem;font-size:.78rem;font-weight:300;color:var(--txt2)}
+.about-feat-dot{width:6px;height:6px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold2));flex-shrink:0}
+
+/* ─── GALLERY ─── */
+.g-rail{display:flex;gap:.9rem;animation:marqueeSlide 35s linear infinite;width:max-content}
+.g-rail:hover{animation-play-state:paused}
+.g-frame{width:220px;height:300px;border-radius:var(--r16);overflow:hidden;flex-shrink:0;position:relative}
+.g-frame img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.g-frame:hover img{transform:scale(1.06)}
+.g-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(4,3,10,.5) 0%,transparent 60%)}
+@media(max-width:600px){.g-frame{width:170px;height:240px}}
+
+/* ─── REVIEWS ─── */
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.2rem}
+.review-card{
+  background:var(--surface);border:1px solid var(--bdr2);border-radius:var(--r16);padding:1.5rem;
+  transition:border-color .3s,transform .3s;position:relative;overflow:hidden;
+}
+.review-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--rose),var(--gold2));opacity:0;transition:opacity .3s}
+.review-card:hover::before{opacity:1}
+.review-card:hover{transform:translateY(-4px);border-color:rgba(194,57,104,.24)}
+.review-stars{color:var(--gold2);font-size:.88rem;letter-spacing:.08em;margin-bottom:.9rem}
+.review-text{font-size:.78rem;font-weight:300;color:var(--txt2);line-height:1.85;margin-bottom:1.1rem;font-style:italic}
+.review-author{display:flex;align-items:center;gap:.75rem}
+.review-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.78rem;color:#fff;flex-shrink:0}
+.review-name{font-size:.8rem;font-weight:500;color:#fff}
+.review-source{font-size:.58rem;color:var(--txt3);letter-spacing:.06em;margin-top:.1rem}
+
+/* ─── BOOKING ─── */
+.booking-grid{display:grid;grid-template-columns:1fr;gap:1.8rem;padding:2rem 5vw}
+@media(min-width:900px){.booking-grid{grid-template-columns:1fr 1fr;padding:2.5rem 5vw}}
+.book-panel{background:var(--surface);border:1px solid var(--bdr2);border-radius:var(--r24);padding:1.8rem}
+.bp-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:#fff;margin-bottom:1.1rem;display:flex;align-items:center;gap:.55rem}
+.cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.cal-nav{background:var(--glass);border:1px solid var(--bdr2);color:var(--txt2);width:32px;height:32px;border-radius:50%;font-size:1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .3s,color .3s}
+.cal-nav:hover{border-color:var(--rose);color:#fff}
+.cal-month{font-size:.82rem;font-weight:500;color:#fff;letter-spacing:.04em}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:.3rem}
+.cal-dh{text-align:center;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--txt3);padding:.4rem 0}
+.cal-d{
+  aspect-ratio:1;border-radius:var(--r10);display:flex;align-items:center;justify-content:center;
+  font-size:.72rem;cursor:pointer;color:var(--txt2);transition:all .2s;
+  border:1px solid transparent;
+}
+.cal-d:hover{border-color:rgba(194,57,104,.3);color:#fff;background:rgba(194,57,104,.08)}
+.cal-d.today{border-color:rgba(212,160,64,.4);color:var(--gold2)}
+.cal-d.selected{background:linear-gradient(135deg,var(--rose),#8a1538);border-color:transparent;color:#fff;box-shadow:0 4px 14px var(--glow)}
+.cal-d.empty{pointer-events:none;opacity:0}
+.cal-d.past{opacity:.3;pointer-events:none}
+.slots-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem;margin-top:.8rem}
+@media(max-width:400px){.slots-grid{grid-template-columns:repeat(2,1fr)}}
+.slot{
+  padding:.6rem;border-radius:var(--r10);border:1px solid var(--bdr2);
+  font-size:.64rem;text-align:center;color:var(--txt2);cursor:pointer;transition:all .25s;
+}
+.slot:hover{border-color:rgba(194,57,104,.35);color:#fff;background:rgba(194,57,104,.06)}
+.slot.selected{background:linear-gradient(135deg,rgba(194,57,104,.2),rgba(184,131,26,.1));border-color:var(--rose);color:#fff}
+.slot.booked{opacity:.35;pointer-events:none;text-decoration:line-through}
+.stylists-row{display:flex;gap:.8rem;overflow-x:auto;padding-bottom:.5rem;margin-top:.8rem;-ms-overflow-style:none;scrollbar-width:none}
+.stylists-row::-webkit-scrollbar{display:none}
+.stylist-chip{
+  flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:.4rem;
+  cursor:pointer;padding:.6rem .9rem;border-radius:var(--r16);border:1px solid var(--bdr2);
+  transition:border-color .3s,background .3s;min-width:70px;
+}
+.stylist-chip.selected{border-color:var(--rose);background:rgba(194,57,104,.1)}
+.stylist-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.78rem;color:#fff}
+.stylist-name{font-size:.6rem;color:var(--txt2);text-align:center;line-height:1.3}
+.bf-label{display:block;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--txt3);margin-bottom:.45rem;margin-top:.9rem}
+.bf-input{
+  width:100%;background:var(--surface2);border:1px solid var(--bdr2);
+  color:var(--txt);padding:.9rem 1.1rem;border-radius:var(--r10);
+  font-size:.83rem;font-weight:300;transition:border-color .3s,box-shadow .3s;
+}
+.bf-input:focus{border-color:rgba(194,57,104,.5);box-shadow:0 0 0 3px rgba(194,57,104,.08);outline:none}
+.bf-input::placeholder{color:var(--txt3)}
+.bf-select{width:100%;background:var(--surface2);border:1px solid var(--bdr2);color:var(--txt);padding:.9rem 1.1rem;border-radius:var(--r10);font-size:.83rem;font-weight:300;transition:border-color .3s;appearance:none;cursor:pointer}
+.bf-select:focus{border-color:rgba(194,57,104,.5);outline:none}
+.bf-select option{background:var(--surface);color:var(--txt)}
+
+/* ─── LOGIN SHARED ─── */
+.login-wrap{
+  min-height:100vh;width:100%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--ink);padding:1.2rem;position:relative;overflow:hidden;
+}
+@media(min-width:480px){.login-wrap{padding:2rem}}
+.login-aura{position:absolute;inset:0;background:radial-gradient(ellipse 75% 55% at 25% 35%,rgba(194,57,104,.1) 0%,transparent 58%),radial-gradient(ellipse 55% 75% at 75% 65%,rgba(184,131,26,.07) 0%,transparent 55%)}
+.login-card{
+  position:relative;z-index:2;
+  width:100%;max-width:420px;
+  background:rgba(21,17,42,.96);
+  border:1px solid rgba(255,255,255,.07);border-radius:20px;
+  padding:clamp(1.5rem,5vw,2.4rem) clamp(1.2rem,5vw,2.2rem);
+  box-shadow:0 35px 90px rgba(0,0,0,.6),0 0 60px rgba(194,57,104,.07);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  animation:scaleIn .4s ease;
+}
+.login-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.4rem,5vw,1.9rem);
+  font-style:italic;font-weight:600;
+  background:linear-gradient(135deg,var(--rose2),var(--gold2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  display:block;line-height:1.1;
+}
+.login-brand-tag{
+  font-size:.5rem;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--txt3);display:block;margin-top:.3rem;margin-bottom:1.6rem;
+}
+.login-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.2rem,4vw,1.5rem);
+  font-weight:600;color:#fff;margin-bottom:.3rem;line-height:1.2;
+}
+.login-hint-text{font-size:.72rem;color:var(--txt3);margin-bottom:1.4rem;font-weight:300}
+/* Credentials hint box */
+.cred-hint{
+  background:rgba(184,131,26,.06);
+  border:1px solid rgba(184,131,26,.18);
+  border-radius:var(--r10);padding:.9rem 1rem;margin-bottom:1.2rem;
+}
+.cred-hint-title{
+  font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold2);margin-bottom:.55rem;display:flex;align-items:center;gap:.4rem;
+}
+.cred-row{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.7rem;margin-bottom:.26rem;gap:.5rem;flex-wrap:wrap;
+}
+.cred-k{color:var(--txt3);flex-shrink:0}
+.cred-v{color:var(--txt);font-weight:500;font-size:.7rem;text-align:right;word-break:break-all}
+.autofill-btn{
+  width:100%;margin-top:.65rem;
+  background:linear-gradient(135deg,rgba(184,131,26,.14),rgba(194,57,104,.09));
+  border:1px solid rgba(184,131,26,.26);color:var(--gold2);
+  padding:.46rem;border-radius:var(--r50);
+  font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;
+  cursor:pointer;font-family:'Jost',sans-serif;transition:border-color .3s,box-shadow .3s;
+}
+.autofill-btn:hover{border-color:rgba(184,131,26,.5);box-shadow:0 4px 14px rgba(184,131,26,.15)}
+/* Form rows */
+.lf-row{display:flex;flex-direction:column;gap:.38rem;margin-bottom:.85rem}
+.lf-label{
+  font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--txt3);font-weight:400;
+}
+.lf-input-wrap{position:relative}
+.lf-input{
+  width:100%;
+  background:rgba(29,25,53,.9);
+  border:1.5px solid rgba(255,255,255,.07);
+  color:var(--txt);
+  padding:.82rem 1rem;border-radius:var(--r10);
+  font-size:.84rem;font-weight:300;
+  transition:border-color .3s,box-shadow .3s;
+}
+.lf-input:focus{
+  border-color:rgba(194,57,104,.55);
+  box-shadow:0 0 0 3px rgba(194,57,104,.1);
+  outline:none;
+}
+.lf-input::placeholder{color:rgba(244,240,254,.22)}
+.lf-eye{
+  position:absolute;right:.85rem;top:50%;transform:translateY(-50%);
+  background:none;color:var(--txt3);font-size:.85rem;cursor:pointer;
+  transition:color .2s;padding:.2rem;border:none;line-height:1;
+}
+.lf-eye:hover{color:var(--txt)}
+/* ── MPIN 4-box row ── */
+.mpin-row{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:.65rem;margin-top:.4rem;
+}
+.mpin-box{
+  width:100%;
+  /* Always square based on width */
+  aspect-ratio:1/1;
+  max-height:64px;
+  border-radius:10px;
+  background:rgba(29,25,53,.95);
+  border:2px solid rgba(255,255,255,.08);
+  color:var(--txt);
+  font-size:1.5rem;font-weight:700;text-align:center;
+  caret-color:var(--rose2);
+  transition:border-color .3s,box-shadow .3s,transform .15s;
+  -webkit-appearance:none;appearance:none;
+  padding:0;
+}
+.mpin-box:focus{
+  border-color:var(--rose);
+  box-shadow:0 0 0 3px rgba(194,57,104,.14);
+  outline:none;
+  transform:scale(1.04);
+}
+/* Constrain MPIN boxes on larger screens so they don't go huge */
+@media(min-width:480px){.mpin-box{max-height:58px;font-size:1.4rem}}
+/* Login button */
+.login-btn{
+  width:100%;margin-top:.4rem;
+  background:linear-gradient(135deg,var(--rose) 0%,#8a1538 100%);
+  color:#fff;padding:.92rem;border-radius:var(--r50);
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;
+  box-shadow:0 8px 28px var(--glow);
+  transition:transform .2s,box-shadow .3s;cursor:pointer;
+  position:relative;overflow:hidden;
+  font-family:'Jost',sans-serif;border:none;
+}
+.login-btn::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,transparent,rgba(255,255,255,.09),transparent);
+  transform:translateX(-100%);transition:transform .5s;
+}
+.login-btn:hover::before{transform:translateX(100%)}
+.login-btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px var(--glow)}
+.login-back{
+  font-size:.68rem;color:var(--txt3);text-align:center;
+  margin-top:1rem;cursor:pointer;transition:color .2s;
+}
+.login-back:hover{color:var(--txt2)}
+.login-back span{color:var(--rose2);text-decoration:underline;cursor:pointer}
+
+/* ─── ADMIN PANEL ─── */
+.admin-layout{display:flex;min-height:100vh;flex-direction:row}
+.admin-sidebar{
+  width:240px;flex-shrink:0;
+  background:var(--ink2);border-right:1px solid var(--bdr2);
+  display:flex;flex-direction:column;
+  position:fixed;top:0;left:0;bottom:0;z-index:200;
+  transition:transform .35s;overflow-y:auto;
+}
+@media(max-width:1024px){.admin-sidebar{transform:translateX(-100%)}.admin-sidebar.open{transform:translateX(0)}}
+.admin-main{flex:1;min-height:100vh;overflow-y:auto;margin-left:240px}
+@media(max-width:1024px){.admin-main{margin-left:0}}
+.adm-logo{padding:1.4rem 1.4rem 1.1rem}
+.adm-logo-text{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;font-weight:600;background:linear-gradient(135deg,var(--rose2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.adm-logo-tag{font-size:.45rem;letter-spacing:.18em;text-transform:uppercase;color:var(--txt3);display:block;margin-top:.18rem}
+.adm-nav{padding:.5rem .7rem;flex:1}
+.adm-nav-group{margin-bottom:1.2rem}
+.adm-nav-label{font-size:.48rem;letter-spacing:.26em;text-transform:uppercase;color:var(--txt3);padding:.4rem .7rem;display:block}
+.adm-ni{
+  display:flex;align-items:center;gap:.7rem;padding:.65rem .7rem;
+  border-radius:var(--r10);color:var(--txt2);font-size:.74rem;cursor:pointer;
+  transition:background .2s,color .2s;margin-bottom:.2rem;
+}
+.adm-ni:hover{background:rgba(255,255,255,.05);color:#fff}
+.adm-ni.active{background:linear-gradient(135deg,rgba(194,57,104,.18),rgba(184,131,26,.1));color:#fff;border-left:2px solid var(--rose)}
+.adm-ni-icon{font-size:.95rem;flex-shrink:0}
+.adm-topbar{
+  background:rgba(10,8,22,.95);backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--bdr2);
+  padding:.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:10;gap:1rem;
+}
+#admin-ham{display:none;background:none;color:var(--txt2);font-size:1.2rem;padding:.3rem;cursor:pointer}
+@media(max-width:1024px){#admin-ham{display:flex}}
+.adm-page-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:#fff}
+.adm-user{display:flex;align-items:center;gap:.65rem}
+.adm-av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.75rem;color:#fff;flex-shrink:0}
+.adm-name{font-size:.76rem;color:var(--txt2)}
+.adm-content{padding:1.5rem}
+.adm-content-inner{max-width:1200px;margin:0 auto}
+/* KPI Cards */
+.kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:1.8rem}
+@media(min-width:640px){.kpi-grid{grid-template-columns:repeat(4,1fr)}}
+.kpi-card{background:var(--surface);border:1px solid var(--bdr2);border-radius:var(--r16);padding:1.3rem;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.kpi-card:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,.4)}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:0;transition:opacity .3s}
+.kpi-card:hover::before{opacity:1}
+.kpi-card.rose::before{background:linear-gradient(90deg,var(--rose),var(--rose2))}
+.kpi-card.gold::before{background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.kpi-card.plum::before{background:linear-gradient(90deg,var(--plum),#8a5ad0)}
+.kpi-card.teal::before{background:linear-gradient(90deg,#1a8a7a,#20c0aa)}
+.kpi-icon{font-size:1.4rem;margin-bottom:.5rem}
+.kpi-val{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;background:linear-gradient(135deg,var(--rose2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.05}
+.kpi-lbl{font-size:.62rem;color:var(--txt3);margin-top:.3rem;letter-spacing:.08em}
+.kpi-trend{font-size:.6rem;margin-top:.5rem}
+.kpi-trend.up{color:#4caf50}.kpi-trend.dn{color:#f44336}
+/* Charts */
+.chart-row{display:grid;grid-template-columns:1fr;gap:1.2rem;margin-bottom:1.8rem}
+@media(min-width:768px){.chart-row{grid-template-columns:2fr 1fr}}
+.panel{background:var(--surface);border:1px solid var(--bdr2);border-radius:var(--r16);padding:1.4rem}
+.panel-title{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:#fff;margin-bottom:1.2rem}
+.bars-wrap{display:flex;gap:.55rem;align-items:flex-end;height:160px;padding-top:.5rem}
+.bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:.4rem}
+.bar-fill{width:100%;border-radius:4px 4px 0 0;background:linear-gradient(to top,var(--rose),var(--rose2));transition:height .6s cubic-bezier(.25,.46,.45,.94);min-height:4px;position:relative;cursor:pointer}
+.bar-fill::after{content:attr(data-lbl);position:absolute;bottom:calc(100% + 4px);left:50%;transform:translateX(-50%);font-size:.54rem;color:var(--txt3);white-space:nowrap;opacity:0;transition:opacity .2s}
+.bar-fill:hover::after{opacity:1}
+.bar-month{font-size:.52rem;color:var(--txt3);text-align:center}
+/* Tables */
+.adm-table-wrap{overflow-x:auto;border-radius:var(--r10);border:1px solid var(--bdr2)}
+.adm-table{width:100%;border-collapse:collapse;min-width:540px}
+.adm-table th{background:var(--surface2);padding:.75rem 1rem;text-align:left;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--txt3);font-weight:400;border-bottom:1px solid var(--bdr2)}
+.adm-table td{padding:.8rem 1rem;font-size:.76rem;color:var(--txt2);border-bottom:1px solid rgba(255,255,255,.04)}
+.adm-table tr:last-child td{border-bottom:none}
+.adm-table tr:hover td{background:rgba(255,255,255,.02)}
+.badge-status{display:inline-flex;padding:.2rem .65rem;border-radius:var(--r50);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.badge-status.confirmed{background:rgba(76,175,80,.15);color:#81c784;border:1px solid rgba(76,175,80,.25)}
+.badge-status.pending{background:rgba(255,193,7,.12);color:#ffd54f;border:1px solid rgba(255,193,7,.22)}
+.badge-status.cancelled{background:rgba(244,67,54,.12);color:#ef9a9a;border:1px solid rgba(244,67,54,.22)}
+.adm-action{background:var(--glass);border:1px solid var(--bdr2);color:var(--txt2);padding:.28rem .65rem;border-radius:var(--r10);font-size:.62rem;cursor:pointer;transition:all .2s;font-family:'Jost',sans-serif}
+.adm-action:hover{border-color:var(--rose);color:#fff}
+
+/* ─── TEAM PANEL ─── */
+.team-layout{display:flex;min-height:100vh}
+.team-sidebar{
+  width:210px;flex-shrink:0;
+  background:var(--ink2);border-right:1px solid var(--bdr2);
+  display:flex;flex-direction:column;
+  position:fixed;top:0;left:0;bottom:0;z-index:200;overflow-y:auto;
+  transition:transform .35s;
+}
+@media(max-width:768px){.team-sidebar{transform:translateX(-100%)}.team-sidebar.open{transform:translateX(0)}}
+.team-main{flex:1;min-height:100vh;overflow-y:auto;margin-left:210px;display:flex;flex-direction:column}
+@media(max-width:768px){.team-main{margin-left:0}}
+.ts-logo{padding:1.3rem}
+.ts-logo-text{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;font-weight:600;background:linear-gradient(135deg,var(--rose2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.ts-member-chip{padding:.9rem 1.3rem;border-top:1px solid var(--bdr2);border-bottom:1px solid var(--bdr2);display:flex;align-items:center;gap:.7rem;margin-bottom:.5rem}
+.ts-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:#fff;flex-shrink:0}
+.ts-name{font-size:.8rem;font-weight:500;color:#fff;line-height:1.2}
+.ts-role{font-size:.58rem;color:var(--txt3);letter-spacing:.06em}
+.ts-nav{padding:.5rem .7rem;flex:1}
+.ts-ni{display:flex;align-items:center;gap:.7rem;padding:.65rem .7rem;border-radius:var(--r10);color:var(--txt2);font-size:.74rem;cursor:pointer;transition:background .2s,color .2s;margin-bottom:.2rem}
+.ts-ni:hover{background:rgba(255,255,255,.05);color:#fff}
+.ts-ni.active{background:linear-gradient(135deg,rgba(194,57,104,.16),rgba(184,131,26,.08));color:#fff;border-left:2px solid var(--rose2)}
+.team-topbar{background:rgba(10,8,22,.95);backdrop-filter:blur(18px);border-bottom:1px solid var(--bdr2);padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;gap:1rem}
+#team-ham{display:none;background:none;color:var(--txt2);font-size:1.2rem;padding:.3rem;cursor:pointer}
+@media(max-width:768px){#team-ham{display:flex}}
+.team-content-area{padding:1.5rem;flex:1}
+
+/* ─── BILLING ─── */
+.billing-layout{display:grid;grid-template-columns:1fr;gap:1.2rem}
+@media(min-width:768px){.billing-layout{grid-template-columns:3fr 2fr}}
+.bill-panel{background:var(--surface);border:1px solid var(--bdr2);border-radius:var(--r16);padding:1.4rem}
+.bill-search{display:flex;align-items:center;gap:.7rem;background:var(--surface2);border:1px solid var(--bdr2);border-radius:var(--r10);padding:.65rem 1rem;margin:.8rem 0;transition:border-color .3s}
+.bill-search:focus-within{border-color:rgba(194,57,104,.35)}
+.bill-search input{background:none;color:var(--txt);width:100%;font-size:.8rem;font-weight:300}
+.bill-search input::placeholder{color:var(--txt3)}
+.bill-svc-dropdown{background:var(--surface2);border:1px solid var(--bdr2);border-radius:var(--r10);overflow:hidden;max-height:200px;overflow-y:auto}
+.bill-svc-item{display:flex;justify-content:space-between;padding:.7rem 1rem;cursor:pointer;transition:background .2s;font-size:.76rem;color:var(--txt2)}
+.bill-svc-item:hover{background:rgba(194,57,104,.08);color:#fff}
+.bill-svc-price{color:var(--gold2);font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:700}
+.bill-items-list{min-height:80px;margin:.8rem 0}
+.bill-item-row{display:flex;align-items:center;gap:.8rem;padding:.7rem .9rem;background:rgba(255,255,255,.03);border:1px solid var(--bdr2);border-radius:var(--r10);margin-bottom:.55rem}
+.bi-name{flex:1;font-size:.78rem;color:#fff;min-width:0}
+.qty-ctrl{display:flex;align-items:center;gap:.45rem}
+.qty-btn{width:24px;height:24px;border-radius:50%;background:var(--glass);border:1px solid var(--bdr2);color:var(--txt);font-size:.9rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s}
+.qty-btn:hover{border-color:var(--rose)}
+.qty-val{font-size:.76rem;color:#fff;min-width:1.2rem;text-align:center}
+.bi-price{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--gold2);font-weight:700;min-width:3rem;text-align:right}
+.bi-rm{color:var(--txt3);cursor:pointer;font-size:.9rem;padding:.2rem;transition:color .2s}
+.bi-rm:hover{color:var(--rose2)}
+.bill-summary{background:var(--surface);border:1px solid var(--bdr2);border-radius:var(--r16);padding:1.4rem}
+.sum-row{display:flex;justify-content:space-between;font-size:.78rem;color:var(--txt2);padding:.5rem 0;border-bottom:1px solid var(--bdr2)}
+.sum-total{display:flex;justify-content:space-between;padding:.8rem 0;margin-top:.3rem}
+.sum-total span:first-child{font-size:.88rem;font-weight:500;color:#fff}
+.sum-total span:last-child{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--gold2)}
+.coupon-row{display:flex;gap:.7rem;margin:.9rem 0}
+.coupon-in{flex:1;background:var(--surface2);border:1px solid var(--bdr2);color:var(--txt);padding:.72rem 1rem;border-radius:var(--r10);font-size:.8rem;font-weight:300;transition:border-color .3s}
+.coupon-in:focus{border-color:var(--rose);outline:none}
+.coupon-in::placeholder{color:var(--txt3)}
+.coupon-apply-btn{background:linear-gradient(135deg,rgba(184,131,26,.2),rgba(194,57,104,.12));border:1px solid rgba(184,131,26,.3);color:var(--gold2);padding:.72rem 1.1rem;border-radius:var(--r10);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;transition:border-color .3s;white-space:nowrap}
+.coupon-apply-btn:hover{border-color:var(--gold2)}
+.invoice-out{margin-top:1.2rem}
+
+/* ─── FOOTER ─── */
+.site-footer{background:var(--ink3);border-top:1px solid var(--bdr2);padding:4rem 5vw 5.5rem}
+@media(min-width:900px){.site-footer{padding-bottom:3.5rem}}
+.footer-top{display:grid;grid-template-columns:1fr;gap:2.5rem;margin-bottom:3rem}
+@media(min-width:600px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.footer-top{grid-template-columns:2fr 1fr 1fr 1fr}}
+.fl-brand{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-style:italic;font-weight:600;background:linear-gradient(135deg,var(--rose2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.fl-tag{font-size:.48rem;letter-spacing:.22em;text-transform:uppercase;color:var(--txt3);display:block;margin-top:.3rem;margin-bottom:.9rem}
+.fl-desc{font-size:.76rem;font-weight:300;color:var(--txt3);line-height:1.85;max-width:26ch}
+.ft-col-title{font-size:.54rem;letter-spacing:.3em;text-transform:uppercase;color:var(--rose2);margin-bottom:1.1rem}
+.ft-links{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.ft-links a{font-size:.76rem;font-weight:300;color:var(--txt3);transition:color .3s;cursor:pointer}
+.ft-links a:hover{color:var(--gold2)}
+.footer-bottom{border-top:1px solid var(--bdr2);padding-top:1.7rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+.fb-copy{font-size:.6rem;color:var(--txt3);letter-spacing:.05em}
+.fb-made{font-size:.6rem;color:var(--txt3)}
+.fb-made span{color:var(--rose2)}
+
+/* ─── TOAST ─── */
+#toast{
+  position:fixed;bottom:5.5rem;right:1.5rem;z-index:9001;
+  background:var(--surface);border:1px solid var(--bdr);
+  padding:.9rem 1.3rem;border-radius:var(--r16);box-shadow:var(--shad);
+  display:flex;align-items:center;gap:.75rem;font-size:.78rem;color:var(--txt);
+  animation:slideInRight .4s ease;transition:opacity .3s,transform .3s;
+  backdrop-filter:blur(16px);max-width:320px;
+}
+#toast.out{opacity:0;transform:translateX(20px);pointer-events:none}
+@media(min-width:900px){#toast{right:2rem;bottom:3.5rem}}
+
+/* ─── WA FLOAT ─── */
+.wa-fab{
+  position:fixed;bottom:4.5rem;right:1.2rem;z-index:451;
+  width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(135deg,#25d366,#128c3e);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 24px rgba(37,211,102,.45);
+  transition:transform .25s,box-shadow .3s;
+  text-decoration:none;
+}
+.wa-fab::before{
+  content:'';position:absolute;inset:-4px;border-radius:50%;
+  border:2px solid rgba(37,211,102,.3);
+  animation:waPulse 2.2s ease-in-out infinite;
+}
+@keyframes waPulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.4);opacity:0}}
+.wa-fab:hover{transform:scale(1.1);box-shadow:0 12px 32px rgba(37,211,102,.55)}
+.wa-fab:hover::before{animation:none}
+.wa-fab svg{width:26px;height:26px}
+@media(min-width:900px){.wa-fab{bottom:2rem;right:2rem}}
+
+/* ─── STICKY MOBILE CTA ─── */
+.sticky-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:400;
+  background:rgba(10,8,22,.98);backdrop-filter:blur(20px);
+  border-top:1px solid var(--bdr);
+  padding:.8rem 5vw;
+  display:flex;align-items:center;justify-content:space-between;gap:.8rem;
+}
+@media(min-width:900px){.sticky-bar{display:none}}
+.sb-label strong{display:block;font-size:.8rem;font-weight:500;color:#fff}
+.sb-label span{font-size:.6rem;color:var(--txt3)}
+
+/* ─── TOPBAR FOR INNER PAGES ─── */
+.page-topbar{
+  background:rgba(10,8,22,.95);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--bdr2);
+  padding:1rem 5vw;display:flex;align-items:center;gap:.9rem;
+  position:sticky;top:0;z-index:20;
+}
+.topbar-back{background:var(--glass);border:1px solid var(--bdr2);color:var(--txt2);padding:.48rem 1rem;border-radius:var(--r50);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;transition:border-color .3s,color .3s}
+.topbar-back:hover{border-color:var(--rose);color:#fff}
+.topbar-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:#fff}
+
+/* ─── DIVIDERS / UTILS ─── */
+.hr{height:1px;background:var(--bdr2);margin:1.2rem 0}
+.mt1{margin-top:.5rem}.mt2{margin-top:1rem}.mt3{margin-top:1.5rem}
+.mb1{margin-bottom:.5rem}.mb2{margin-bottom:1rem}
+.flex{display:flex}.items-center{align-items:center}.justify-between{justify-content:space-between}
+.gap1{gap:.5rem}.gap2{gap:1rem}.flex-wrap{flex-wrap:wrap}
+.overflow-x-auto{overflow-x:auto}
+.font-serif{font-family:'Cormorant Garamond',serif}
+.text-rose{color:var(--rose2)}.text-gold{color:var(--gold2)}.text-muted{color:var(--txt3)}
+
+/* ─── MOBILE RESPONSIVE ─── */
+@media(max-width:600px){
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn-p,.hero-actions .btn-s,.hero-actions .btn-g{justify-content:center}
+  .hbc-stats{gap:1.5rem}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .adm-table{min-width:500px}
+}
+@media(max-width:360px){
+  .hero-h1{font-size:2.8rem}
+  #nav{padding:.7rem 4vw}
+  .nav-logo-ring{width:30px;height:30px}
+}
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cur"></div><div id="cur2"></div>
+
+<!-- ═══════════ LOADER ═══════════ -->
+<div id="loader">
+  <div class="ld-gem">
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="gemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#e05482"/>
+          <stop offset="50%" stop-color="#d4a040"/>
+          <stop offset="100%" stop-color="#f0b8cc"/>
+        </linearGradient>
+      </defs>
+      <polygon points="30,5 55,22 50,50 10,50 5,22" fill="url(#gemGrad)" opacity=".9"/>
+      <polygon points="30,5 55,22 30,18" fill="rgba(255,255,255,.25)"/>
+      <polygon points="5,22 30,18 10,50" fill="rgba(255,255,255,.08)"/>
+      <polygon points="55,22 50,50 30,18" fill="rgba(0,0,0,.15)"/>
+    </svg>
+  </div>
+  <div class="ld-title">Grace & Glamour</div>
+  <div class="ld-sub">Luxury Beauty & Bridal · Surat</div>
+  <div class="ld-bar-outer"><div class="ld-bar-inner"></div></div>
+  <div class="ld-dots"><div class="ld-dot"></div><div class="ld-dot"></div><div class="ld-dot"></div></div>
+</div>
+
+<!-- WA FLOAT -->
+<a class="wa-fab" href="https://wa.me/919876543210" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="white"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.557 4.11 1.531 5.829L.054 23.25c-.093.351.197.672.55.594l5.698-1.355A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.76 9.76 0 01-5.143-1.463l-.365-.215-3.786.9.96-3.685-.238-.376A9.76 9.76 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818S21.818 6.577 21.818 12 17.423 21.818 12 21.818z" fill="white"/>
+  </svg>
+</a>
+
+<!-- TOAST -->
+<div id="toast" class="out"><span id="toast-msg"></span></div>
+
+<!-- ═══════════════════════════════════════════
+     MAIN WEBSITE
+═══════════════════════════════════════════ -->
+<div id="view-website" class="screen active" style="flex-direction:column">
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-brand" onclick="scrollTop()">
+      <div class="nav-logo-ring">G</div>
+      <div>
+        <div class="nav-brand-name">Grace & Glamour</div>
+        <span class="nav-brand-tag">Luxury Beauty & Bridal · Surat</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a onclick="sScroll('svc-section')">Services</a></li>
+      <li><a onclick="sScroll('trending-section')">Trending</a></li>
+      <li><a onclick="sScroll('branches-section')">Branches</a></li>
+      <li><a onclick="sScroll('about-section')">About</a></li>
+      <li><a onclick="goView('view-booking')">Bookings</a></li>
+      <li><a onclick="goView('view-admin-login')" style="color:var(--gold2)">Admin</a></li>
+      <li><a onclick="goView('view-team-login')" style="color:var(--rose2)">Team</a></li>
+    </ul>
+    <div class="flex items-center gap2">
+      <button class="nav-book" onclick="goView('view-booking')">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="3"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          <circle cx="8" cy="16" r="1.5" fill="currentColor"/><circle cx="12" cy="16" r="1.5" fill="currentColor"/>
+        </svg>
+        <span class="nbook-txt">Book Now</span>
+      </button>
+      <button class="ham" id="ham-btn" onclick="toggleMob()" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mob-menu" role="dialog" aria-modal="true">
+    <button class="mob-close" onclick="closeMenu()" aria-label="Close menu">✕</button>
+    <a class="mob-link" onclick="closeMenu();sScroll('svc-section')">Services</a>
+    <a class="mob-link" onclick="closeMenu();sScroll('trending-section')">Trending</a>
+    <a class="mob-link" onclick="closeMenu();sScroll('branches-section')">Branches</a>
+    <a class="mob-link" onclick="closeMenu();sScroll('about-section')">About</a>
+    <a class="mob-link" onclick="closeMenu();goView('view-booking')">Book Now</a>
+    <a class="mob-link" onclick="closeMenu();goView('view-admin-login')" style="color:var(--gold2)">Admin</a>
+    <a class="mob-link" onclick="closeMenu();goView('view-team-login')" style="color:var(--rose2)">Team</a>
+    <button class="btn-p mt3" onclick="closeMenu();goView('view-booking')">📅 Book Appointment</button>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <!-- Salon room background image -->
+    <div class="hero-bg-img"></div>
+    <!-- Dark cinematic overlay -->
+    <div class="hero-bg-overlay"></div>
+    <!-- Colour tint layer -->
+    <div class="hero-bg-layer"></div>
+    <div class="hero-noise"></div>
+    <div class="hero-particles" id="ptcl"></div>
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">Surat's Premier Luxury Beauty Platform</div>
+        <h1 class="hero-h1">
+          <span class="hw1">Grace</span>
+          <span class="hw2">& Glamour</span>
+        </h1>
+        <p class="hero-tagline">"Where every visit is a celebration of beauty, elegance, and timeless grace."</p>
+        <div class="hero-actions">
+          <button class="btn-p" onclick="goView('view-booking')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Book Appointment
+          </button>
+          <button class="btn-s" onclick="sScroll('svc-section')">✨ Explore Services</button>
+          <button class="btn-g" onclick="sScroll('about-section')">👰 Bridal Packages</button>
+        </div>
+        <div class="hero-badges">
+          <span class="badge"><span class="badge-dot"></span>★ 4.8 Google</span>
+          <span class="badge"><span class="badge-dot"></span>125+ Reviews</span>
+          <span class="badge"><span class="badge-dot"></span>3 Branches · Surat</span>
+          <span class="badge"><span class="badge-dot"></span>Est. 2011</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-frame" id="heroFrame">
+          <img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=900&q=85" alt="Grace & Glamour luxury salon" loading="eager"/>
+          <div class="hero-frame-border"></div>
+          <div class="hero-float-card">
+            <div class="hfc-val">500+</div>
+            <div class="hfc-lbl">Brides Styled</div>
+          </div>
+          <div class="hero-rating-card">
+            <div>
+              <div class="hrc-stars">★★★★★</div>
+              <div class="hrc-val">4.8</div>
+              <div class="hrc-lbl">Google Rating</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" onclick="sScroll('stats-bar')">
+      <span class="hsh-txt">Scroll</span>
+      <div class="hsh-line"></div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <div class="stats-band rev" id="stats-bar">
+    <div class="sband-item"><div class="sband-num" data-t="4.8" data-dec>0</div><div class="sband-lbl">Google Rating ★</div></div>
+    <div class="sband-item"><div class="sband-num" data-t="125">0</div><div class="sband-lbl">Verified Reviews</div></div>
+    <div class="sband-item"><div class="sband-num" data-t="3">0</div><div class="sband-lbl">Branches</div></div>
+    <div class="sband-item"><div class="sband-num" data-t="2011">0</div><div class="sband-lbl">Established Since</div></div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="svc-section" class="sp" style="background:var(--ink2)">
+    <div class="sec-head rev">
+      <div class="sec-head-tag">Our Services</div>
+      <h2 class="sec-title">Everything to Make You <em>Shine</em></h2>
+      <p class="sec-sub">Browse our complete luxury service menu — from everyday glam to bridal perfection.</p>
+    </div>
+    <div class="svc-search-wrap rev">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--txt3);flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="svc-search" placeholder="Search services, e.g. 'facial', 'bridal', 'keratin'…" oninput="filterSvc(this.value)"/>
+    </div>
+    <div class="cat-pills rev" id="cat-pills"></div>
+    <div id="svc-container"></div>
+  </section>
+
+  <!-- BRIDAL BANNER -->
+  <div class="hero-banner rev">
+    <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=1400&q=85" alt="Bridal experience" loading="lazy"/>
+    <div class="hero-banner-grad"></div>
+    <div class="hero-banner-content">
+      <div class="hbc-tag">Bridal Special</div>
+      <h2 class="hbc-title">Your Most <em>Radiant</em> Day Starts Here</h2>
+      <p class="hbc-body">From mehendi to the mandap — our bridal team crafts every detail to perfection.</p>
+      <div class="hbc-stats">
+        <div><div class="hbs-val">500+</div><div class="hbs-lbl">Brides Styled</div></div>
+        <div><div class="hbs-val">13+</div><div class="hbs-lbl">Years Experience</div></div>
+      </div>
+      <button class="btn-p" onclick="goView('view-booking')">Book Bridal Consultation</button>
+    </div>
+  </div>
+
+  <!-- TRENDING -->
+  <section id="trending-section" class="sp" style="background:var(--ink3)">
+    <div class="sec-head rev">
+      <div class="sec-head-tag">What's Hot</div>
+      <h2 class="sec-title"><em>Trending</em> Right Now</h2>
+    </div>
+    <div class="trend-rail rev" id="trend-rail"></div>
+  </section>
+
+  <!-- COUPONS -->
+  <section class="sp" style="background:var(--ink)">
+    <div class="sec-head rev">
+      <div class="sec-head-tag">Exclusive Deals</div>
+      <h2 class="sec-title">Offers & <em>Coupons</em></h2>
+      <p class="sec-sub">Tap any code to copy — use at billing for instant savings!</p>
+    </div>
+    <div class="coupon-grid rev" id="coupon-grid"></div>
+  </section>
+
+  <!-- BRANCHES -->
+  <section id="branches-section" class="sp" style="background:var(--ink2)">
+    <div class="sec-head rev">
+      <div class="sec-head-tag">Find Us</div>
+      <h2 class="sec-title">3 Branches Across <em>Surat</em></h2>
+      <p class="sec-sub">Same luxury, same love — visit your nearest Grace & Glamour.</p>
+    </div>
+    <div class="branches-grid">
+      <div class="branch-card rev">
+        <div class="branch-img">
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Vesu Branch" loading="lazy"/>
+          <div class="branch-img-overlay"></div>
+          <div class="branch-num">01</div>
+        </div>
+        <div class="branch-body">
+          <div class="branch-name">Vesu Branch</div>
+          <div class="branch-addr">G 31 & 32, Atlanta Shopper,<br>Nr. Reliance Market, Vesu,<br>Surat — 395007</div>
+          <span class="branch-tag">📍 Main Branch · Opens 10 AM</span>
+        </div>
+      </div>
+      <div class="branch-card rev rd1">
+        <div class="branch-img">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Rander Branch" loading="lazy"/>
+          <div class="branch-img-overlay"></div>
+          <div class="branch-num">02</div>
+        </div>
+        <div class="branch-body">
+          <div class="branch-name">Rander Branch</div>
+          <div class="branch-addr">Chanakya Marg,<br>Rander, Surat,<br>Gujarat</div>
+          <span class="branch-tag">📍 Rander · Opens 10 AM</span>
+        </div>
+      </div>
+      <div class="branch-card rev rd2">
+        <div class="branch-img">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Jahangirpura Branch" loading="lazy"/>
+          <div class="branch-img-overlay"></div>
+          <div class="branch-num">03</div>
+        </div>
+        <div class="branch-body">
+          <div class="branch-name">Jahangirpura Branch</div>
+          <div class="branch-addr">Shop No. G-24,<br>Jahangirpura, Surat,<br>Gujarat</div>
+          <span class="branch-tag">📍 Jahangirpura · Opens 10 AM</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about-section" class="sp" style="background:var(--ink3)">
+    <div class="about-layout">
+      <div class="about-img-wrap rev">
+        <div class="about-img-frame">
+          <img src="https://images.unsplash.com/photo-1614252234498-9e389e5a9a2d?w=700&q=85" alt="Indian bridal makeup" loading="lazy"/>
+        </div>
+        <div class="about-badge">
+          <div class="ab-val">Since 2011</div>
+          <div class="ab-lbl">Trusted in Surat</div>
+        </div>
+      </div>
+      <div class="rev rd2">
+        <div class="about-text-head">
+          <div class="sec-head-tag" style="justify-content:flex-start;margin-bottom:.7rem">Our Story</div>
+          <h2 class="sec-title" style="text-align:left">Surat's <em>Trusted</em><br>Beauty Destination</h2>
+        </div>
+        <p class="about-body">Established in 2011, Grace & Glamour is Surat's premier luxury beauty and wellness centre. From a single boutique in Vesu, we've grown into one of the city's most-loved salon brands — with three thriving branches serving thousands of happy clients.</p>
+        <p class="about-body">We specialise in hair styling, bridal makeup, skincare, waxing, threading, nail services, and full bridal packages. Our highly trained team makes every client feel truly extraordinary.</p>
+        <div class="about-feats">
+          <div class="about-feat"><span class="about-feat-dot"></span>Specialised bridal makeup & hair styling</div>
+          <div class="about-feat"><span class="about-feat-dot"></span>Premium global beauty brands only</div>
+          <div class="about-feat"><span class="about-feat-dot"></span>Highly trained & certified stylists</div>
+          <div class="about-feat"><span class="about-feat-dot"></span>Hygienic, sterilised tools every visit</div>
+          <div class="about-feat"><span class="about-feat-dot"></span>Online booking via website & WhatsApp</div>
+        </div>
+        <div class="flex gap2 flex-wrap mt3">
+          <button class="btn-p" onclick="goView('view-booking')">Book Now</button>
+          <button class="btn-s" onclick="sScroll('svc-section')">View Services</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="sp" style="background:var(--ink);padding-left:0;padding-right:0;overflow:hidden">
+    <div style="padding:0 5vw 2.5rem;text-align:center" class="rev">
+      <div class="sec-head-tag" style="justify-content:center">Our Work</div>
+      <h2 class="sec-title">Beauty in <em>Motion</em></h2>
+    </div>
+    <div style="overflow:hidden"><div class="g-rail" id="g-rail"></div></div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="sp" style="background:var(--ink2)">
+    <div class="sec-head rev">
+      <div class="sec-head-tag">Client Love</div>
+      <h2 class="sec-title">What Surat <em>Says</em></h2>
+      <p class="sec-sub">Real reviews from verified Google & Justdial clients.</p>
+    </div>
+    <div class="reviews-grid rev" id="reviews-grid"></div>
+  </section>
+
+  <!-- SECOND BANNER -->
+  <div class="hero-banner rev" style="flex-direction:row-reverse">
+    <img src="https://images.unsplash.com/photo-1614252234498-9e389e5a9a2d?w=1400&q=85" alt="Bridal makeup" loading="lazy"/>
+    <div class="hero-banner-grad" style="background:linear-gradient(270deg,rgba(4,3,10,.93) 0%,rgba(4,3,10,.65) 52%,rgba(4,3,10,.12) 100%)"></div>
+    <div class="hero-banner-content" style="margin-left:auto;text-align:right;padding-right:5vw">
+      <div class="hbc-tag" style="justify-content:flex-end">Special Offer</div>
+      <h2 class="hbc-title">Get the <em>Best Makeup</em><br>on Your Special Day</h2>
+      <p class="hbc-body" style="margin-left:auto">Book your bridal consultation today. Limited slots — don't miss out!</p>
+      <div class="flex gap2 flex-wrap" style="justify-content:flex-end">
+        <button class="btn-p" onclick="goView('view-booking')">Book Package</button>
+        <a href="https://wa.me/919876543210" class="btn-s" target="_blank">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div>
+        <div class="fl-brand">Grace & Glamour</div>
+        <span class="fl-tag">Premium Beauty & Bridal Salon · Surat</span>
+        <p class="fl-desc">Surat's trusted beauty destination since 2011. Three branches — Vesu, Rander & Jahangirpura.</p>
+      </div>
+      <div>
+        <div class="ft-col-title">Navigation</div>
+        <ul class="ft-links">
+          <li><a onclick="sScroll('svc-section')">Services</a></li>
+          <li><a onclick="sScroll('branches-section')">Branches</a></li>
+          <li><a onclick="sScroll('about-section')">About Us</a></li>
+          <li><a onclick="goView('view-booking')">Book Now</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-col-title">Services</div>
+        <ul class="ft-links">
+          <li><a>Hair Styling</a></li>
+          <li><a>Bridal Packages</a></li>
+          <li><a>Nail Studio</a></li>
+          <li><a>Waxing & Threading</a></li>
+          <li><a>Facials & Skin</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-col-title">Connect</div>
+        <ul class="ft-links">
+          <li><a href="https://instagram.com/grace_n_glamour" target="_blank">@grace_n_glamour</a></li>
+          <li><a href="https://wa.me/919876543210" target="_blank">💬 WhatsApp Us</a></li>
+          <li><a>★ 4.8 Google Reviews</a></li>
+          <li><a href="tel:+919876543210">📞 Call Now</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="fb-copy">© 2025 Grace & Glamour Salon, Surat · All rights reserved.</span>
+      <span class="fb-made">Made with <span>♥</span> in Surat, India</span>
+    </div>
+  </footer>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="sticky-bar">
+    <div class="sb-label"><strong>Grace & Glamour</strong><span>Vesu · Rander · Jahangirpura</span></div>
+    <button class="btn-p" onclick="goView('view-booking')" style="font-size:.64rem;padding:.65rem 1.3rem">Book Now</button>
+  </div>
+</div>
+
+<!-- ═════════════════════════════════
+     BOOKING VIEW
+═════════════════════════════════ -->
+<div id="view-booking" class="screen" style="background:var(--ink);flex-direction:column">
+  <div class="page-topbar">
+    <button class="topbar-back" onclick="goView('view-website')">← Back</button>
+    <span class="topbar-title">Book an Appointment</span>
+  </div>
+  <div class="booking-grid">
+    <div class="book-panel">
+      <div class="bp-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Select Date
+      </div>
+      <div class="cal-header">
+        <button class="cal-nav" onclick="changeMonth(-1)">‹</button>
+        <div class="cal-month font-serif" id="cal-month"></div>
+        <button class="cal-nav" onclick="changeMonth(1)">›</button>
+      </div>
+      <div class="cal-grid">
+        <div class="cal-dh">Su</div><div class="cal-dh">Mo</div><div class="cal-dh">Tu</div>
+        <div class="cal-dh">We</div><div class="cal-dh">Th</div><div class="cal-dh">Fr</div><div class="cal-dh">Sa</div>
+        <div id="cal-days" style="display:contents"></div>
+      </div>
+      <div class="hr"></div>
+      <div class="bp-title" style="font-size:.9rem;margin-bottom:.5rem">⏰ Time Slots</div>
+      <div class="slots-grid" id="slot-grid"></div>
+      <div class="hr"></div>
+      <div class="bp-title" style="font-size:.9rem;margin-bottom:.5rem">👩 Choose Stylist</div>
+      <div class="stylists-row" id="staff-grid"></div>
+    </div>
+    <div class="book-panel">
+      <div class="bp-title">📝 Your Details</div>
+      <label class="bf-label">Full Name *</label>
+      <input class="bf-input" id="bk-name" placeholder="Your full name"/>
+      <label class="bf-label">WhatsApp Number *</label>
+      <input class="bf-input" id="bk-phone" placeholder="+91 98765 43210"/>
+      <label class="bf-label">Branch *</label>
+      <select class="bf-select" id="bk-branch">
+        <option value="">Select branch…</option>
+        <option>Vesu Branch (Main)</option>
+        <option>Rander Branch</option>
+        <option>Jahangirpura Branch</option>
+      </select>
+      <label class="bf-label">Service *</label>
+      <select class="bf-select" id="bk-service">
+        <option value="">Select service…</option>
+        <option>Hair Styling & Cut</option><option>Colour & Highlights</option>
+        <option>Keratin / Botox Treatment</option><option>Facial / Skin Care</option>
+        <option>Bridal Package</option><option>Waxing & Threading</option>
+        <option>Nail Studio</option><option>Massage</option>
+        <option>Makeup</option><option>Other / Consultation</option>
+      </select>
+      <label class="bf-label">Special Requests</label>
+      <textarea class="bf-input" id="bk-notes" rows="3" placeholder="Any notes or special requests…" style="resize:vertical"></textarea>
+      <button class="btn-p w-full justify-center mt2" onclick="confirmBooking()">✅ Confirm Appointment</button>
+      <p style="font-size:.62rem;color:var(--txt3);text-align:center;margin-top:.7rem">WhatsApp confirmation sent automatically after booking.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════════════════════════
+     ADMIN LOGIN
+═════════════════════════════════ -->
+<div id="view-admin-login" class="screen" style="justify-content:center;align-items:center">
+  <div class="login-wrap">
+    <div class="login-aura"></div>
+    <div class="login-card">
+      <!-- Brand -->
+      <span class="login-brand">Grace & Glamour</span>
+      <span class="login-brand-tag">Admin Portal · Secure Access</span>
+      <!-- Heading -->
+      <div class="login-title">Admin Login</div>
+      <div class="login-hint-text">Access the full management dashboard</div>
+      <!-- Demo creds -->
+      <div class="cred-hint">
+        <div class="cred-hint-title">🔐 Demo Credentials</div>
+        <div class="cred-row"><span class="cred-k">Email</span><span class="cred-v">admin@gracenglamour.com</span></div>
+        <div class="cred-row"><span class="cred-k">Password</span><span class="cred-v">Admin@GG2025</span></div>
+        <button class="autofill-btn" onclick="document.getElementById('adm-email').value='admin@gracenglamour.com';document.getElementById('adm-pass').value='Admin@GG2025'">⚡ Auto-Fill Credentials</button>
+      </div>
+      <!-- Email -->
+      <div class="lf-row">
+        <label class="lf-label">Email Address</label>
+        <input class="lf-input" id="adm-email" type="email" placeholder="admin@gracenglamour.com" autocomplete="email"/>
+      </div>
+      <!-- Password -->
+      <div class="lf-row">
+        <label class="lf-label">Password</label>
+        <div class="lf-input-wrap">
+          <input class="lf-input" id="adm-pass" type="password" placeholder="Enter your password" style="padding-right:3rem" autocomplete="current-password"/>
+          <button class="lf-eye" onclick="toggleEye('adm-pass',this)" aria-label="Show/hide password" type="button">👁</button>
+        </div>
+      </div>
+      <!-- Submit -->
+      <button class="login-btn" onclick="adminLogin()" type="button">Login to Dashboard</button>
+      <div class="login-back" onclick="goView('view-website')">← <span>Back to website</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════════════════════════
+     TEAM LOGIN
+═════════════════════════════════ -->
+<div id="view-team-login" class="screen" style="justify-content:center;align-items:center">
+  <div class="login-wrap">
+    <div class="login-aura" style="background:radial-gradient(ellipse 75% 55% at 30% 40%,rgba(194,57,104,.1) 0%,transparent 58%),radial-gradient(ellipse 55% 75% at 72% 62%,rgba(90,53,128,.09) 0%,transparent 55%)"></div>
+    <div class="login-card">
+      <!-- Brand -->
+      <span class="login-brand">Grace & Glamour</span>
+      <span class="login-brand-tag">Team Portal · Stylist Access</span>
+      <!-- Heading -->
+      <div class="login-title">Team Login</div>
+      <div class="login-hint-text">Enter your Member ID and 4-digit MPIN</div>
+      <!-- Demo creds -->
+      <div class="cred-hint" style="background:rgba(90,53,128,.07);border-color:rgba(90,53,128,.22)">
+        <div class="cred-hint-title" style="color:#b090f5">👩‍💼 Demo Team Credentials</div>
+        <div class="cred-row"><span class="cred-k">Member ID</span><span class="cred-v">GG-001 (Priya Sharma)</span></div>
+        <div class="cred-row"><span class="cred-k">MPIN</span><span class="cred-v">1 2 3 4</span></div>
+        <div class="cred-row"><span class="cred-k">Also try</span><span class="cred-v">GG-002 / 2345</span></div>
+        <button class="autofill-btn" style="border-color:rgba(90,53,128,.32);color:#b090f5" onclick="teamAutofill()">⚡ Auto-Fill GG-001</button>
+      </div>
+      <!-- Member ID -->
+      <div class="lf-row">
+        <label class="lf-label">Team Member ID</label>
+        <input class="lf-input" id="team-id" placeholder="e.g. GG-001" style="text-transform:uppercase;letter-spacing:.06em" autocomplete="username"/>
+      </div>
+      <!-- MPIN -->
+      <div class="lf-row">
+        <label class="lf-label">4-Digit MPIN</label>
+        <div class="mpin-row">
+          <input class="mpin-box" type="password" maxlength="1" id="mp1"
+            oninput="mpNav(this,'mp2')" onkeydown="mpBack(event,'mp1',null)"
+            inputmode="numeric" pattern="[0-9]" autocomplete="one-time-code"/>
+          <input class="mpin-box" type="password" maxlength="1" id="mp2"
+            oninput="mpNav(this,'mp3')" onkeydown="mpBack(event,'mp2','mp1')"
+            inputmode="numeric" pattern="[0-9]"/>
+          <input class="mpin-box" type="password" maxlength="1" id="mp3"
+            oninput="mpNav(this,'mp4')" onkeydown="mpBack(event,'mp3','mp2')"
+            inputmode="numeric" pattern="[0-9]"/>
+          <input class="mpin-box" type="password" maxlength="1" id="mp4"
+            oninput="mpNav(this,null)" onkeydown="mpBack(event,'mp4','mp3')"
+            inputmode="numeric" pattern="[0-9]"/>
+        </div>
+      </div>
+      <!-- Submit -->
+      <button class="login-btn" style="background:linear-gradient(135deg,#8a5ad0 0%,#4a2580 100%);box-shadow:0 8px 28px rgba(138,90,208,.4)" onclick="teamLogin()" type="button">Login to Team Panel</button>
+      <div class="login-back" onclick="goView('view-website')">← <span>Back to website</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════════════════════════
+     ADMIN PANEL
+═════════════════════════════════ -->
+<div id="view-admin" class="screen" style="flex-direction:row">
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="adm-logo">
+      <div class="adm-logo-text">Grace & Glamour</div>
+      <span class="adm-logo-tag">Admin Dashboard v3.0</span>
+    </div>
+    <nav class="adm-nav">
+      <div class="adm-nav-group">
+        <span class="adm-nav-label">Overview</span>
+        <div class="adm-ni active" onclick="adminTab('overview',this)"><span class="adm-ni-icon">📊</span>Dashboard</div>
+        <div class="adm-ni" onclick="adminTab('bookings',this)"><span class="adm-ni-icon">📅</span>Bookings</div>
+        <div class="adm-ni" onclick="adminTab('revenue',this)"><span class="adm-ni-icon">💰</span>Revenue</div>
+      </div>
+      <div class="adm-nav-group">
+        <span class="adm-nav-label">Management</span>
+        <div class="adm-ni" onclick="adminTab('services',this)"><span class="adm-ni-icon">✨</span>Services</div>
+        <div class="adm-ni" onclick="adminTab('team',this)"><span class="adm-ni-icon">👩‍💼</span>Team</div>
+        <div class="adm-ni" onclick="adminTab('customers',this)"><span class="adm-ni-icon">👥</span>Customers</div>
+        <div class="adm-ni" onclick="adminTab('attendance',this)"><span class="adm-ni-icon">🕐</span>Attendance</div>
+      </div>
+      <div class="adm-nav-group">
+        <span class="adm-nav-label">Settings</span>
+        <div class="adm-ni" onclick="adminTab('coupons',this)"><span class="adm-ni-icon">🎟</span>Coupons</div>
+        <div class="adm-ni" onclick="adminTab('settings',this)"><span class="adm-ni-icon">⚙️</span>Settings</div>
+      </div>
+    </nav>
+    <div style="padding:1rem">
+      <button onclick="goView('view-website')" style="width:100%;background:var(--glass);border:1px solid var(--bdr2);color:var(--txt2);padding:.65rem;border-radius:var(--r10);font-size:.7rem;cursor:pointer;font-family:'Jost',sans-serif;transition:border-color .3s" onmouseover="this.style.borderColor='var(--rose)'" onmouseout="this.style.borderColor='var(--bdr2)'">← Exit Admin</button>
+    </div>
+  </aside>
+  <div class="admin-main">
+    <div class="adm-topbar">
+      <div style="display:flex;align-items:center;gap:.8rem">
+        <button id="admin-ham" onclick="document.getElementById('adminSidebar').classList.toggle('open')" aria-label="Toggle menu">☰</button>
+        <span class="adm-page-title font-serif" id="adm-title">Dashboard</span>
+      </div>
+      <div class="adm-user">
+        <div class="adm-av">A</div>
+        <span class="adm-name">Admin · Grace & Glamour</span>
+        <button onclick="goView('view-website')" style="background:none;border:none;color:var(--txt3);font-size:.7rem;cursor:pointer;font-family:'Jost',sans-serif;padding:.2rem .5rem">Exit</button>
+      </div>
+    </div>
+    <div class="adm-content">
+      <div class="adm-content-inner" id="adm-content"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════════════════════════
+     TEAM PANEL
+═════════════════════════════════ -->
+<div id="view-team" class="screen" style="flex-direction:row">
+  <aside class="team-sidebar" id="teamSidebar">
+    <div class="ts-logo">
+      <div class="ts-logo-text">Grace & Glamour</div>
+    </div>
+    <div class="ts-member-chip">
+      <div class="ts-av" id="team-av-letter">P</div>
+      <div>
+        <div class="ts-name" id="team-member-name">Priya Sharma</div>
+        <div class="ts-role" id="team-member-role">Senior Stylist · GG-001</div>
+      </div>
+    </div>
+    <nav class="ts-nav">
+      <div class="ts-ni active" onclick="tTab('bill',this)">🧾 Create Bill</div>
+      <div class="ts-ni" onclick="tTab('attendance',this)">🕐 Attendance</div>
+      <div class="ts-ni" onclick="tTab('appointments',this)">📅 Appointments</div>
+      <div class="ts-ni" onclick="tTab('history',this)">📋 My History</div>
+    </nav>
+    <div style="padding:1rem;margin-top:auto">
+      <button onclick="goView('view-website')" style="width:100%;background:var(--glass);border:1px solid var(--bdr2);color:var(--txt2);padding:.65rem;border-radius:var(--r10);font-size:.7rem;cursor:pointer;font-family:'Jost',sans-serif">← Exit</button>
+    </div>
+  </aside>
+  <div class="team-main">
+    <div class="team-topbar">
+      <div style="display:flex;align-items:center;gap:.7rem">
+        <button id="team-ham" onclick="document.getElementById('teamSidebar').classList.toggle('open')" aria-label="Toggle menu" style="background:none;border:none;color:var(--txt2);font-size:1.2rem;cursor:pointer;padding:.3rem">☰</button>
+        <span class="font-serif" style="font-size:1.05rem;font-weight:600;color:#fff" id="team-tab-title">Create Bill</span>
+      </div>
+      <div style="font-size:.68rem;color:var(--txt3)" id="team-clock"></div>
+    </div>
+    <div class="team-content-area" id="team-content"></div>
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════
+   GRACE & GLAMOUR PLATFORM v4.0 — COMPLETE ENGINE
+═══════════════════════════════════════════════════════════ */
+
+// ── CURSOR
+const c1=document.getElementById('cur'),c2=document.getElementById('cur2');
+let mx=0,my=0,tx=0,ty=0;
+if(window.matchMedia('(hover:hover)').matches){
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;c1.style.left=mx+'px';c1.style.top=my+'px'});
+  (function L(){tx+=(mx-tx)*.1;ty+=(my-ty)*.1;c2.style.left=tx+'px';c2.style.top=ty+'px';requestAnimationFrame(L)})();
+  document.querySelectorAll('a,button,input,select,.trend-card,.coupon-card,.branch-card,.svc-row,.review-card').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{c1.style.width='14px';c1.style.height='14px';c1.style.background='var(--gold2)';c2.style.width='40px';c2.style.height='40px'});
+    el.addEventListener('mouseleave',()=>{c1.style.width='5px';c1.style.height='5px';c1.style.background='var(--rose)';c2.style.width='20px';c2.style.height='20px'});
+  });
+}
+
+// ── LOADER
+window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('out'),3000));
+
+// ── NAV
+window.addEventListener('scroll',()=>{
+  const nav=document.getElementById('nav');
+  nav.classList.toggle('stuck',scrollY>60);
+},{ passive:true });
+function toggleMob(){
+  document.getElementById('mob-menu').classList.toggle('open');
+  document.getElementById('ham-btn').classList.toggle('open');
+  document.body.style.overflow=document.getElementById('mob-menu').classList.contains('open')?'hidden':'';
+}
+function closeMenu(){
+  document.getElementById('mob-menu').classList.remove('open');
+  document.getElementById('ham-btn').classList.remove('open');
+  document.body.style.overflow='';
+}
+function scrollTop(){window.scrollTo({top:0,behavior:'smooth'})}
+function sScroll(id){
+  goView('view-website');
+  setTimeout(()=>{const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})},120);
+}
+
+// ── VIEWS
+function goView(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  const v=document.getElementById(id);
+  if(v){v.classList.add('active');window.scrollTo(0,0)}
+  if(id==='view-admin')renderAdmin('overview');
+  if(id==='view-team'){renderTeam('bill');startClock()}
+}
+
+// ── TOAST
+let _to;
+function showToast(msg,dur=3200){
+  const t=document.getElementById('toast'),m=document.getElementById('toast-msg');
+  m.textContent=msg;t.classList.remove('out');
+  clearTimeout(_to);_to=setTimeout(()=>t.classList.add('out'),dur);
+}
+
+// ── PARTICLES
+function initParticles(){
+  const pc=document.getElementById('ptcl');if(!pc)return;
+  for(let i=0;i<12;i++){
+    const p=document.createElement('div');p.className='hparticle';
+    const s=Math.random()*120+40;const c=i%2===0?'rgba(194,57,104,':'rgba(184,131,26,';
+    p.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;top:${Math.random()*100}%;opacity:${Math.random()*.09+.02};border-radius:50%;background:radial-gradient(circle,${c}.6),transparent);animation:floatY ${Math.random()*4+4}s ease-in-out ${Math.random()*-6}s infinite;`;
+    pc.appendChild(p);
+  }
+}
+
+// ── EYE TOGGLE
+function toggleEye(inputId,btn){
+  const inp=document.getElementById(inputId);
+  if(!inp)return;
+  inp.type=inp.type==='password'?'text':'password';
+  btn.textContent=inp.type==='password'?'👁':'🙈';
+}
+
+// ════════════════════════════════════
+// DATABASE
+// ════════════════════════════════════
+const DB={
+  cats:[
+    {id:'threading',name:'Threading',icon:'✂️'},
+    {id:'waxing',name:'Waxing',icon:'🌿'},
+    {id:'facial',name:'Facial & Cleanup',icon:'✨'},
+    {id:'bleach',name:'Bleach & Polish',icon:'💆'},
+    {id:'massage',name:'Massage',icon:'🧘'},
+    {id:'hair',name:'Hair Services',icon:'💇'},
+    {id:'hair-spa',name:'Hair Spa',icon:'🛁'},
+    {id:'adv-hair',name:'Advanced Hair',icon:'⚗️'},
+    {id:'nails',name:'Nails',icon:'💅'},
+    {id:'color',name:'Hair Color',icon:'🎨'},
+    {id:'makeup',name:'Makeup',icon:'💄'},
+    {id:'bridal',name:'Bridal',icon:'👰'},
+  ],
+  svcs:[
+    {id:'t1',cat:'threading',name:'Eyebrow Threading',desc:'Precision eyebrow shaping for the perfect arch.',price:50,dur:'10 min',hot:false},
+    {id:'t2',cat:'threading',name:'Upper Lip Threading',desc:'Quick & clean upper lip hair removal.',price:20,dur:'5 min',hot:false},
+    {id:'t7',cat:'threading',name:'Full Face Threading',desc:'Complete facial threading for a clean polished look.',price:200,dur:'30 min',hot:false},
+    {id:'w1',cat:'waxing',name:'Full Hand Waxing',desc:'Clean Wax ₹200 | Rica Wax ₹400. Smooth, silky hands.',price:200,dur:'25 min',hot:false,alt:'Rica: ₹400'},
+    {id:'w3',cat:'waxing',name:'Full Leg Waxing',desc:'Clean Wax ₹400 | Rica Wax ₹800.',price:400,dur:'35 min',hot:false,alt:'Rica: ₹800'},
+    {id:'w7',cat:'waxing',name:'Bikini Waxing',desc:'Professional bikini line waxing.',price:700,dur:'30 min',hot:false},
+    {id:'f1',cat:'facial',name:'Signature Cleanup',desc:'Deep pore cleansing & skin refresh.',price:500,dur:'45 min',hot:false,maxPrice:2500},
+    {id:'f3',cat:'facial',name:'Luxury Facial',desc:'Premium facial treatment for glowing skin.',price:700,dur:'60 min',hot:true,maxPrice:5000},
+    {id:'f4',cat:'facial',name:'Advanced Facial (Machinery)',desc:'Facial with advanced machinery & technology.',price:4000,dur:'75 min',hot:true,maxPrice:10000},
+    {id:'f5',cat:'facial',name:'BB Glow Treatment',desc:'Trending semi-permanent BB cream treatment.',price:3500,dur:'60 min',hot:true},
+    {id:'f6',cat:'facial',name:'Permanent Eyebrow',desc:'Long-lasting permanent eyebrow microblading.',price:5000,dur:'90 min',hot:true},
+    {id:'f8',cat:'facial',name:'Permanent Lip Color',desc:'Semi-permanent lip blush treatment.',price:6000,dur:'90 min',hot:true},
+    {id:'b1',cat:'bleach',name:'Face Bleach',desc:'Brightening face bleach treatment.',price:200,dur:'20 min',hot:false},
+    {id:'b5',cat:'bleach',name:'Body Bleach',desc:'Full body bleach for even skin tone.',price:1500,dur:'90 min',hot:false},
+    {id:'b7',cat:'bleach',name:'Manicure',desc:'Complete nail & hand care.',price:500,dur:'40 min',hot:false},
+    {id:'b8',cat:'bleach',name:'Pedicure',desc:'Relaxing foot & nail treatment.',price:700,dur:'50 min',hot:false},
+    {id:'b9',cat:'bleach',name:'Full Body Spa',desc:'Luxurious full body spa experience.',price:3000,dur:'120 min',hot:true},
+    {id:'m1',cat:'massage',name:'Full Body Massage',desc:'Relaxing 45-min full body massage.',price:1500,dur:'45 min',hot:false},
+    {id:'m2',cat:'massage',name:'Advanced Full Body Massage',desc:'Deep tissue 2-hour premium massage.',price:2500,dur:'120 min',hot:true},
+    {id:'h1',cat:'hair',name:'Hair Wash + Blow Dry',desc:'Luxury shampoo, conditioning & blow dry.',price:200,dur:'30 min',hot:false},
+    {id:'h4',cat:'hair',name:'Blow Dry & Style',desc:'Straight / Out Turn / In Turn styling.',price:500,dur:'45 min',hot:false},
+    {id:'h6',cat:'hair',name:'U / V / B Cut',desc:'Trendy layered cuts for modern looks.',price:300,dur:'35 min',hot:false},
+    {id:'h7',cat:'hair',name:'Advanced Haircut + Wash + Blow Dry',desc:'Complete haircut experience.',price:700,dur:'60 min',hot:false},
+    {id:'hs2',cat:'hair-spa',name:'Keratin Hair Spa',desc:'Keratin-infused deep conditioning spa.',price:700,dur:'60 min',hot:true},
+    {id:'hs3',cat:'hair-spa',name:'Treatment Hair Spa',desc:'Advanced hair treatment spa.',price:1000,dur:'75 min',hot:false},
+    {id:'a1',cat:'adv-hair',name:'Olaplex Treatment',desc:'World-famous bond repair treatment.',price:1600,dur:'90 min',hot:true},
+    {id:'a2',cat:'adv-hair',name:'Basic Keratin',desc:'Smooth, frizz-free hair for months.',price:2500,dur:'120 min',hot:true},
+    {id:'a3',cat:'adv-hair',name:'Advanced Keratin',desc:'Premium keratin extended results.',price:4000,dur:'150 min',hot:true},
+    {id:'a4',cat:'adv-hair',name:'Botox Hair Treatment',desc:'Hair botox for silky, voluminous hair.',price:5000,dur:'150 min',hot:true},
+    {id:'a5',cat:'adv-hair',name:'Nano Plastia',desc:'Brazilian-style advanced smoothing.',price:6000,dur:'180 min',hot:false},
+    {id:'a6',cat:'adv-hair',name:'Basic Smoothing',desc:'Smooth, frizz-free straightening.',price:3000,dur:'120 min',hot:false},
+    {id:'n1',cat:'nails',name:'Gel Nail Art (per finger)',desc:'Creative gel nail art per finger.',price:50,dur:'varies',hot:false},
+    {id:'n2',cat:'nails',name:'Press-On Nails',desc:'Custom press-on nail set.',price:1200,dur:'30 min',hot:true},
+    {id:'c1',cat:'color',name:"Root Touch-Up (L'Oréal/Matrix)",desc:'Professional root colour 120gm.',price:700,dur:'60 min',hot:false},
+    {id:'c4',cat:'color',name:'Global Color (Wella/Schwarzkopf)',desc:'Premium full hair colour 150gm.',price:2000,dur:'90 min',hot:true},
+    {id:'c6',cat:'color',name:'Balayage',desc:'Sun-kissed hand-painted highlights.',price:3500,dur:'120 min',hot:true},
+    {id:'c8',cat:'color',name:'Ombre Hair Color',desc:'Gradient fade colour technique.',price:3000,dur:'120 min',hot:true},
+    {id:'mk1',cat:'makeup',name:'Party Makeup',desc:'Glamorous full makeup for parties.',price:2500,dur:'90 min',hot:false},
+    {id:'mk2',cat:'makeup',name:'HD Makeup',desc:'High-definition flawless makeup.',price:3500,dur:'90 min',hot:true},
+    {id:'mk5',cat:'makeup',name:'Makeup Only',desc:'Makeup without hairstyle.',price:1500,dur:'60 min',hot:false},
+    {id:'mk7',cat:'makeup',name:'Hairstyle Only',desc:'Hairstyle without makeup.',price:500,dur:'30 min',hot:false},
+    {id:'br1',cat:'bridal',name:'Classic Bridal Makeup',desc:'Timeless bridal look with all essentials.',price:10000,dur:'3 hrs',hot:false},
+    {id:'br2',cat:'bridal',name:'Premium Bridal Makeup',desc:'Enhanced bridal look with premium products.',price:13000,dur:'3.5 hrs',hot:true},
+    {id:'br3',cat:'bridal',name:'Luxury Bridal Package',desc:'Full-day bridal experience with pre-bridal package.',price:18000,dur:'Full day',hot:true},
+    {id:'br4',cat:'bridal',name:'Pre-Bridal Package',desc:'Complete pre-bridal skin & hair prep.',price:8000,dur:'3 hrs',hot:true},
+  ],
+  coupons:[
+    {code:'GRACE10',val:'10% Off',type:'pct',amt:10,desc:'10% off any service above ₹500.'},
+    {code:'BRIDAL500',val:'₹500 Off',type:'flat',amt:500,desc:'₹500 off any bridal package.'},
+    {code:'NEWLOOK',val:'15% Off',type:'pct',amt:15,desc:'15% off on first visit. Welcome gift!'},
+    {code:'FESTIVE',val:'₹200 Off',type:'flat',amt:200,desc:'Festive season special discount.'},
+    {code:'HAIRCARE',val:'20% Off',type:'pct',amt:20,desc:'20% off all advanced hair treatments.'},
+    {code:'GLOW',val:'₹300 Off',type:'flat',amt:300,desc:'₹300 off on facials above ₹1500.'},
+  ],
+  team:[
+    {id:'GG-001',name:'Priya Sharma',role:'Senior Stylist',mpin:'1234',active:true,initial:'P'},
+    {id:'GG-002',name:'Anjali Patel',role:'Makeup Artist',mpin:'2345',active:true,initial:'A'},
+    {id:'GG-003',name:'Kavya Mehta',role:'Hair Specialist',mpin:'3456',active:true,initial:'K'},
+    {id:'GG-004',name:'Riya Joshi',role:'Nail Technician',mpin:'4567',active:true,initial:'R'},
+  ],
+  appointments:[
+    {id:'APT001',client:'Meena Shah',phone:'98765-01234',service:'Bridal Package',time:'10:00 AM',branch:'Vesu',stylist:'Priya',status:'confirmed',amount:18000,date:'Today'},
+    {id:'APT002',client:'Pooja Verma',phone:'87654-12345',service:'HD Makeup',time:'11:30 AM',branch:'Rander',stylist:'Anjali',status:'confirmed',amount:3500,date:'Today'},
+    {id:'APT003',client:'Simran Desai',phone:'76543-23456',service:'Keratin Treatment',time:'12:00 PM',branch:'Vesu',stylist:'Kavya',status:'pending',amount:4000,date:'Today'},
+    {id:'APT004',client:'Neha Gupta',phone:'65432-34567',service:'Nail Art',time:'2:30 PM',branch:'Jahangirpura',stylist:'Riya',status:'confirmed',amount:1200,date:'Today'},
+    {id:'APT005',client:'Anita Raj',phone:'54321-45678',service:'Luxury Facial',time:'4:00 PM',branch:'Vesu',stylist:'Priya',status:'cancelled',amount:5000,date:'Today'},
+  ],
+  attendance:[
+    {id:'GG-001',name:'Priya Sharma',date:'Today',in:'09:55 AM',out:'07:10 PM',hrs:'9h 15m',status:'present'},
+    {id:'GG-002',name:'Anjali Patel',date:'Today',in:'10:02 AM',out:'--',hrs:'--',status:'present'},
+    {id:'GG-003',name:'Kavya Mehta',date:'Today',in:'10:15 AM',out:'--',hrs:'--',status:'present'},
+    {id:'GG-004',name:'Riya Joshi',date:'Today',in:'--',out:'--',hrs:'--',status:'off'},
+  ],
+  reviews:[
+    {name:'Meena Shah',rating:5,text:'Absolutely stunning bridal experience! The team at Grace & Glamour made my wedding day truly magical. Every detail was perfect.',source:'Google Review',initial:'M'},
+    {name:'Pooja Verma',rating:5,text:'Best salon in Surat! My hair treatment transformed my hair completely. The ambience is premium and the staff is so professional.',source:'Google Review',initial:'P'},
+    {name:'Ananya Desai',rating:5,text:'I love visiting Grace & Glamour. The HD makeup was flawless — stayed perfect all day. Highly recommend to every bride!',source:'Justdial Review',initial:'A'},
+    {name:'Simran Patel',rating:4,text:'Excellent service and very hygienic. The stylists really know what they are doing. Will definitely come back for my next appointment.',source:'Google Review',initial:'S'},
+    {name:'Kriti Joshi',rating:5,text:'The keratin treatment was worth every rupee. My hair has never been this smooth. The staff is friendly and the results are amazing!',source:'Google Review',initial:'K'},
+    {name:'Riya Mehta',rating:5,text:'Came for pre-bridal and left feeling like a queen. The facial and hair treatment combo is a must-try. Grace & Glamour is the best!',source:'Justdial Review',initial:'R'},
+  ],
+};
+
+let activeCat='all',billItems=[],teamDiscount=0,loggedMember=null;
+
+// ── CATEGORY PILLS
+function renderCatPills(){
+  const el=document.getElementById('cat-pills');if(!el)return;
+  const all=[{id:'all',name:'All Services',icon:'🌟'},...DB.cats];
+  el.innerHTML=all.map(c=>`<div class="cat-pill${c.id==='all'?' active':''}" onclick="filterCat('${c.id}',this)">${c.icon} ${c.name}</div>`).join('');
+}
+function filterCat(id,el){
+  document.querySelectorAll('.cat-pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');activeCat=id;renderSvcs(id);
+}
+function filterSvc(v){renderSvcs(activeCat,v)}
+
+// ── SERVICE IMAGES MAP
+const svcImgPool=[
+  'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=150&q=70',
+  'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=150&q=70',
+  'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=150&q=70',
+  'https://images.unsplash.com/photo-1614252234498-9e389e5a9a2d?w=150&q=70',
+  'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=150&q=70',
+  'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=150&q=70',
+  'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=150&q=70',
+  'https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=150&q=70',
+  'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=150&q=70',
+  'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=150&q=70',
+];
+
+// ── RENDER SERVICES
+function renderSvcs(catId='all',search=''){
+  const container=document.getElementById('svc-container');if(!container)return;
+  const cats=catId==='all'?DB.cats:DB.cats.filter(c=>c.id===catId);
+  let html='';
+  cats.forEach(cat=>{
+    let svcs=DB.svcs.filter(s=>s.cat===cat.id);
+    if(search)svcs=svcs.filter(s=>s.name.toLowerCase().includes(search.toLowerCase())||s.desc.toLowerCase().includes(search.toLowerCase()));
+    if(!svcs.length)return;
+    html+=`<div class="svc-cat-block">
+      <div class="svc-cat-hdr">
+        <span class="svc-cat-icon">${cat.icon}</span>
+        <span class="svc-cat-name">${cat.name}</span>
+        <span class="svc-cat-cnt">${svcs.length} services</span>
+      </div>`;
+    svcs.forEach((s,i)=>{
+      const price=s.maxPrice
+        ?`<span style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--gold2)">₹${s.price.toLocaleString()}</span><span style="font-size:.68rem;color:var(--txt3)"> – </span><span style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:700;color:var(--gold2)">₹${s.maxPrice.toLocaleString()}</span>`
+        :`<span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--gold2)">₹${s.price.toLocaleString()}</span>`;
+      html+=`<div class="svc-row" onclick="addToCart('${s.id}')">
+        <button class="svc-fav" onclick="event.stopPropagation();this.classList.toggle('on');this.textContent=this.classList.contains('on')?'❤️':'🤍'">🤍</button>
+        <div class="svc-img-box"><img src="${svcImgPool[i%svcImgPool.length]}" alt="${s.name}" loading="lazy"/></div>
+        <div class="svc-body">
+          <div class="svc-name">${s.name}${s.hot?` <span class="hot-badge">🔥 Trending</span>`:''}</div>
+          <div class="svc-desc">${s.desc}${s.alt?` · <span style="color:var(--gold2)">${s.alt}</span>`:''}</div>
+          <div class="svc-meta">
+            <span>${price}</span>
+            ${s.dur?`<span class="svc-dur">⏱ ${s.dur}</span>`:''}
+          </div>
+        </div>
+        <div class="svc-add-btn" onclick="event.stopPropagation();addToCart('${s.id}')">+</div>
+      </div>`;
+    });
+    html+='</div>';
+  });
+  if(!html)html='<div style="text-align:center;padding:3rem;color:var(--txt3)"><div style="font-size:2.5rem">🔍</div><div style="margin-top:.8rem;font-size:.88rem">No services found matching your search.</div></div>';
+  container.innerHTML=html;
+}
+
+// ── TRENDING
+const tImgPool=['https://images.unsplash.com/photo-1560066984-138dadb4c035?w=300&q=70','https://images.unsplash.com/photo-1614252234498-9e389e5a9a2d?w=300&q=70','https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=300&q=70','https://images.unsplash.com/photo-1604654894610-df63bc536371?w=300&q=70','https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=300&q=70','https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=300&q=70','https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=300&q=70','https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=300&q=70'];
+function renderTrending(){
+  const el=document.getElementById('trend-rail');if(!el)return;
+  const hot=DB.svcs.filter(s=>s.hot);
+  el.innerHTML=hot.map((s,i)=>`
+    <div class="trend-card" onclick="addToCart('${s.id}')">
+      <div class="trend-img">
+        <img src="${tImgPool[i%tImgPool.length]}" alt="${s.name}" loading="lazy"/>
+        <div class="trend-hot-tag">🔥 Trending</div>
+      </div>
+      <div class="trend-body">
+        <div class="trend-name">${s.name}</div>
+        <div class="trend-price">₹${s.price.toLocaleString()}${s.maxPrice?'+':''}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── COUPONS
+function renderCoupons(){
+  const el=document.getElementById('coupon-grid');if(!el)return;
+  el.innerHTML=DB.coupons.map(c=>`
+    <div class="coupon-card" onclick="copyCoupon('${c.code}')">
+      <div class="coupon-code">${c.code}</div>
+      <div class="coupon-val">${c.val}</div>
+      <div class="coupon-desc">${c.desc}</div>
+      <div class="coupon-copy">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Tap to copy code
+      </div>
+    </div>
+  `).join('');
+}
+function copyCoupon(code){
+  navigator.clipboard?.writeText(code).catch(()=>{});
+  showToast(`✅ Code "${code}" copied to clipboard!`);
+}
+
+// ── GALLERY
+const gImgs=[
+  'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=300&q=70',
+  'https://images.unsplash.com/photo-1614252234498-9e389e5a9a2d?w=300&q=70',
+  'https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=300&q=70',
+  'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=300&q=70',
+  'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=300&q=70',
+  'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=300&q=70',
+  'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=300&q=70',
+  'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=300&q=70',
+  'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=300&q=70',
+];
+function renderGallery(){
+  const el=document.getElementById('g-rail');if(!el)return;
+  const doubled=[...gImgs,...gImgs];
+  el.innerHTML=doubled.map((src,i)=>`<div class="g-frame"><img src="${src}" alt="Gallery ${i+1}" loading="lazy"/></div>`).join('');
+}
+
+// ── REVIEWS
+function renderReviews(){
+  const el=document.getElementById('reviews-grid');if(!el)return;
+  el.innerHTML=DB.reviews.map(r=>`
+    <div class="review-card">
+      <div class="review-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div>
+      <div class="review-text">"${r.text}"</div>
+      <div class="review-author">
+        <div class="review-av">${r.initial}</div>
+        <div>
+          <div class="review-name">${r.name}</div>
+          <div class="review-source">${r.source}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── BOOKING CALENDAR
+let selDate=null,selSlot=null,selStylist=null;
+let calYear=new Date().getFullYear(),calMonth=new Date().getMonth();
+const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const slots=['10:00 AM','10:30 AM','11:00 AM','11:30 AM','12:00 PM','12:30 PM','2:00 PM','2:30 PM','3:00 PM','3:30 PM','4:00 PM','4:30 PM','5:00 PM','5:30 PM','6:00 PM'];
+const bookedSlots=['11:30 AM','2:30 PM'];
+const stylists=[{n:'Priya',i:'P'},{n:'Anjali',i:'A'},{n:'Kavya',i:'K'},{n:'Riya',i:'R'},{n:'Any',i:'★'}];
+
+function renderCal(){
+  const lbl=document.getElementById('cal-month');if(!lbl)return;
+  lbl.textContent=`${months[calMonth]} ${calYear}`;
+  const daysEl=document.getElementById('cal-days');if(!daysEl)return;
+  const first=new Date(calYear,calMonth,1).getDay();
+  const days=new Date(calYear,calMonth+1,0).getDate();
+  const today=new Date();let html='';
+  for(let i=0;i<first;i++)html+=`<div class="cal-d empty"></div>`;
+  for(let d=1;d<=days;d++){
+    const dt=new Date(calYear,calMonth,d);
+    const isPast=dt<new Date(today.getFullYear(),today.getMonth(),today.getDate());
+    const isToday=dt.toDateString()===today.toDateString();
+    const dateStr=`${calYear}-${String(calMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const isSel=selDate===dateStr;
+    html+=`<div class="cal-d${isPast?' past':''}${isToday?' today':''}${isSel?' selected':''}" onclick="${isPast?'':'selectDate(\''+dateStr+'\')'}">${d}</div>`;
+  }
+  daysEl.innerHTML=html;
+}
+function selectDate(d){selDate=d;renderCal();renderSlots()}
+function renderSlots(){
+  const el=document.getElementById('slot-grid');if(!el)return;
+  el.innerHTML=slots.map(s=>`<div class="slot${bookedSlots.includes(s)?' booked':''}${selSlot===s?' selected':''}" onclick="${bookedSlots.includes(s)?'':'selectSlot(\''+s+'\')'}}">${s}${bookedSlots.includes(s)?'<br><span style="font-size:.5rem;opacity:.6">Booked</span>':''}</div>`).join('');
+}
+function selectSlot(s){selSlot=s;renderSlots()}
+function renderStylists(){
+  const el=document.getElementById('staff-grid');if(!el)return;
+  el.innerHTML=stylists.map(s=>`<div class="stylist-chip${selStylist===s.n?' selected':''}" onclick="selectStylist('${s.n}')"><div class="stylist-av">${s.i}</div><div class="stylist-name">${s.n}</div></div>`).join('');
+}
+function selectStylist(n){selStylist=n;renderStylists()}
+function changeMonth(d){calMonth+=d;if(calMonth<0){calMonth=11;calYear--}if(calMonth>11){calMonth=0;calYear++}renderCal()}
+function confirmBooking(){
+  const name=document.getElementById('bk-name')?.value?.trim();
+  const phone=document.getElementById('bk-phone')?.value?.trim();
+  const branch=document.getElementById('bk-branch')?.value;
+  const service=document.getElementById('bk-service')?.value;
+  if(!name||!phone||!branch||!service){showToast('⚠️ Please fill all required fields');return}
+  if(!selDate){showToast('⚠️ Please select a date');return}
+  if(!selSlot){showToast('⚠️ Please select a time slot');return}
+  showToast(`🎉 Appointment confirmed! WhatsApp sent to ${phone}`);
+  const waMsg=`*Grace & Glamour — Appointment Confirmed*%0A%0AName: ${name}%0AService: ${service}%0ADate: ${selDate}%0ATime: ${selSlot}%0ABranch: ${branch}%0AStylist: ${selStylist||'Any Available'}%0A%0AThank you for choosing Grace & Glamour! 💄✨`;
+  setTimeout(()=>window.open(`https://wa.me/919876543210?text=${waMsg}`,'_blank'),1000);
+}
+
+// ── COUNTERS
+function initCounters(){
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target,isDec=el.hasAttribute('data-dec'),target=parseFloat(el.dataset.t),dur=2200,step=16;
+    let cur=0;const inc=target/(dur/step);
+    const timer=setInterval(()=>{
+      cur=Math.min(cur+inc,target);
+      el.textContent=isDec?cur.toFixed(1):(target===2011?Math.floor(cur):Math.floor(cur)+(target>=10?'+':''));
+      if(cur>=target)clearInterval(timer);
+    },step);
+    io.unobserve(el);
+  }),{threshold:.5});
+  document.querySelectorAll('[data-t]').forEach(el=>io.observe(el));
+}
+
+// ── SCROLL REVEAL
+function initReveal(){
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.06,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rev').forEach(el=>io.observe(el));
+}
+
+// ── CLOCK (TEAM)
+function startClock(){
+  function tick(){
+    const el=document.getElementById('team-clock');
+    if(el)el.textContent=new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true});
+  }
+  tick();setInterval(tick,1000);
+}
+
+// ── ADD TO CART
+function addToCart(id){
+  const s=DB.svcs.find(x=>x.id===id);if(!s)return;
+  const ex=billItems.find(i=>i.id===id);
+  if(ex)ex.qty++;else billItems.push({...s,qty:1});
+  showToast(`✅ ${s.name} added — ₹${s.price.toLocaleString()}`);
+}
+
+// ── LOGIN FUNCTIONS
+function adminLogin(){
+  const email=document.getElementById('adm-email')?.value;
+  const pass=document.getElementById('adm-pass')?.value;
+  if((email==='admin@gracenglamour.com'&&(pass==='Admin@GG2025'||pass==='admin123'))){
+    showToast('✅ Welcome back, Admin!');
+    setTimeout(()=>goView('view-admin'),600);
+  }else showToast('❌ Invalid credentials. Check demo credentials above.');
+}
+function teamLogin(){
+  const id=document.getElementById('team-id')?.value?.trim().toUpperCase();
+  const mpin=[1,2,3,4].map(i=>document.getElementById(`mp${i}`)?.value).join('');
+  const member=DB.team.find(t=>t.id===id&&t.mpin===mpin&&t.active);
+  if(member){
+    loggedMember=member;
+    document.getElementById('team-member-name').textContent=member.name;
+    document.getElementById('team-member-role').textContent=`${member.role} · ${member.id}`;
+    document.getElementById('team-av-letter').textContent=member.initial;
+    showToast(`✅ Welcome, ${member.name}!`);
+    setTimeout(()=>goView('view-team'),600);
+  }else showToast('❌ Invalid ID or MPIN. Try: GG-001 / 1234');
+}
+function teamAutofill(){
+  document.getElementById('team-id').value='GG-001';
+  ['mp1','mp2','mp3','mp4'].forEach((id,i)=>document.getElementById(id).value=String(i+1));
+}
+function mpNav(el,next){
+  // Only move forward if a digit was entered
+  if(el.value.replace(/\D/,'')&&next)document.getElementById(next)?.focus();
+  el.value=el.value.replace(/\D/,''); // strip non-digits
+}
+function mpBack(e,curId,prevId){
+  if(e.key==='Backspace'){
+    const el=document.getElementById(curId);
+    if(!el.value&&prevId){
+      const prev=document.getElementById(prevId);
+      if(prev){prev.value='';prev.focus()}
+    }
+  }
+}
+
+// ── TEAM TABS
+function tTab(tab,el){
+  if(el){document.querySelectorAll('.ts-ni').forEach(i=>i.classList.remove('active'));el.classList.add('active')}
+  const titles={bill:'Create Bill',attendance:'My Attendance',appointments:"Today's Appointments",history:'My History'};
+  const t=document.getElementById('team-tab-title');if(t)t.textContent=titles[tab]||tab;
+  renderTeam(tab);
+  document.getElementById('teamSidebar')?.classList.remove('open');
+}
+function renderTeam(tab){
+  const c=document.getElementById('team-content');if(!c)return;
+  if(tab==='bill')c.innerHTML=buildBillingUI();
+  else if(tab==='attendance')c.innerHTML=buildAttendanceUI();
+  else if(tab==='appointments')c.innerHTML=buildApptsUI();
+  else if(tab==='history')c.innerHTML=buildHistoryUI();
+}
+
+function buildBillingUI(){
+  const member=loggedMember||DB.team[0];
+  return`<div class="billing-layout">
+    <div class="bill-panel">
+      <div class="panel-title">👤 Client Details</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1rem">
+        <input class="bf-input" id="tc-name" placeholder="Client name *" style="margin-top:0"/>
+        <input class="bf-input" id="tc-phone" placeholder="WhatsApp number *" style="margin-top:0"/>
+      </div>
+      <div class="hr"></div>
+      <div class="panel-title">🔍 Search & Add Services</div>
+      <div class="bill-search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--txt3);flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="tc-svc-in" placeholder="Type service name…" oninput="searchTeamSvc(this.value)" onfocus="document.getElementById('tc-svc-list').style.display='block'"/>
+      </div>
+      <div class="bill-svc-dropdown" id="tc-svc-list" style="display:none">
+        ${DB.svcs.map(s=>`<div class="bill-svc-item" onclick="addTeamSvc('${s.id}')"><span>${s.name}</span><span class="bill-svc-price">₹${s.price.toLocaleString()}</span></div>`).join('')}
+      </div>
+      <div class="bill-items-list" id="tc-bill-items"><div style="text-align:center;padding:1.5rem;color:var(--txt3);font-size:.76rem">Search & add services above ☝️</div></div>
+    </div>
+    <div class="bill-summary">
+      <div class="panel-title">🧾 Bill Summary</div>
+      <div class="sum-row"><span>Subtotal</span><span id="tc-sub">₹0</span></div>
+      <div class="sum-row"><span>Discount</span><span style="color:#4caf50" id="tc-disc">- ₹0</span></div>
+      <div class="sum-total"><span>Total</span><span id="tc-tot">₹0</span></div>
+      <div class="coupon-row">
+        <input class="coupon-in" id="tc-coupon" placeholder="Coupon code…"/>
+        <button class="coupon-apply-btn" onclick="applyTeamCoupon()">Apply</button>
+      </div>
+      <button class="btn-p w-full justify-center mt2" onclick="genTeamBill()">🧾 Generate & Send WA</button>
+      <button class="btn-s w-full justify-center mt1" onclick="showToast('🖨️ Print preview opened')">🖨️ Print Bill</button>
+      <div id="tc-inv-out"></div>
+    </div>
+  </div>`;
+}
+
+function searchTeamSvc(v){
+  const el=document.getElementById('tc-svc-list');if(!el)return;
+  el.style.display='block';
+  const filtered=DB.svcs.filter(s=>s.name.toLowerCase().includes(v.toLowerCase()));
+  el.innerHTML=filtered.length
+    ?filtered.map(s=>`<div class="bill-svc-item" onclick="addTeamSvc('${s.id}')"><span>${s.name}</span><span class="bill-svc-price">₹${s.price.toLocaleString()}</span></div>`).join('')
+    :'<div style="padding:1rem;color:var(--txt3);font-size:.76rem;text-align:center">No match found</div>';
+}
+function addTeamSvc(id){
+  const s=DB.svcs.find(x=>x.id===id);if(!s)return;
+  const ex=billItems.find(i=>i.id===id);if(ex)ex.qty++;else billItems.push({...s,qty:1});
+  document.getElementById('tc-svc-list').style.display='none';
+  const inp=document.getElementById('tc-svc-in');if(inp)inp.value='';
+  updateBillUI();showToast(`✅ ${s.name} added`);
+}
+function updateBillUI(){
+  const el=document.getElementById('tc-bill-items');if(!el)return;
+  if(!billItems.length){el.innerHTML='<div style="text-align:center;padding:1.5rem;color:var(--txt3);font-size:.76rem">No services added yet</div>';updateBillTotals();return}
+  el.innerHTML=billItems.map((item,i)=>`
+    <div class="bill-item-row">
+      <span class="bi-name">${item.name}</span>
+      <div class="qty-ctrl">
+        <button class="qty-btn" onclick="chgQty(${i},-1)">−</button>
+        <span class="qty-val">${item.qty}</span>
+        <button class="qty-btn" onclick="chgQty(${i},1)">+</button>
+      </div>
+      <span class="bi-price">₹${(item.price*item.qty).toLocaleString()}</span>
+      <span class="bi-rm" onclick="rmItem(${i})">✕</span>
+    </div>`).join('');
+  updateBillTotals();
+}
+function chgQty(i,d){billItems[i].qty=Math.max(1,billItems[i].qty+d);updateBillUI()}
+function rmItem(i){billItems.splice(i,1);updateBillUI()}
+function updateBillTotals(){
+  const sub=billItems.reduce((a,i)=>a+i.price*i.qty,0),tot=Math.max(0,sub-teamDiscount);
+  const s=document.getElementById('tc-sub'),d=document.getElementById('tc-disc'),t=document.getElementById('tc-tot');
+  if(s)s.textContent=`₹${sub.toLocaleString()}`;
+  if(d)d.textContent=`- ₹${teamDiscount.toLocaleString()}`;
+  if(t)t.textContent=`₹${tot.toLocaleString()}`;
+}
+function applyTeamCoupon(){
+  const code=document.getElementById('tc-coupon')?.value?.trim().toUpperCase();
+  const c=DB.coupons.find(x=>x.code===code);
+  if(c){
+    const sub=billItems.reduce((a,i)=>a+i.price*i.qty,0);
+    teamDiscount=c.type==='flat'?c.amt:Math.round(sub*c.amt/100);
+    updateBillUI();showToast(`🎉 "${code}" applied! Saving ₹${teamDiscount.toLocaleString()}`);
+  }else showToast('❌ Invalid coupon code');
+}
+function genTeamBill(){
+  const client=document.getElementById('tc-name')?.value||'Walk-in';
+  const phone=document.getElementById('tc-phone')?.value||'N/A';
+  if(!billItems.length){showToast('⚠️ Add at least one service');return}
+  const sub=billItems.reduce((a,i)=>a+i.price*i.qty,0),tot=Math.max(0,sub-teamDiscount);
+  const invNo=`INV-${Date.now().toString().slice(-6)}`;
+  const out=document.getElementById('tc-inv-out');
+  if(out)out.innerHTML=buildInvoice(invNo,client,phone,billItems,teamDiscount,tot);
+  showToast(`🎉 Bill ₹${tot.toLocaleString()} generated! WA sent to ${phone}`);
+  billItems=[];teamDiscount=0;updateBillUI();
+}
+function buildInvoice(no,client,phone,items,disc,total){
+  const date=new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});
+  return`<div style="background:var(--surface2);border:1px solid var(--bdr);border-radius:var(--r16);padding:1.4rem;margin-top:1.2rem">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;padding-bottom:.8rem;border-bottom:1px solid var(--bdr2)">
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;color:var(--rose2)">Grace & Glamour</div>
+        <div style="font-size:.56rem;color:var(--txt3);letter-spacing:.1em">LUXURY BEAUTY & BRIDAL · SURAT</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:.62rem;color:var(--gold2);font-weight:600">${no}</div>
+        <div style="font-size:.58rem;color:var(--txt3)">${date}</div>
+      </div>
+    </div>
+    <div style="margin-bottom:.9rem">
+      <div style="font-size:.7rem;color:#fff;font-weight:500">${client}</div>
+      <div style="font-size:.64rem;color:var(--txt3)">${phone}</div>
+    </div>
+    ${items.map(i=>`<div style="display:flex;justify-content:space-between;padding:.38rem 0;font-size:.74rem;color:var(--txt2);border-bottom:1px solid rgba(255,255,255,.03)"><span>${i.name} × ${i.qty}</span><span style="color:var(--gold2);font-family:'Cormorant Garamond',serif;font-size:.9rem;font-weight:700">₹${(i.price*i.qty).toLocaleString()}</span></div>`).join('')}
+    ${disc?`<div style="display:flex;justify-content:space-between;padding:.38rem 0;font-size:.74rem;color:#4caf50"><span>Discount Applied</span><span>- ₹${disc.toLocaleString()}</span></div>`:''}
+    <div style="display:flex;justify-content:space-between;padding:.7rem 0 0;margin-top:.3rem;border-top:1px solid var(--bdr2)">
+      <span style="font-size:.88rem;font-weight:500;color:#fff">Total</span>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--gold2)">₹${total.toLocaleString()}</span>
+    </div>
+    <div style="text-align:center;margin-top:.9rem;font-size:.6rem;color:var(--txt3);letter-spacing:.08em">Thank you for choosing Grace & Glamour ✨</div>
+  </div>`;
+}
+
+function buildAttendanceUI(){
+  const member=loggedMember||DB.team[0];
+  const att=DB.attendance.find(a=>a.id===member.id)||{in:'--',out:'--',hrs:'--',status:'absent'};
+  return`<div style="display:grid;gap:1.2rem">
+    <div class="bill-panel" style="background:var(--surface);border:1px solid var(--bdr2);border-radius:var(--r16);padding:1.4rem">
+      <div class="panel-title">🕐 Today's Attendance</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem">
+        <div style="text-align:center;padding:1rem;background:var(--surface2);border-radius:var(--r10);border:1px solid var(--bdr2)">
+          <div style="font-size:.56rem;color:var(--txt3);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.4rem">Check In</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--gold2)">${att.in}</div>
+        </div>
+        <div style="text-align:center;padding:1rem;background:var(--surface2);border-radius:var(--r10);border:1px solid var(--bdr2)">
+          <div style="font-size:.56rem;color:var(--txt3);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.4rem">Check Out</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--rose2)">${att.out}</div>
+        </div>
+        <div style="text-align:center;padding:1rem;background:var(--surface2);border-radius:var(--r10);border:1px solid var(--bdr2)">
+          <div style="font-size:.56rem;color:var(--txt3);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.4rem">Hours</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--txt)">${att.hrs}</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem">
+        <button class="btn-p justify-center" onclick="showToast('✅ Check-in marked: '+new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',hour12:true}))">✅ Mark Check-In</button>
+        <button class="btn-s justify-center" onclick="showToast('✅ Check-out marked: '+new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',hour12:true}))">🚪 Mark Check-Out</button>
+      </div>
+    </div>
+    <div class="bill-panel" style="background:var(--surface);border:1px solid var(--bdr2);border-radius:var(--r16);padding:1.4rem">
+      <div class="panel-title">📅 Monthly Overview</div>
+      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:.3rem">
+        ${['Su','Mo','Tu','We','Th','Fr','Sa'].map(d=>`<div style="text-align:center;font-size:.56rem;color:var(--txt3);padding:.3rem">${d}</div>`).join('')}
+        ${Array.from({length:31},(_, i)=>{const types=['P','P','P','P','P','O','P','P','P','P','P','P','O','P','P','A','P','P','P','O','P','P','P','P','P','P','O','P','P','P','P'];const t=types[i]||'P';const color=t==='P'?'var(--rose)':t==='O'?'var(--gold)':'var(--txt3)';return`<div style="aspect-ratio:1;border-radius:6px;background:${color === 'var(--txt3)'?'var(--surface2)':'rgba('+( t==='P'?'194,57,104':'184,131,26')+','+(i<27?'.25':'.15')+')'};border:1px solid ${color==='var(--txt3)'?'var(--bdr2)':'rgba('+( t==='P'?'194,57,104':'184,131,26')+', .3)'};display:flex;align-items:center;justify-content:center;font-size:.56rem;color:${color==='var(--txt3)'?'var(--txt3)':'#fff'}">${i+1}</div>`}).join('')}
+      </div>
+      <div style="display:flex;gap:1rem;margin-top:1rem;font-size:.66rem">
+        <span style="color:var(--rose2)">● Present</span>
+        <span style="color:var(--gold2)">● Off Day</span>
+        <span style="color:var(--txt3)">● Absent</span>
+      </div>
+    </div>
+  </div>`;
+}
+
+function buildApptsUI(){
+  return`<div class="bill-panel" style="background:var(--surface);border:1px solid var(--bdr2);border-radius:var(--r16);padding:1.4rem">
+    <div class="panel-title">📅 Today's Appointments</div>
+    <div style="display:flex;flex-direction:column;gap:.65rem">
+      ${DB.appointments.slice(0,4).map(a=>`
+        <div style="background:var(--surface2);border:1px solid var(--bdr2);border-radius:var(--r10);padding:.9rem;display:flex;align-items:center;gap:.9rem;flex-wrap:wrap">
+          <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.78rem;color:#fff;flex-shrink:0">${a.client[0]}</div>
+          <div style="flex:1;min-width:140px">
+            <div style="font-weight:500;color:#fff;font-size:.84rem">${a.client}</div>
+            <div style="font-size:.68rem;color:var(--txt3);margin-top:.15rem">${a.service} · ${a.time} · ${a.branch}</div>
+          </div>
+          <span class="badge-status ${a.status}">${a.status}</span>
+          <button class="btn-p" style="font-size:.6rem;padding:.4rem .9rem" onclick="showToast('✅ Service started for ${a.client}')">Start</button>
+        </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+function buildHistoryUI(){
+  return`<div class="bill-panel" style="background:var(--surface);border:1px solid var(--bdr2);border-radius:var(--r16);padding:1.4rem">
+    <div class="panel-title">📋 Recent Bills</div>
+    <div class="adm-table-wrap">
+      <table class="adm-table">
+        <thead><tr><th>Client</th><th>Service</th><th>Amount</th><th>Date</th><th>Status</th></tr></thead>
+        <tbody>
+          ${DB.appointments.slice(0,4).map(a=>`<tr>
+            <td style="color:#fff">${a.client}</td>
+            <td>${a.service}</td>
+            <td><span style="font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--gold2);font-weight:700">₹${a.amount.toLocaleString()}</span></td>
+            <td>${a.date}</td>
+            <td><span class="badge-status ${a.status}">${a.status}</span></td>
+          </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+  </div>`;
+}
+
+// ── ADMIN PANEL
+function adminTab(tab,el){
+  if(el){document.querySelectorAll('.adm-ni').forEach(i=>i.classList.remove('active'));el.classList.add('active')}
+  const titles={overview:'Dashboard',bookings:'Bookings',revenue:'Revenue Analytics',services:'Service Management',team:'Team Management',customers:'Customers',attendance:'Attendance',coupons:'Coupons & Offers',settings:'Settings'};
+  const t=document.getElementById('adm-title');if(t)t.textContent=titles[tab]||tab;
+  renderAdmin(tab);
+  document.getElementById('adminSidebar')?.classList.remove('open');
+}
+function renderAdmin(tab){
+  const c=document.getElementById('adm-content');if(!c)return;
+  if(tab==='overview')c.innerHTML=buildAdmOverview();
+  else if(tab==='bookings')c.innerHTML=buildAdmBookings();
+  else if(tab==='services')c.innerHTML=buildAdmServices();
+  else if(tab==='team')c.innerHTML=buildAdmTeam();
+  else if(tab==='attendance')c.innerHTML=buildAdmAttendance();
+  else if(tab==='customers')c.innerHTML=buildAdmCustomers();
+  else if(tab==='coupons')c.innerHTML=buildAdmCoupons();
+  else if(tab==='revenue')c.innerHTML=buildAdmRevenue();
+  else c.innerHTML=`<div style="text-align:center;padding:3rem;color:var(--txt3)"><div style="font-size:2.5rem">🔧</div><div style="margin-top:.8rem">${(document.getElementById('adm-title')||{}).textContent} — Coming Soon</div></div>`;
+  setTimeout(drawRevenueBars,100);
+}
+
+function buildAdmOverview(){
+  const today=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  return`<div>
+    <div style="margin-bottom:1.5rem"><div style="font-size:.72rem;color:var(--txt3)">📅 ${today}</div><div style="font-size:.88rem;color:var(--txt2);margin-top:.2rem">Overview across all 3 branches · Vesu, Rander & Jahangirpura</div></div>
+    <div class="kpi-grid">
+      <div class="kpi-card rose"><div class="kpi-icon">📅</div><div class="kpi-val">24</div><div class="kpi-lbl">Today's Bookings</div><div class="kpi-trend up">↑ 4 vs yesterday</div></div>
+      <div class="kpi-card gold"><div class="kpi-icon">💰</div><div class="kpi-val">₹45K</div><div class="kpi-lbl">Today's Revenue</div><div class="kpi-trend up">↑ ₹8K vs last week</div></div>
+      <div class="kpi-card plum"><div class="kpi-icon">👥</div><div class="kpi-val">12</div><div class="kpi-lbl">Active Today</div><div class="kpi-trend up">4 of 4 team in</div></div>
+      <div class="kpi-card teal"><div class="kpi-icon">⭐</div><div class="kpi-val">4.8</div><div class="kpi-lbl">Google Rating</div><div class="kpi-trend up">125 reviews</div></div>
+    </div>
+    <div class="chart-row">
+      <div class="panel">
+        <div class="panel-title">📊 Revenue — Last 7 Months</div>
+        <div class="bars-wrap" id="rev-bars"></div>
+        <div style="display:flex;justify-content:space-around;margin-top:.4rem">
+          ${['Nov','Dec','Jan','Feb','Mar','Apr','May'].map(m=>`<div class="bar-month">${m}</div>`).join('')}
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-title">📊 Service Mix</div>
+        <div style="display:flex;flex-direction:column;gap:.6rem;margin-top:.5rem">
+          ${[['Bridal','38%','var(--rose)'],['Hair','26%','var(--gold2)'],['Facial','18%','var(--plum)'],['Makeup','12%','#20b0a0'],['Others','6%','var(--txt3)']].map(([name,pct,color])=>`
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--txt2);margin-bottom:.3rem"><span>${name}</span><span style="color:${color}">${pct}</span></div>
+              <div style="height:5px;background:var(--surface2);border-radius:3px;overflow:hidden"><div style="height:100%;width:${pct};background:${color};border-radius:3px;transition:width .8s ease"></div></div>
+            </div>`).join('')}
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">📅 Recent Bookings</div>
+      <div class="adm-table-wrap">
+        <table class="adm-table">
+          <thead><tr><th>Client</th><th>Service</th><th>Branch</th><th>Stylist</th><th>Time</th><th>Amount</th><th>Status</th><th>Action</th></tr></thead>
+          <tbody>
+            ${DB.appointments.map(a=>`<tr>
+              <td style="color:#fff;font-weight:500">${a.client}</td>
+              <td>${a.service}</td><td>${a.branch}</td><td>${a.stylist}</td><td>${a.time}</td>
+              <td><span style="font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--gold2);font-weight:700">₹${a.amount.toLocaleString()}</span></td>
+              <td><span class="badge-status ${a.status}">${a.status}</span></td>
+              <td><button class="adm-action" onclick="showToast('✏️ Editing ${a.client}')">Edit</button></td>
+            </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>`;
+}
+
+function buildAdmBookings(){
+  return`<div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;flex-wrap:wrap;gap:.8rem">
+      <div style="font-size:.82rem;color:var(--txt2)">All bookings across 3 branches</div>
+      <button class="btn-p" style="font-size:.64rem;padding:.55rem 1.2rem" onclick="showToast('➕ New booking form')">+ New Booking</button>
+    </div>
+    <div class="panel">
+      <div class="adm-table-wrap">
+        <table class="adm-table">
+          <thead><tr><th>ID</th><th>Client</th><th>Service</th><th>Branch</th><th>Stylist</th><th>Time</th><th>Amount</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody>
+            ${DB.appointments.map(a=>`<tr>
+              <td style="color:var(--txt3);font-size:.66rem">${a.id}</td>
+              <td><div style="color:#fff;font-weight:500;font-size:.82rem">${a.client}</div><div style="font-size:.64rem;color:var(--txt3)">${a.phone}</div></td>
+              <td>${a.service}</td><td>${a.branch}</td><td>${a.stylist}</td><td>${a.time}</td>
+              <td><span style="font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--gold2);font-weight:700">₹${a.amount.toLocaleString()}</span></td>
+              <td><span class="badge-status ${a.status}">${a.status}</span></td>
+              <td style="display:flex;gap:.4rem">
+                <button class="adm-action" onclick="showToast('✅ Confirmed')">✅</button>
+                <button class="adm-action" onclick="showToast('❌ Cancelled')">❌</button>
+              </td>
+            </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>`;
+}
+
+function buildAdmRevenue(){
+  return`<div>
+    <div class="kpi-grid" style="margin-bottom:1.5rem">
+      <div class="kpi-card rose"><div class="kpi-icon">💰</div><div class="kpi-val">₹1.24L</div><div class="kpi-lbl">This Month</div><div class="kpi-trend up">↑ 18% vs last</div></div>
+      <div class="kpi-card gold"><div class="kpi-icon">📈</div><div class="kpi-val">₹8.92L</div><div class="kpi-lbl">This Year (2025)</div><div class="kpi-trend up">↑ 24% YOY</div></div>
+      <div class="kpi-card plum"><div class="kpi-icon">🧾</div><div class="kpi-val">489</div><div class="kpi-lbl">Bills This Month</div><div class="kpi-trend up">↑ 42 vs last</div></div>
+      <div class="kpi-card teal"><div class="kpi-icon">💆</div><div class="kpi-val">₹2,538</div><div class="kpi-lbl">Avg Bill Size</div><div class="kpi-trend up">↑ ₹180</div></div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">📊 Monthly Revenue (2025)</div>
+      <div class="bars-wrap" id="rev-bars"></div>
+      <div style="display:flex;justify-content:space-around;margin-top:.4rem">
+        ${['Jan','Feb','Mar','Apr','May','Jun','Jul'].map(m=>`<div class="bar-month">${m}</div>`).join('')}
+      </div>
+    </div>
+  </div>`;
+}
+
+function buildAdmServices(){
+  return`<div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;flex-wrap:wrap;gap:.8rem">
+      <div style="font-size:.82rem;color:var(--txt2)">${DB.svcs.length} services across ${DB.cats.length} categories</div>
+      <button class="btn-p" style="font-size:.64rem;padding:.55rem 1.2rem" onclick="showToast('➕ New service form')">+ Add Service</button>
+    </div>
+    <div class="panel">
+      <div class="adm-table-wrap">
+        <table class="adm-table">
+          <thead><tr><th>Name</th><th>Category</th><th>Price</th><th>Duration</th><th>Trending</th><th>Actions</th></tr></thead>
+          <tbody>
+            ${DB.svcs.slice(0,15).map(s=>`<tr>
+              <td style="color:#fff;font-weight:500">${s.name}</td>
+              <td>${DB.cats.find(c=>c.id===s.cat)?.name||s.cat}</td>
+              <td><span style="font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--gold2);font-weight:700">₹${s.price.toLocaleString()}</span></td>
+              <td style="color:var(--txt3)">${s.dur||'—'}</td>
+              <td><span class="badge-status ${s.hot?'confirmed':'pending'}">${s.hot?'🔥 Yes':'No'}</span></td>
+              <td style="display:flex;gap:.4rem">
+                <button class="adm-action" onclick="showToast('✏️ Editing ${s.name}')">Edit</button>
+                <button class="adm-action" onclick="showToast('🗑 Deleted')">Del</button>
+              </td>
+            </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>`;
+}
+
+function buildAdmTeam(){
+  return`<div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;flex-wrap:wrap;gap:.8rem">
+      <div style="font-size:.82rem;color:var(--txt2)">${DB.team.length} team members</div>
+      <button class="btn-p" style="font-size:.64rem;padding:.55rem 1.2rem" onclick="showToast('➕ Add team member')">+ Add Member</button>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.1rem">
+      ${DB.team.map(m=>`
+        <div class="panel" style="display:flex;flex-direction:column;gap:.9rem;position:relative">
+          <div style="display:flex;align-items:center;gap:.9rem">
+            <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;color:#fff;flex-shrink:0">${m.initial}</div>
+            <div>
+              <div style="font-weight:500;color:#fff;font-size:.86rem">${m.name}</div>
+              <div style="font-size:.66rem;color:var(--txt3)">${m.role}</div>
+            </div>
+            <span class="badge-status confirmed" style="margin-left:auto">● Active</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:.72rem">
+            <span style="color:var(--txt3)">ID:</span><span style="color:var(--gold2);font-weight:600">${m.id}</span>
+          </div>
+          <div style="display:flex;gap:.5rem">
+            <button class="adm-action" style="flex:1;justify-content:center;display:flex" onclick="showToast('✏️ Edit ${m.name}')">Edit</button>
+            <button class="adm-action" onclick="showToast('🔑 Reset MPIN for ${m.name}')">Reset MPIN</button>
+          </div>
+        </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+function buildAdmAttendance(){
+  return`<div>
+    <div class="panel" style="margin-bottom:1.2rem">
+      <div class="panel-title">🕐 Today's Attendance — ${new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'})}</div>
+      <div class="adm-table-wrap">
+        <table class="adm-table">
+          <thead><tr><th>Member</th><th>Role</th><th>Check In</th><th>Check Out</th><th>Hours</th><th>Status</th></tr></thead>
+          <tbody>
+            ${DB.attendance.map(a=>`<tr>
+              <td style="color:#fff;font-weight:500">${a.name}</td>
+              <td style="color:var(--txt3)">${DB.team.find(t=>t.id===a.id)?.role||'Stylist'}</td>
+              <td style="color:var(--gold2)">${a.in}</td>
+              <td style="color:var(--rose2)">${a.out}</td>
+              <td>${a.hrs}</td>
+              <td><span class="badge-status ${a.status==='present'?'confirmed':a.status==='off'?'pending':'cancelled'}">${a.status}</span></td>
+            </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>`;
+}
+
+function buildAdmCustomers(){
+  const customers=[
+    {name:'Meena Shah',phone:'98765-01234',visits:8,spend:45000,initial:'M'},
+    {name:'Pooja Verma',phone:'87654-12345',visits:5,spend:22500,initial:'P'},
+    {name:'Ananya Desai',phone:'76543-23456',visits:12,spend:68000,initial:'A'},
+    {name:'Simran Patel',phone:'65432-34567',visits:3,spend:9800,initial:'S'},
+    {name:'Kriti Joshi',phone:'54321-45678',visits:6,spend:31500,initial:'K'},
+  ];
+  return`<div>
+    <div class="panel">
+      <div class="panel-title">👥 Customer Database</div>
+      <div class="adm-table-wrap">
+        <table class="adm-table">
+          <thead><tr><th>Client</th><th>Phone</th><th>Visits</th><th>Total Spend</th><th>Actions</th></tr></thead>
+          <tbody>
+            ${customers.map(c=>`<tr>
+              <td><div style="display:flex;align-items:center;gap:.7rem"><div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.72rem;color:#fff">${c.initial}</div><span style="color:#fff;font-weight:500">${c.name}</span></div></td>
+              <td style="color:var(--txt3)">${c.phone}</td>
+              <td><span style="color:var(--rose2);font-weight:600">${c.visits}</span></td>
+              <td><span style="font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--gold2);font-weight:700">₹${c.spend.toLocaleString()}</span></td>
+              <td><button class="adm-action" onclick="showToast('💬 WhatsApp opened for ${c.name}')">WA</button></td>
+            </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>`;
+}
+
+function buildAdmCoupons(){
+  return`<div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;flex-wrap:wrap;gap:.8rem">
+      <div style="font-size:.82rem;color:var(--txt2)">${DB.coupons.length} active coupons</div>
+      <button class="btn-p" style="font-size:.64rem;padding:.55rem 1.2rem" onclick="showToast('➕ New coupon')">+ Add Coupon</button>
+    </div>
+    <div class="coupon-grid">
+      ${DB.coupons.map(c=>`
+        <div class="panel" style="border:1px dashed rgba(194,57,104,.3)">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--rose2);margin-bottom:.4rem">${c.code}</div>
+          <div style="font-size:.78rem;color:var(--gold2);font-weight:500;margin-bottom:.4rem">${c.val}</div>
+          <div style="font-size:.72rem;color:var(--txt3);line-height:1.6;margin-bottom:.9rem">${c.desc}</div>
+          <div style="display:flex;gap:.5rem">
+            <button class="adm-action" onclick="showToast('✏️ Editing ${c.code}')">Edit</button>
+            <button class="adm-action" onclick="showToast('🗑 Deleted ${c.code}')">Delete</button>
+          </div>
+        </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+function drawRevenueBars(){
+  const el=document.getElementById('rev-bars');if(!el)return;
+  const vals=[65000,82000,78000,91000,105000,98000,124000];
+  const max=Math.max(...vals);
+  el.innerHTML='';
+  vals.forEach((v,i)=>{
+    const col=document.createElement('div');col.className='bar-col';
+    const bar=document.createElement('div');bar.className='bar-fill';
+    bar.style.height='0';bar.setAttribute('data-lbl',`₹${(v/1000).toFixed(0)}K`);
+    col.appendChild(bar);el.appendChild(col);
+    setTimeout(()=>bar.style.height=`${(v/max)*135}px`,i*80+100);
+  });
+}
+
+// ── SCROLL REVEAL
+function initReveal(){
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.06,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.rev').forEach(el=>io.observe(el));
+}
+
+// ── COUNTERS
+function initCounters(){
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target,isDec=el.hasAttribute('data-dec'),target=parseFloat(el.dataset.t),dur=2400,step=16;
+    let cur=0;const inc=target/(dur/step);
+    const timer=setInterval(()=>{
+      cur=Math.min(cur+inc,target);
+      el.textContent=isDec?cur.toFixed(1):(target===2011?Math.floor(cur):Math.floor(cur)+(target>=10?'+':''));
+      if(cur>=target)clearInterval(timer);
+    },step);
+    io.unobserve(el);
+  }),{threshold:.5});
+  document.querySelectorAll('[data-t]').forEach(el=>io.observe(el));
+}
+
+// ── INIT ALL
+document.addEventListener('DOMContentLoaded',()=>{
+  initParticles();
+  initReveal();
+  initCounters();
+  renderCatPills();
+  renderSvcs();
+  renderTrending();
+  renderCoupons();
+  renderGallery();
+  renderReviews();
+  renderCal();
+  renderSlots();
+  renderStylists();
+});
+
+// Close mobile sidebar on outside click
+document.addEventListener('click',e=>{
+  const adminSB=document.getElementById('adminSidebar');
+  const teamSB=document.getElementById('teamSidebar');
+  if(adminSB?.classList.contains('open')&&!adminSB.contains(e.target)&&e.target.id!=='admin-ham')adminSB.classList.remove('open');
+  if(teamSB?.classList.contains('open')&&!teamSB.contains(e.target)&&e.target.id!=='team-ham')teamSB.classList.remove('open');
+});
+</script>
+</body>
+</html>
